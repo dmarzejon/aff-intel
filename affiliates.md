@@ -18,6 +18,9 @@
 | `convertkit` | ConvertKit (Kit) | `#AFFILIATE:convertkit` | _pending_ | Kit / ConvertKit creator plan |
 | `beehiiv` | Beehiiv | `#AFFILIATE:beehiiv` | _pending_ | Beehiiv Scale / Max |
 | `gumroad` | Gumroad | `#AFFILIATE:gumroad` | _pending_ | Gumroad creator store |
+| `meta-muse` | Meta Muse | `#AFFILIATE:meta-muse` | _pending_ | muse.ai — partner link TBD |
+| `sesame` | Sesame | `#AFFILIATE:sesame` | _pending_ | Sesame iOS agents — partner link TBD |
+| `gemini-spark` | Gemini Spark | `#AFFILIATE:gemini-spark` | _pending_ | Google AI Pro / Spark |
 
 ## Placeholder convention
 
@@ -46,3 +49,6 @@ Affiliate Bot should rewrite `href="#AFFILIATE:<slug>"` → live URL and optiona
 | convertkit | https://kit.com/ |
 | beehiiv | https://www.beehiiv.com/ |
 | gumroad | https://gumroad.com/ |
+| meta-muse | https://muse.ai/ |
+| sesame | https://www.sesame.com/ |
+| gemini-spark | https://gemini.google.com/ |
