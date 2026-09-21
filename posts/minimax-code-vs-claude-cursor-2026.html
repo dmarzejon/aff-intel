@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MiniMax Code vs Claude Code vs Cursor (Sep 2026) — Aff Intel</title>
+  <meta name="description" content="MiniMax open-sourced MiniMax Code CLI under MIT — how the terminal harness compares to Claude Code and Cursor, and when Claude Pro or Cursor still wins." />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <a class="brand" href="../">Aff <span>Intel</span></a>
+      <nav>
+        <a href="../">Reviews</a>
+        <a href="../affiliates.md">Affiliates</a>
+        <a href="../DISCLOSURE.md">Disclosure</a>
+      </nav>
+    </header>
+    <aside class="disclosure" role="note">
+      <strong>Affiliate disclosure:</strong> We may earn a commission if you buy through links on this site, at no extra cost to you.
+      See the full <a href="../DISCLOSURE.md">FTC disclosure</a>.
+    </aside>
+    <article class="post">
+<p class="meta">Roundup · Updated Sep 21, 2026 · MiniMax Code · Claude Code · Cursor · Terminal agents</p>
+<h1>MiniMax Code vs Claude Code vs Cursor (Sep 2026)</h1>
+<p>Mid–late September 2026, MiniMax open-sourced <strong>MiniMax Code</strong> — a terminal coding agent under the MIT license for first-party code. It understands projects, edits files, and runs tests from a CLI (<code>mcode</code>), with an interactive TUI, headless mode for scripts/CI, and Agent Client Protocol (ACP) for editor hooks. That’s a different lane from our <a href="claude-code-projects-vs-cursor-2026.html">Sep 18 Claude Code Projects</a> roundup (coordinator fleets). Here’s when an inspectable OSS harness wins vs paying for Claude Pro/Max or Cursor.</p>
+
+<h2>Quick verdict</h2>
+<div class="verdict"><strong>Want an inspectable OSS terminal harness + BYO models:</strong> try MiniMax Code CLI (MIT) — TUI, headless <code>mcode exec</code>, ACP; MiniMax account or bring your own API keys / compatible endpoints.
+<strong>Want Anthropic-native terminal agent quality:</strong> stay on Claude Code + Claude Pro/Max — polished product loop, not a DIY fork.
+<strong>Want IDE fleets / Projects / model choice:</strong> Cursor — day-to-day shipping, Slack/CI listeners, multi-model IDE agents.
+<strong>Codex / ChatGPT path:</strong> fine if your org is already OpenAI-standardized; different UX than Claude Code or MiniMax’s MIT CLI.
+<strong>Do not:</strong> treat an OSS CLI as a free replacement for paid model seats — BYO keys still cost tokens, and FrontierHarness-style scores are third-party comparisons with caveats, not a sealed crown.</div>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro / Max</a>
+  <a class="btn primary" href="#AFFILIATE:cursor" rel="sponsored noopener">Cursor</a>
+  <a class="btn" href="#AFFILIATE:chatgpt-plus" rel="sponsored noopener">ChatGPT / Codex</a>
+</div>
+
+<h2>What’s new (OSS MiniMax Code)</h2>
+<ul class="clean">
+  <li><strong>MIT open source (CLI):</strong> MiniMax published MiniMax Code terminal agent source — first-party code MIT; third-party sandbox/tools/assets keep their own licenses</li>
+  <li><strong>What the source covers:</strong> interactive TUI, headless CLI for scripts/CI, and ACP for editor integrations — <em>not</em> the separate MiniMax Code desktop app binary/source</li>
+  <li><strong>Install path reported in coverage:</strong> <code>curl -fsSL https://filecdn.minimax.chat/public/install.sh | bash</code> (macOS/Linux/WSL; Windows PowerShell path also mentioned); command <code>mcode</code></li>
+  <li><strong>Auth:</strong> MiniMax login (<code>mcode login</code> / region flags in docs) <em>or</em> BYO API keys and OpenAI-/Anthropic-compatible endpoints</li>
+  <li><strong>Repo:</strong> <a href="https://github.com/MiniMax-AI/minimax-code">github.com/MiniMax-AI/minimax-code</a> — verify README vs issues-only noise; coverage cites CLI ~v0.4.12 as the MIT drop</li>
+  <li><strong>Benchmarks (attribute + caveat):</strong> some write-ups float FrontierHarness Eval figures (e.g. ~76.7% / 23 of 30 on one third-party setup with MiniMax Code + a specific model). Providers, checkpoints, and timeouts differ from other baselines — prefer product facts over scoreboard theater</li>
+  <li><strong>Angle vs Sep 18:</strong> that post was Claude Code <em>Projects</em> (coordinator + parallel cloud threads). Today is terminal <em>harness</em> OSS vs Claude Code CLI vs Cursor IDE agents</li>
+</ul>
+
+<h2>Comparison table</h2>
+<table>
+  <thead><tr><th>Product</th><th>Best for</th><th>Surface</th><th>Licensing / cost reality (Sep 2026)</th></tr></thead>
+  <tbody>
+    <tr><td>MiniMax Code (CLI)</td><td>Inspectable terminal harness, CI/headless, BYO or MiniMax models, fork/harden permissions</td><td>TUI + headless CLI + ACP; desktop app is separate (not in this OSS drop)</td><td>MIT for first-party CLI code; model tokens via MiniMax account or BYO keys still bill</td></tr>
+    <tr><td>Claude Code</td><td>Anthropic-native terminal / cloud coding quality; Projects coordinator fleets</td><td>CLI + Claude Code cloud; Projects beta for Pro/Max (see <a href="claude-code-projects-vs-cursor-2026.html">Projects roundup</a>)</td><td>Product seat via Claude Pro/Max; usage limits apply — not “free because terminal”</td></tr>
+    <tr><td>Cursor</td><td>IDE shipping, Projects fleets, Slack/CI listeners, model choice (incl. Claude inside Cursor)</td><td>IDE + cloud/local agents + Projects</td><td>Cursor subscription; model mix depends on plan — best “fleet in the editor” default</td></tr>
+    <tr><td>ChatGPT / Codex path</td><td>OpenAI-standardized teams; async sandboxes / Agents API</td><td>Chat + Codex tooling</td><td>Bundled with OpenAI seats; different loop than MiniMax MIT CLI or Claude Code</td></tr>
+  </tbody>
+</table>
+
+<h2>How to adopt without over-buying</h2>
+<ol>
+  <li><strong>Curious about harness internals</strong> — clone/install MiniMax Code CLI, run <code>mcode --help</code>, and poke permissions/tool loops before changing paid seats.</li>
+  <li><strong>Already on Claude Pro/Max + Claude Code</strong> — keep Claude Code for daily Anthropic quality; use MiniMax Code only if you need MIT inspectability or BYO multi-provider in the terminal.</li>
+  <li><strong>Cursor is already your IDE</strong> — stay on Cursor for fleets/Projects; don’t churn for an OSS CLI headline. Add Claude Pro if you want Claude Code’s native loop, not because MiniMax went MIT.</li>
+  <li><strong>Budget tokens honestly</strong> — OSS harness ≠ free inference. BYO keys, MiniMax accounts, Claude seats, and Cursor models all meter usage.</li>
+  <li><strong>Don’t confuse surfaces</strong> — MiniMax desktop app ≠ this MIT CLI drop; Claude Code Projects ≠ terminal harness bake-off; Cursor ≠ a pure CLI clone.</li>
+</ol>
+
+<h2>Affiliate-ready picks (what we can monetize today)</h2>
+<p>The money is still <strong>Claude Pro / Max</strong> (Claude Code quality + Projects path) and <strong>Cursor</strong> (IDE fleets). ChatGPT stays the OpenAI default. MiniMax Code itself is OSS/MIT — we don’t invent affiliate links for it. Wire live Claude/Cursor/ChatGPT URLs via <code>affiliates.md</code> placeholders. Waitlist for Aff-intel drops: <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a>.</p>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro / Max →</a>
+  <a class="btn primary" href="#AFFILIATE:cursor" rel="sponsored noopener">Cursor →</a>
+  <a class="btn" href="#AFFILIATE:chatgpt-plus" rel="sponsored noopener">ChatGPT →</a>
+</div>
+
+<h2>Want Aff-intel drops when coding agents ship?</h2>
+<p>Join the waitlist (no checkout): email <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a> — sharper roundups when MiniMax, Claude Code, Cursor, and Codex race on terminal vs IDE agents.</p>
+
+<h2>Recommendation</h2>
+<ul class="clean">
+  <li>Inspectable OSS terminal harness + BYO models → <strong>try MiniMax Code CLI (MIT)</strong>; verify install from official docs, not random forks</li>
+  <li>Anthropic-native terminal quality → <strong>Claude Code + Claude Pro/Max</strong>; add Projects when you need coordinator fleets</li>
+  <li>IDE fleets / model choice → <strong>Cursor</strong> (and keep Claude as a model inside Cursor when it wins)</li>
+  <li>Projects coordinator deep dive → <a href="claude-code-projects-vs-cursor-2026.html">Claude Code Projects vs Cursor</a> · Docs/decks → <a href="one-claude-docs-slides-2026.html">One Claude</a></li>
+</ul>
+<p class="meta">Sources: <a href="https://technode.com/2026/09/21/minimax-open-sources-minimax-code-terminal-coding-agent/">TechNode — MiniMax open-sources MiniMax Code</a> (Sep 21, 2026); <a href="https://artrealmai.com/article/minimax-code-cli-open-source-mit">ArtRealmAI — MiniMax Code CLI MIT</a> (Sep 18, 2026); <a href="https://github.com/MiniMax-AI/minimax-code">GitHub — MiniMax-AI/minimax-code</a>; <a href="https://claude.com/blog/projects-redesigned">Anthropic — Projects redesigned</a> (Sep 17, 2026); <a href="https://cursor.com/blog/projects">Cursor — Introducing Projects</a> (Sep 10, 2026). Packaging, install scripts, and eval claims move fast — re-check MiniMax/Anthropic/Cursor before changing paid seats. FrontierHarness figures cited in secondary coverage are third-party comparisons with disclosed deviations — not treated here as an official leaderboard win.</p>
+    </article>
+    <footer class="site">
+      <p><a href="../">← All reviews</a> · <a href="../DISCLOSURE.md">Affiliate Disclosure</a> · Waitlist: <a href="mailto:toolsthathelp@agentmail.to">toolsthathelp@agentmail.to</a></p>
+    </footer>
+  </div>
+</body>
+</html>
