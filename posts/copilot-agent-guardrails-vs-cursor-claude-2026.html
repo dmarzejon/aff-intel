@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Copilot Agent Guardrails vs Cursor &amp; Claude Code (Sep 2026) — Aff Intel</title>
+  <meta name="description" content="GitHub Copilot enterprise managed permissions + Agent Host vs Cursor Projects fleets vs Claude Code — buyer guide for coding-agent approval rails (Sep 2026)." />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <a class="brand" href="../">Aff <span>Intel</span></a>
+      <nav>
+        <a href="../">Reviews</a>
+        <a href="../affiliates.md">Affiliates</a>
+        <a href="../DISCLOSURE.md">Disclosure</a>
+      </nav>
+    </header>
+    <aside class="disclosure" role="note">
+      <strong>Affiliate disclosure:</strong> We may earn a commission if you buy through links on this site, at no extra cost to you.
+      See the full <a href="../DISCLOSURE.md">FTC disclosure</a>.
+    </aside>
+    <article class="post">
+<p class="meta">Roundup · Updated Sep 22, 2026 · GitHub Copilot · Cursor · Claude Code · Agent guardrails</p>
+<h1>Copilot Agent Guardrails vs Cursor &amp; Claude Code (Sep 2026)</h1>
+<p>On Sep 22, 2026, roughly 20–22 countries plus the EU called for AI systems to stay under human direction and oversight (US/China not in the declaration). For engineering buyers that heat is framing, not a shopping list: you still pick tools with <em>real</em> approval rails for shell, files, and network. Distinct from our <a href="minimax-code-vs-claude-cursor-2026.html">Sep 21 MiniMax OSS harness</a> and <a href="claude-code-projects-vs-cursor-2026.html">Sep 18 Projects coordinator</a> posts — today is managed permissions and agent maturity. Thin IDE comparison remains <a href="cursor-vs-github-copilot.html">Cursor vs GitHub Copilot</a>.</p>
+
+<h2>Quick verdict</h2>
+<div class="verdict"><strong>Need central agent allowlists (Biz/Ent):</strong> GitHub Copilot Business/Enterprise — managed permissions for shell, file R/W, and network domains; restrictions cannot be weakened by user/workspace settings, auto-approval, or saved approvals; available in Copilot app, Copilot CLI, and VS Code Agent Host sessions.
+<strong>Want IDE fleets / model choice:</strong> Cursor Projects — cloud coordinator, fleets, Slack/PR subscriptions (see Sep 18 for Claude-side depth).
+<strong>Want Anthropic-native agent quality:</strong> Claude Code + Claude Pro/Max — strong terminal/cloud loop; treat permissions and usage limits as product-seat reality, not invent admin APIs.
+<strong>OpenAI path:</strong> ChatGPT / Codex if your org is already OpenAI-standardized.
+<strong>Do not:</strong> buy “AI oversight” headlines — buy enforceable human-approval rails for the agents your teams already run.</div>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:github-copilot" rel="sponsored noopener">GitHub Copilot</a>
+  <a class="btn primary" href="#AFFILIATE:cursor" rel="sponsored noopener">Cursor</a>
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro / Max</a>
+  <a class="btn" href="#AFFILIATE:chatgpt-plus" rel="sponsored noopener">ChatGPT / Codex</a>
+</div>
+
+<h2>What’s new (Copilot managed permissions + Agent Host)</h2>
+<ul class="clean">
+  <li><strong>Enterprise managed permissions (GA, changelog Sep 9, 2026):</strong> Business/Enterprise admins centrally set which agent operations are blocked, require human approval, or proceed without a prompt</li>
+  <li><strong>Coverage:</strong> shell commands, file reads/edits, and network domains — fine-grained guardrails without killing agent workflows; specialized policies per enterprise team</li>
+  <li><strong>Hard floor:</strong> managed restrictions cannot be weakened by user or workspace settings, auto-approval, or previously saved approvals</li>
+  <li><strong>Surfaces:</strong> Copilot app, Copilot CLI, and Visual Studio Code sessions using Agent Host</li>
+  <li><strong>Weekly releases (Sep 14, changelog Sep 18):</strong> model selection efficiency/balance/intelligence tiers; code review improvements; Sentry canvas in Copilot app; Agents window local Dev Containers (rolling out); auto-mark inactive sessions Done when PRs merge; create PRs from Agent Host</li>
+  <li><strong>Angle vs this week:</strong> Sep 21 = MiniMax MIT terminal harness; Sep 18 = Claude Code Projects coordinator; today = <em>who can force human approval</em> on agent ops</li>
+</ul>
+
+<h2>Comparison table</h2>
+<table>
+  <thead><tr><th>Product</th><th>Surface</th><th>Guardrails story (Sep 2026)</th><th>Best for</th><th>Cost reality</th></tr></thead>
+  <tbody>
+    <tr><td>GitHub Copilot (Biz/Ent)</td><td>Copilot app, Copilot CLI, VS Code + Agent Host</td><td>Central managed permissions: block / require approval / allow for shell, files, network; cannot be overridden by users</td><td>Orgs that need admin-enforced agent allowlists inside GitHub/VS Code</td><td>Business or Enterprise seats — managed permissions are admin controls, not a free Individual bolt-on</td></tr>
+    <tr><td>Cursor</td><td>IDE + cloud/local agents + Projects fleets</td><td>Team/workspace controls + model choice; fleets/Slack/PR subscriptions (Sep 10 Projects) — less “central agent ACL” marketing than Copilot Biz/Ent</td><td>Day-to-day IDE shipping and multi-agent fleets with model flexibility</td><td>Cursor subscription; model mix depends on plan</td></tr>
+    <tr><td>Claude Code</td><td>Terminal + Claude Code cloud; Projects coordinator</td><td>Strong product loop; permissions/usage limits at Pro/Max seat level — do not invent Anthropic enterprise permission APIs here</td><td>Anthropic-native agent quality and Projects fleets</td><td>Claude Pro/Max product seats; usage limits apply</td></tr>
+    <tr><td>ChatGPT / Codex</td><td>Chat + Codex / Agents tooling</td><td>Org policies via OpenAI admin path; different UX than Copilot Agent Host or Claude Code</td><td>OpenAI-standardized teams</td><td>Bundled with OpenAI seats</td></tr>
+  </tbody>
+</table>
+
+<h2>How to adopt without overbuying</h2>
+<ol>
+  <li><strong>Already on GitHub Copilot Biz/Ent</strong> — turn on managed permissions for shell/file/network before expanding Agent Host usage; treat Sep 14 weekly drops (Dev Containers, PR-from-Agent-Host) as maturity, not a reason to add a second IDE seat.</li>
+  <li><strong>Cursor is already your IDE</strong> — stay on Cursor Projects for fleets; add Copilot Biz/Ent only if you need GitHub-central agent ACLs your Cursor plan does not replace.</li>
+  <li><strong>Claude Code is your daily driver</strong> — keep Claude Pro/Max for quality; do not churn seats because of UN oversight headlines or Copilot changelog theater.</li>
+  <li><strong>Map approval to risk</strong> — require human approval for shell + outbound network; allow quieter file reads where policy permits.</li>
+  <li><strong>Don’t confuse posts</strong> — this is guardrails maturity; MiniMax MIT CLI and Claude Projects coordinator are separate buys (linked above).</li>
+</ol>
+
+<h2>Affiliate-ready picks (what we can monetize today)</h2>
+<p>Primary money: <strong>GitHub Copilot</strong> (Biz/Ent guardrails story), <strong>Cursor</strong> (IDE fleets), and <strong>Claude Pro / Max</strong> (Claude Code quality). Optional OpenAI path via ChatGPT. Wire live URLs via <code>affiliates.md</code> placeholders. Waitlist for Aff-intel drops: <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a>.</p>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:github-copilot" rel="sponsored noopener">GitHub Copilot →</a>
+  <a class="btn primary" href="#AFFILIATE:cursor" rel="sponsored noopener">Cursor →</a>
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro / Max →</a>
+  <a class="btn" href="#AFFILIATE:chatgpt-plus" rel="sponsored noopener">ChatGPT →</a>
+</div>
+
+<h2>Want Aff-intel drops when agent guardrails ship?</h2>
+<p>Join the waitlist (no checkout): email <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a> — sharper roundups when Copilot, Cursor, and Claude Code race on approval rails vs fleets.</p>
+
+<h2>Recommendation</h2>
+<ul class="clean">
+  <li>Central agent allowlists inside GitHub/VS Code → <strong>Copilot Business/Enterprise</strong> + managed permissions</li>
+  <li>IDE fleets / model choice → <strong>Cursor</strong> (Projects)</li>
+  <li>Anthropic-native agent quality → <strong>Claude Code + Claude Pro/Max</strong></li>
+  <li>Thin IDE bake-off → <a href="cursor-vs-github-copilot.html">Cursor vs GitHub Copilot</a> · Projects → <a href="claude-code-projects-vs-cursor-2026.html">Claude Code Projects vs Cursor</a> · OSS harness → <a href="minimax-code-vs-claude-cursor-2026.html">MiniMax Code</a></li>
+</ul>
+<p class="meta">Sources: <a href="https://github.blog/changelog/2026-09-09-enterprise-managed-permissions-for-github-copilot-agent-operations/">GitHub Changelog — Enterprise managed permissions</a> (Sep 9, 2026); <a href="https://github.blog/changelog/2026-09-18-github-copilot-weekly-releases-september-14/">GitHub Changelog — Copilot weekly releases Sep 14</a> (Sep 18, 2026); <a href="https://cursor.com/blog/projects">Cursor — Introducing Projects</a> (Sep 10, 2026); <a href="https://claude.com/blog/projects-redesigned">Anthropic — Projects redesigned</a> (Sep 17, 2026). Framing: Sep 22, 2026 multi-country/EU “human control” AI statements (Al Jazeera / POLITICO) — US/China not in the declaration. Packaging and admin UIs move fast — re-check GitHub/Cursor/Anthropic before changing paid seats.</p>
+    </article>
+    <footer class="site">
+      <p><a href="../">← All reviews</a> · <a href="../DISCLOSURE.md">Affiliate Disclosure</a> · Waitlist: <a href="mailto:toolsthathelp@agentmail.to">toolsthathelp@agentmail.to</a></p>
+    </footer>
+  </div>
+</body>
+</html>
