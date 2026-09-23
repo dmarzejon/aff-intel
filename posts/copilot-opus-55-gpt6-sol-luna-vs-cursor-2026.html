@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Copilot Opus 5.5 &amp; GPT-6 Sol/Luna vs Cursor (Sep 2026) — Aff Intel</title>
+  <meta name="description" content="Claude Opus 5.5 and OpenAI GPT-6 Sol/Luna landed in GitHub Copilot on Sep 22 — buyer guide vs Cursor model choice, Claude Code, and ChatGPT/Codex (Sep 2026)." />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <a class="brand" href="../">Aff <span>Intel</span></a>
+      <nav>
+        <a href="../">Reviews</a>
+        <a href="../affiliates.md">Affiliates</a>
+        <a href="../DISCLOSURE.md">Disclosure</a>
+      </nav>
+    </header>
+    <aside class="disclosure" role="note">
+      <strong>Affiliate disclosure:</strong> We may earn a commission if you buy through links on this site, at no extra cost to you.
+      See the full <a href="../DISCLOSURE.md">FTC disclosure</a>.
+    </aside>
+    <article class="post">
+<p class="meta">Roundup · Updated Sep 23, 2026 · GitHub Copilot · Claude Opus 5.5 · GPT-6 Sol · GPT-6 Luna · Cursor</p>
+<h1>Copilot Opus 5.5 &amp; GPT-6 Sol/Luna vs Cursor (Sep 2026)</h1>
+<p>On Sep 22, 2026, Anthropic shipped Claude Opus 5.5 and OpenAI expanded the GPT-6 family with Sol and Luna — and the same day GitHub put both stacks into the Copilot model picker. Distinct from our <a href="copilot-agent-guardrails-vs-cursor-claude-2026.html">Sep 22 guardrails post</a> (admin approval rails) and <a href="claude-code-projects-vs-cursor-2026.html">Sep 18 Projects</a> / <a href="minimax-code-vs-claude-cursor-2026.html">Sep 21 MiniMax OSS</a> angles: today is <em>which model and which seat</em> now that Copilot, Claude, and ChatGPT/Codex all moved on the same launch day. Thin IDE bake-off remains <a href="cursor-vs-github-copilot.html">Cursor vs GitHub Copilot</a>; Astra-pause context is <a href="gpt6-astra-alternatives.html">GPT-6 Astra alternatives</a>.</p>
+
+<h2>Quick verdict</h2>
+<div class="verdict"><strong>Already on Copilot Pro+/Max/Biz/Ent:</strong> try Claude Opus 5.5 and GPT-6 Sol in the model picker first (usage-based at provider list pricing) before buying a second IDE seat — Luna is the cheap/fast GPT-6 option and is also on Copilot Pro.
+<strong>Want Anthropic-native quality + Claude Code loop:</strong> Claude Pro/Max — Opus 5.5 is Anthropic’s new Opus-class efficiency play (fewer steps/tokens vs Opus 5 per GitHub’s early testing note and Anthropic’s own launch).
+<strong>Want IDE fleets / multi-model day-to-day:</strong> Cursor — Projects coordinator + model choice; don’t churn just because Copilot added models.
+<strong>OpenAI-standardized teams:</strong> ChatGPT / Codex path for Sol/Luna where your org already lives; Copilot if you want the same models inside GitHub/VS Code.
+<strong>Do not:</strong> treat dual-launch headlines as a reason to triple-pay Copilot + Cursor + Claude without a concrete workflow gap.</div>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:github-copilot" rel="sponsored noopener">GitHub Copilot</a>
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro / Max</a>
+  <a class="btn primary" href="#AFFILIATE:cursor" rel="sponsored noopener">Cursor</a>
+  <a class="btn" href="#AFFILIATE:chatgpt-plus" rel="sponsored noopener">ChatGPT / Codex</a>
+</div>
+
+<h2>What’s new (Sep 22 model drops in Copilot)</h2>
+<ul class="clean">
+  <li><strong>Claude Opus 5.5 in Copilot (changelog Sep 22):</strong> available to Copilot Pro+, Max, Business, and Enterprise; billed at provider list pricing under usage-based billing; GitHub notes early testing resolved tasks comparably to Claude Opus 5 with significantly fewer steps and tokens, plus faster recovery from errors in multistep tasks; text outputs are watermarked (no added tokens/cost per GitHub)</li>
+  <li><strong>GPT-6 Sol in Copilot:</strong> balanced model for interactive and agentic coding; available to Pro+, Max, Business, Enterprise</li>
+  <li><strong>GPT-6 Luna in Copilot:</strong> lightweight, cost-efficient, lowest-cost option in the GPT-6 family; available to Pro, Pro+, Max, Business, Enterprise</li>
+  <li><strong>Surfaces (both drops):</strong> VS Code, Visual Studio, Copilot CLI, Copilot cloud/coding agent, Copilot app, github.com, GitHub Mobile, JetBrains, Xcode, Eclipse — gradual rollout</li>
+  <li><strong>Admin control:</strong> Copilot Business/Enterprise admins manage access via model policy; new models enable by default unless the global default is off or the model is explicitly disabled</li>
+  <li><strong>Anthropic side (product page Sep 22):</strong> Opus 5.5 priced at $4 / $20 per MTok input/output with $0.20 cache reads; Anthropic states ~40% lower typical workload cost vs Opus 5 and &gt;30% faster output; API id <code>claude-opus-5-5</code>; Pro/Max/Team/Enterprise usage-limit increases noted on the launch page</li>
+  <li><strong>Angle vs this week:</strong> Sep 22 = who can force human approval; today = which frontier model you actually select inside Copilot vs buying Claude- or Cursor-native seats</li>
+</ul>
+
+<h2>Comparison table</h2>
+<table>
+  <thead><tr><th>Product</th><th>New model story (Sep 22–23)</th><th>Best for</th><th>Cost reality</th></tr></thead>
+  <tbody>
+    <tr><td>GitHub Copilot</td><td>Opus 5.5 + GPT-6 Sol/Luna in the picker across IDE/CLI/cloud/app surfaces; Sol/Luna join prior GPT-6 Astra</td><td>Teams already in GitHub/VS Code who want Anthropic + OpenAI models without a second tool</td><td>Plan gate: Opus 5.5 &amp; Sol need Pro+/Max/Biz/Ent; Luna also on Pro; usage-based at provider rates</td></tr>
+    <tr><td>Claude Code + Claude Pro/Max</td><td>Opus 5.5 as Anthropic-native Opus-class model across Claude platforms; Claude Code remains the Anthropic agent loop</td><td>Anthropic-first agent quality, Projects (see Sep 18), and Claude app workflows</td><td>Claude Pro/Max product seats + usage limits; API/platform pricing per Anthropic ($4/$20, cache reads $0.20)</td></tr>
+    <tr><td>Cursor</td><td>Model choice + Projects fleets (Sep 10) — not the Sep 22 Copilot changelog, but the competing “pick models in an IDE” buy</td><td>Day-to-day IDE shipping with fleets/Slack/PR subscriptions</td><td>Cursor subscription; model mix depends on plan</td></tr>
+    <tr><td>ChatGPT / Codex</td><td>OpenAI’s GPT-6 Sol/Luna expansion (same launch window); Copilot is one surface, ChatGPT/Codex is another</td><td>OpenAI-standardized orgs and Codex-centric workflows</td><td>Bundled with OpenAI seats; Copilot usage still billed separately if you use both</td></tr>
+  </tbody>
+</table>
+
+<h2>How to adopt without overbuying</h2>
+<ol>
+  <li><strong>On Copilot Pro+ or higher</strong> — enable Opus 5.5 and GPT-6 Sol in the model picker; use Luna for small/fast tasks. Confirm Biz/Ent model policy hasn’t disabled them.</li>
+  <li><strong>On Copilot Pro only</strong> — Luna is in scope per GitHub; Opus 5.5 and Sol are not — upgrade only if you need those models <em>inside</em> Copilot rather than via Claude or ChatGPT seats.</li>
+  <li><strong>Claude Code is your daily driver</strong> — buy/keep Claude Pro/Max for Opus 5.5 natively; add Copilot only if GitHub surfaces matter more than another Claude seat.</li>
+  <li><strong>Cursor is already your IDE</strong> — stay on Cursor for fleets; treat Copilot’s new models as optional, not a forced migration.</li>
+  <li><strong>Don’t confuse posts</strong> — guardrails (managed permissions) ≠ model picker; Projects coordinator ≠ Sol/Luna; MiniMax MIT CLI is a separate harness buy.</li>
+</ol>
+
+<h2>Affiliate-ready picks (what we can monetize today)</h2>
+<p>Primary money: <strong>GitHub Copilot</strong> (new picker story), <strong>Claude Pro / Max</strong> (Opus 5.5 native), and <strong>Cursor</strong> (IDE fleets). Optional OpenAI path via ChatGPT. Wire live URLs via <code>affiliates.md</code> placeholders. Waitlist for Aff-intel drops: <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a>.</p>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:github-copilot" rel="sponsored noopener">GitHub Copilot →</a>
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro / Max →</a>
+  <a class="btn primary" href="#AFFILIATE:cursor" rel="sponsored noopener">Cursor →</a>
+  <a class="btn" href="#AFFILIATE:chatgpt-plus" rel="sponsored noopener">ChatGPT →</a>
+</div>
+
+<h2>Want Aff-intel drops when Copilot’s model picker moves?</h2>
+<p>Join the waitlist (no checkout): email <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a> — sharper roundups when Copilot, Cursor, Claude, and ChatGPT race on frontier models vs IDE fleets.</p>
+
+<h2>Recommendation</h2>
+<ul class="clean">
+  <li>Need Opus 5.5 / GPT-6 Sol inside GitHub/VS Code → <strong>Copilot Pro+ (or Max/Biz/Ent)</strong> + model picker</li>
+  <li>Need cheap/fast GPT-6 on Copilot Pro → <strong>GPT-6 Luna</strong> path (Pro eligible)</li>
+  <li>Anthropic-native agent quality → <strong>Claude Code + Claude Pro/Max</strong></li>
+  <li>IDE fleets / model choice outside GitHub → <strong>Cursor</strong></li>
+  <li>Related: <a href="copilot-agent-guardrails-vs-cursor-claude-2026.html">Copilot guardrails</a> · <a href="claude-code-projects-vs-cursor-2026.html">Claude Code Projects vs Cursor</a> · <a href="gpt6-astra-alternatives.html">GPT-6 Astra alternatives</a></li>
+</ul>
+<p class="meta">Sources: <a href="https://github.blog/changelog/2026-09-22-claude-opus-5-5-is-now-available-in-github-copilot/">GitHub Changelog — Claude Opus 5.5 in Copilot</a> (Sep 22, 2026); <a href="https://github.blog/changelog/2026-09-22-openais-gpt-6-sol-and-gpt-6-luna-now-available/">GitHub Changelog — GPT-6 Sol and Luna in Copilot</a> (Sep 22, 2026); <a href="https://www.anthropic.com/claude-opus-5-5">Anthropic — Introducing Claude Opus 5.5</a> (Sep 22, 2026); <a href="https://cursor.com/blog/projects">Cursor — Introducing Projects</a> (Sep 10, 2026). Packaging, plan gates, and rollouts move fast — re-check GitHub/Anthropic/OpenAI/Cursor before changing paid seats.</p>
+    </article>
+    <footer class="site">
+      <p><a href="../">← All reviews</a> · <a href="../DISCLOSURE.md">Affiliate Disclosure</a> · Waitlist: <a href="mailto:toolsthathelp@agentmail.to">toolsthathelp@agentmail.to</a></p>
+    </footer>
+  </div>
+</body>
+</html>
