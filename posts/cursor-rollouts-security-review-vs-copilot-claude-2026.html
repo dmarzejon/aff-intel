@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cursor Rollouts &amp; Security Review vs Copilot / Claude (Sep 2026) — Aff Intel</title>
+  <meta name="description" content="Cursor launched Rollouts + Security Review on Sep 23 for Teams &amp; Enterprise — last-mile PR→deploy health and exploitable-bug review vs Copilot Code Review / Claude options (Sep 2026)." />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <a class="brand" href="../">Aff <span>Intel</span></a>
+      <nav>
+        <a href="../">Reviews</a>
+        <a href="../affiliates.md">Affiliates</a>
+        <a href="../DISCLOSURE.md">Disclosure</a>
+      </nav>
+    </header>
+    <aside class="disclosure" role="note">
+      <strong>Affiliate disclosure:</strong> We may earn a commission if you buy through links on this site, at no extra cost to you.
+      See the full <a href="../DISCLOSURE.md">FTC disclosure</a>.
+    </aside>
+    <article class="post">
+<p class="meta">Roundup · Updated Sep 24, 2026 · Cursor · Rollouts · Security Review · GitHub Copilot · Claude Code</p>
+<h1>Cursor Rollouts &amp; Security Review vs Copilot / Claude (Sep 2026)</h1>
+<p>On Sep 23, 2026, Cursor shipped two Teams/Enterprise bots for the last mile of shipping: <strong>Rollouts</strong> (PR→deploy health per environment) and <strong>Security Review</strong> (exploitable bugs on every PR). Distinct from our <a href="copilot-agent-guardrails-vs-cursor-claude-2026.html">Sep 22 Copilot guardrails post</a> (admin approval rails) and <a href="copilot-opus-55-gpt6-sol-luna-vs-cursor-2026.html">Sep 23 model-picker post</a> (which frontier model to select): today is <em>post-merge deploy monitors + security review bots</em>, not model choice or shell allowlists. Projects coordinator context is <a href="claude-code-projects-vs-cursor-2026.html">Claude Code Projects vs Cursor</a>; thin IDE bake-off remains <a href="cursor-vs-github-copilot.html">Cursor vs GitHub Copilot</a>.</p>
+
+<h2>Quick verdict</h2>
+<div class="verdict"><strong>Already on Cursor Teams / Enterprise:</strong> enable Rollouts + Security Review from the automations tab during the ~10-day Rollouts credit window (~50 changes Teams / ~500 Enterprise) before deciding on ongoing usage.
+<strong>GitHub-native code review path:</strong> Copilot Code Review / agent rails if your org lives in GitHub/VS Code — don’t buy Cursor Teams solely for these bots if you’re Copilot-only unless last-mile deploy monitoring is the gap.
+<strong>Anthropic-native loop:</strong> Claude Code + Claude Pro/Max for review/Projects quality; treat Cursor bots as a separate last-mile buy, not a Claude replacement.
+<strong>Do not:</strong> upgrade to Cursor Teams just because of dual-bot headlines if you already have Copilot review + your own CD/telemetry — enable only when PR→prod health monitoring is the missing piece.</div>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:cursor" rel="sponsored noopener">Cursor</a>
+  <a class="btn primary" href="#AFFILIATE:github-copilot" rel="sponsored noopener">GitHub Copilot</a>
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro / Max</a>
+</div>
+
+<h2>What’s new (Cursor Rollouts + Security Review, Sep 23)</h2>
+<ul class="clean">
+  <li><strong>Rollouts:</strong> attaches a monitor to every PR; reports change health per environment — verified healthy / regression detected / inconclusive; Cursor’s take on Firetiger Change Monitors, rebuilt with the Bot Development Kit</li>
+  <li><strong>Monitoring plans:</strong> on PR open, writes a PR comment covering risks, intended effect, signals to check, and instrumentation gaps; editable — Rollouts uses your edited version</li>
+  <li><strong>Deploy tracking:</strong> wakes on deploy events for the change’s commit; tracks staging vs production separately; compares intended effect plus error/latency signals against pre-deploy baseline</li>
+  <li><strong>On regression:</strong> notifies the author; depending on config can open a revert PR for review, pause a progressive rollout, or hand the finding to a cloud agent — does <em>not</em> merge or roll back on its own</li>
+  <li><strong>Integrations:</strong> Origin or GitHub for source control; your CD system for deploy events; Datadog and other telemetry (blog also cites Grafana/Honeycomb); feature-flag integration coming soon</li>
+  <li><strong>Security Review / Security Reviewer:</strong> runs on every PR (skips drafts); one review comment with exploitable bugs; style/quality stay with Bugbot</li>
+  <li><strong>What it looks for:</strong> injection (SQL/command/template/LDAP per blog); authz/authn bypasses including checks a refactor stopped running; secrets; SSRF/unvalidated redirects; unsafe deserialization; vulnerable deps; insecure defaults in infra/config</li>
+  <li><strong>Findings:</strong> severity + attack path + proposed fix (blog: one-click fix); dismiss with a reason and it won’t re-raise on that PR; team rules enforceable on every PR</li>
+  <li><strong>Plans &amp; trial:</strong> Teams and Enterprise only; enable from the automations tab; next ~10 days include Rollouts usage credits (~50 Teams / ~500 Enterprise)</li>
+</ul>
+
+<h2>Comparison table</h2>
+<table>
+  <thead><tr><th>Product</th><th>Last-mile / review story (Sep 2026)</th><th>Best for</th><th>Cost reality</th></tr></thead>
+  <tbody>
+    <tr><td>Cursor Rollouts + Security Review</td><td>PR→deploy health monitors per env + exploitable-bug review on every PR; automations-tab bots; Bugbot keeps style/quality</td><td>Teams/Ent already on Cursor who want deploy-aware change monitors and security review in the same IDE ecosystem</td><td>Teams or Enterprise seats required; ~10-day Rollouts credits (~50 / ~500 changes) then ongoing usage</td></tr>
+    <tr><td>GitHub Copilot (Code Review / agent rails)</td><td>GitHub-native review + Biz/Ent managed permissions / Agent Host (see Sep 22 guardrails post) — strong on PR review and admin allowlists, not Cursor-style CD+telemetry change monitors</td><td>Orgs standardized on GitHub/VS Code who want review + agent rails without a Cursor Teams seat</td><td>Copilot Pro+/Biz/Ent seats; managed permissions are admin controls on Biz/Ent</td></tr>
+    <tr><td>Claude Code + Claude Pro/Max</td><td>Anthropic-native agent loop + Projects coordinator (Sep 18); product-level review/quality — not a Cursor Rollouts equivalent for CD/telemetry health</td><td>Anthropic-first teams who want Claude Code quality and Projects fleets</td><td>Claude Pro/Max product seats; usage limits apply</td></tr>
+    <tr><td>Cursor (IDE / Projects baseline)</td><td>Day-to-day IDE + Projects fleets/model choice — Rollouts/Security Review are the Sep 23 last-mile add-on on Teams/Ent</td><td>Teams already shipping in Cursor who need the bots, not a net-new IDE migration</td><td>Cursor subscription; bots gated to Teams/Enterprise</td></tr>
+  </tbody>
+</table>
+
+<h2>How to adopt without overbuying</h2>
+<ol>
+  <li><strong>Already on Cursor Teams / Enterprise</strong> — enable Rollouts and Security Review from the automations tab; burn the ~10-day Rollouts credits on real PRs before committing to ongoing usage.</li>
+  <li><strong>Copilot-only shop</strong> — stay on Copilot Code Review + Biz/Ent rails unless you specifically lack PR→prod change-health monitoring wired to CD + Datadog/Grafana/Honeycomb; don’t buy Cursor Teams solely for dual-bot headlines.</li>
+  <li><strong>Claude Code daily driver</strong> — keep Claude Pro/Max for Anthropic-native quality/Projects; add Cursor bots only if last-mile deploy monitors are the gap, not because of model-picker or guardrails posts.</li>
+  <li><strong>Wire integrations before judging</strong> — Rollouts needs source control (Origin/GitHub), CD deploy events, and telemetry; without those, verdicts stay inconclusive.</li>
+  <li><strong>Don’t confuse posts</strong> — guardrails (who can approve shell/network) ≠ model picker ≠ Rollouts/Security Review (deploy health + exploitable bugs).</li>
+</ol>
+
+<h2>Affiliate-ready picks (what we can monetize today)</h2>
+<p>Primary money: <strong>Cursor</strong> (Teams/Ent last-mile bots story). Secondary: <strong>GitHub Copilot</strong> (GitHub-native review path) and <strong>Claude Pro / Max</strong> (Anthropic-native loop). Wire live URLs via <code>affiliates.md</code> placeholders. Waitlist for Aff-intel drops: <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a>.</p>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:cursor" rel="sponsored noopener">Cursor →</a>
+  <a class="btn primary" href="#AFFILIATE:github-copilot" rel="sponsored noopener">GitHub Copilot →</a>
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro / Max →</a>
+</div>
+
+<h2>Want Aff-intel drops when last-mile coding bots ship?</h2>
+<p>Join the waitlist (no checkout): email <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a> — sharper roundups when Cursor, Copilot, and Claude race on deploy monitors vs PR security review.</p>
+
+<h2>Recommendation</h2>
+<ul class="clean">
+  <li>Cursor Teams/Ent already → <strong>enable Rollouts + Security Review</strong> from automations during the credit window</li>
+  <li>GitHub-native review + agent rails → <strong>Copilot</strong> (see <a href="copilot-agent-guardrails-vs-cursor-claude-2026.html">guardrails roundup</a>)</li>
+  <li>Anthropic-native agent quality → <strong>Claude Code + Claude Pro/Max</strong></li>
+  <li>Don’t buy Cursor Teams solely for these bots if Copilot covers review and you don’t need CD+telemetry change monitors</li>
+  <li>Related: <a href="copilot-opus-55-gpt6-sol-luna-vs-cursor-2026.html">Copilot model picker</a> · <a href="claude-code-projects-vs-cursor-2026.html">Claude Code Projects vs Cursor</a> · <a href="cursor-vs-github-copilot.html">Cursor vs GitHub Copilot</a></li>
+</ul>
+<p class="meta">Sources: <a href="https://cursor.com/changelog/rollouts-and-security-reviewer">Cursor Changelog — Rollouts and Security Review</a> (Sep 23, 2026); <a href="https://cursor.com/blog/rollouts-and-security-reviewer">Cursor Blog — Bots for the last mile: Rollouts, Security Review</a> (Sep 23, 2026, Rustam Lalkaka). Packaging, plan gates, and credit windows move fast — re-check Cursor/GitHub/Anthropic before changing paid seats.</p>
+    </article>
+    <footer class="site">
+      <p><a href="../">← All reviews</a> · <a href="../DISCLOSURE.md">Affiliate Disclosure</a> · Waitlist: <a href="mailto:toolsthathelp@agentmail.to">toolsthathelp@agentmail.to</a></p>
+    </footer>
+  </div>
+</body>
+</html>
