@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Claude Code Cloud Sessions vs Cursor Cloud Agents vs Docker Sandboxes (Sep 2026) — Aff Intel</title>
+  <meta name="description" content="Where long coding-agent work runs when the laptop closes: Claude Code cloud sessions, Cursor cloud agents, and Docker Cloud Sandboxes (Sep 2026 buyer guide)." />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <a class="brand" href="../">Aff <span>Intel</span></a>
+      <nav>
+        <a href="../">Reviews</a>
+        <a href="../affiliates.md">Affiliates</a>
+        <a href="../DISCLOSURE.md">Disclosure</a>
+      </nav>
+    </header>
+    <aside class="disclosure" role="note">
+      <strong>Affiliate disclosure:</strong> We may earn a commission if you buy through links on this site, at no extra cost to you.
+      See the full <a href="../DISCLOSURE.md">FTC disclosure</a>.
+    </aside>
+    <article class="post">
+<p class="meta">Roundup · Updated Sep 25, 2026 · Claude Code · Cloud Sessions · Cursor · Docker Sandboxes</p>
+<h1>Claude Code Cloud Sessions vs Cursor Cloud Agents vs Docker Sandboxes (Sep 2026)</h1>
+<p>Long agent tasks (hour-plus refactors, overnight test loops) fail on a sleeping laptop. This week’s buyer question is <em>where</em> that work runs — not which frontier model to pick (see our <a href="copilot-opus-55-gpt6-sol-luna-vs-cursor-2026.html">Sep 23 model-picker post</a>) and not PR→deploy bots (see <a href="cursor-rollouts-security-review-vs-copilot-claude-2026.html">Sep 24 Rollouts / Security Review</a>). Anthropic’s docs now treat <strong>Claude Code cloud sessions</strong> as a first-class product surface (Pro / Max / Team, plus eligible Enterprise seats). Docker launched <strong>Cloud Sandboxes</strong> on Sep 24 for agent-agnostic microVM compute. Cursor already sells <strong>cloud agents</strong> on its own machines. Distinct from our <a href="claude-code-projects-vs-cursor-2026.html">Sep 18 Projects coordinator post</a>: today is <em>session hosting / isolation / laptop-close durability</em>, not fleet orchestration.</p>
+
+<h2>Quick verdict</h2>
+<div class="verdict"><strong>Already on Claude Pro / Max:</strong> start cloud sessions from <code>claude.ai/code</code>, the Desktop/mobile Code tab, or <code>claude --cloud</code>; connect GitHub (App or <code>/web-setup</code>) before judging quality.
+<strong>Already shipping in Cursor:</strong> keep Cursor cloud agents if you want IDE-native fleets, Origin/GitHub wiring, and model choice inside one editor — don’t buy Claude Pro solely for “cloud” if Cursor agents already cover overnight work.
+<strong>Need agent-agnostic isolation + BYO keys:</strong> Docker Cloud Sandboxes (<code>sbx --cloud</code>) with Claude / Codex / Copilot kits — pay-by-the-second compute; local sandboxes stay free.
+<strong>Do not:</strong> confuse Projects (coordinator spinning many threads) with a single durable cloud session; don’t assume cloud VM hours are free of plan usage — Claude cloud sessions share Pro/Max rate limits with no separate VM fee, while Docker meters compute separately from your model bill.</div>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro / Max</a>
+  <a class="btn primary" href="#AFFILIATE:cursor" rel="sponsored noopener">Cursor</a>
+  <a class="btn" href="https://www.docker.com/blog/introducing-cloud-sandboxes-start-on-your-laptop-finish-in-the-cloud/" rel="noopener">Docker Cloud Sandboxes</a>
+</div>
+
+<h2>What’s new (cloud hosting, late Sep 2026)</h2>
+<ul class="clean">
+  <li><strong>Claude Code cloud sessions:</strong> Anthropic-hosted (or org self-hosted) VMs; keep running after lid close; start from browser, mobile, Desktop (Cloud), terminal (<code>claude --cloud</code>), or routines; teleport back with <code>--teleport</code></li>
+  <li><strong>Claude environments:</strong> Default Trusted network allowlist; Custom/Full/None; setup scripts + filesystem cache; Pro/Max API credentials injected outside the VM</li>
+  <li><strong>Claude GitHub paths:</strong> Claude GitHub App (enables Auto-fix on PRs) or <code>/web-setup</code> with local <code>gh</code> token; Auto-fix can respond to CI failures and review comments</li>
+  <li><strong>Docker Cloud Sandboxes (Sep 24):</strong> same microVM model as local Docker Sandboxes, on Docker-managed compute; <code>sbx move … --to cloud</code>; kits for Claude Code, Codex, Copilot, and more; MCP gateway + secrets proxy</li>
+  <li><strong>Docker pricing:</strong> pay-as-you-go by the second; Small default ~2 vCPU / 4 GiB at $0.14/hr; sizes from Micro $0.07/hr to XL $1.12/hr; paused = $0; default TTL 1 hour, up to 24 hours; bring your own model key</li>
+  <li><strong>Cursor cloud agents (baseline):</strong> Cursor-managed machines, subscriptions to PRs/Slack/schedules, Projects coordinators — already covered for fleets; use this post when comparing <em>hosting/isolation</em> only</li>
+</ul>
+
+<h2>Comparison table</h2>
+<table>
+  <thead><tr><th>Product</th><th>Cloud / durable-session story</th><th>Best for</th><th>Cost reality</th></tr></thead>
+  <tbody>
+    <tr><td>Claude Code cloud sessions</td><td>Anthropic-hosted Ubuntu VMs; lid-close durability; environments + GitHub App / Auto-fix; shares Claude usage limits</td><td>Anthropic-native teams who want overnight Claude Code without a second compute bill</td><td>Claude Pro / Max / Team (or Ent premium seats); usage limits apply; no separate Anthropic VM meter</td></tr>
+    <tr><td>Cursor cloud agents</td><td>Cursor-managed cloud machines; PR/Slack/schedule subscriptions; IDE + Projects in one product</td><td>Teams already shipping in Cursor who want agents wired to their editor and SCM</td><td>Cursor subscription (cloud agents gated by plan); model usage per Cursor billing</td></tr>
+    <tr><td>Docker Cloud Sandboxes</td><td>Agent-agnostic microVMs; local↔cloud move; kits for multiple agents; secrets never in agent context</td><td>Operators who want isolation + BYO keys and may run Claude <em>or</em> Codex / Copilot in the same sandbox product</td><td>Docker Personal/Pro pay-as-you-go compute; model keys billed by your provider; local sandboxes free</td></tr>
+    <tr><td>Claude Code Projects (Sep 18)</td><td>Coordinator spinning parallel cloud threads — orchestration layer on top of sessions</td><td>Multi-repo / multi-PR goals where one brief should spawn many workers</td><td>Same Claude seats; each thread still consumes usage — see Projects post</td></tr>
+  </tbody>
+</table>
+
+<h2>How to adopt without overbuying</h2>
+<ol>
+  <li><strong>Claude Pro / Max daily driver</strong> — connect GitHub, start one real overnight task with <code>claude --cloud</code> or claude.ai/code before upgrading seats; confirm org policy allows remote sessions.</li>
+  <li><strong>Cursor daily driver</strong> — keep Cursor cloud agents / Projects unless you specifically need Anthropic Auto-fix or Docker’s multi-agent kits; don’t double-pay for “cloud” headlines.</li>
+  <li><strong>Security / isolation first</strong> — prefer Docker Cloud Sandboxes (or Claude Trusted/Custom network) when agents need long unattended runs with secrets proxying; Plugin4Shell-style plugin risks are a separate supply-chain topic — pin agent versions and restrict marketplaces.</li>
+  <li><strong>Cost check</strong> — Claude: watch rate limits (no VM meter). Docker: watch $/hr × hours × parallel sandboxes. Cursor: watch plan + model usage.</li>
+  <li><strong>Don’t confuse posts</strong> — model picker ≠ guardrails ≠ Rollouts/Security Review ≠ Projects coordinator ≠ this cloud-hosting buy.</li>
+</ol>
+
+<h2>Affiliate-ready picks (what we can monetize today)</h2>
+<p>Primary money: <strong>Claude Pro / Max</strong> (cloud sessions on seats you already sell). Secondary: <strong>Cursor</strong> (cloud agents for IDE-native teams). Docker Cloud Sandboxes is the isolation / BYO-key option (official docs/blog for now — no Aff-intel affiliate slug yet). Wire live URLs via <code>affiliates.md</code> placeholders. Waitlist for Aff-intel drops: <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a>.</p>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro / Max →</a>
+  <a class="btn primary" href="#AFFILIATE:cursor" rel="sponsored noopener">Cursor →</a>
+  <a class="btn" href="https://docs.docker.com/ai/sandboxes/cloud/" rel="noopener">Docker Sandboxes docs →</a>
+</div>
+
+<h2>Want Aff-intel drops when cloud agent hosting ships?</h2>
+<p>Join the waitlist (no checkout): email <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a> — sharper roundups when Claude, Cursor, and Docker race on durable agent compute.</p>
+
+<h2>Recommendation</h2>
+<ul class="clean">
+  <li>Claude Pro/Max already → <strong>try one cloud session overnight</strong> before changing seats</li>
+  <li>Cursor IDE daily → <strong>stay on Cursor cloud agents</strong> unless you need Anthropic-native Auto-fix or Docker kits</li>
+  <li>Multi-agent + secrets isolation → <strong>Docker Cloud Sandboxes</strong> with BYO keys</li>
+  <li>Fleet orchestration across many PRs → see <a href="claude-code-projects-vs-cursor-2026.html">Claude Code Projects vs Cursor</a></li>
+  <li>Related: <a href="cursor-rollouts-security-review-vs-copilot-claude-2026.html">Cursor Rollouts &amp; Security Review</a> · <a href="cursor-vs-github-copilot.html">Cursor vs GitHub Copilot</a></li>
+</ul>
+<p class="meta">Sources: <a href="https://code.claude.com/docs/en/claude-code-on-the-web">Claude Code — Use Claude Code in the cloud</a>; <a href="https://code.claude.com/docs/en/cloud-environments">Claude Code — Configure cloud environments</a>; <a href="https://www.docker.com/blog/introducing-cloud-sandboxes-start-on-your-laptop-finish-in-the-cloud/">Docker Blog — Introducing Cloud Sandboxes</a> (Sep 24, 2026); <a href="https://docs.docker.com/ai/sandboxes/cloud/">Docker Docs — Cloud sandboxes</a>; <a href="https://cursor.com/changelog">Cursor Changelog</a> (cloud agents / Projects baseline). Packaging and promo credits move fast — re-check Anthropic / Docker / Cursor before changing paid seats.</p>
+    </article>
+    <footer class="site">
+      <p><a href="../">← All reviews</a> · <a href="../DISCLOSURE.md">Affiliate Disclosure</a> · Waitlist: <a href="mailto:toolsthathelp@agentmail.to">toolsthathelp@agentmail.to</a></p>
+    </footer>
+  </div>
+</body>
+</html>
