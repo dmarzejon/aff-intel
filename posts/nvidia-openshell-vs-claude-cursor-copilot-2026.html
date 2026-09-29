@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NVIDIA OpenShell vs Claude Managed Agents vs Cursor / Copilot CLI (Sep 2026) — Aff Intel</title>
+  <meta name="description" content="NVIDIA’s Sep 28 Open Agent Safety Platform (OpenShell + Sentry) vs Claude Managed Agents, Cursor coding agents, and GitHub Copilot CLI — buyer guide for runtime agent sandboxes (Sep 2026)." />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <a class="brand" href="../">Aff <span>Intel</span></a>
+      <nav>
+        <a href="../">Reviews</a>
+        <a href="../affiliates.md">Affiliates</a>
+        <a href="../DISCLOSURE.md">Disclosure</a>
+      </nav>
+    </header>
+    <aside class="disclosure" role="note">
+      <strong>Affiliate disclosure:</strong> We may earn a commission if you buy through links on this site, at no extra cost to you.
+      See the full <a href="../DISCLOSURE.md">FTC disclosure</a>.
+    </aside>
+    <article class="post">
+<p class="meta">Roundup · Updated Sep 29, 2026 · NVIDIA OpenShell · Sentry · Claude Code · Cursor · GitHub Copilot CLI · Codex</p>
+<h1>NVIDIA OpenShell vs Claude Managed Agents vs Cursor / Copilot CLI (Sep 2026)</h1>
+<p>On Sep 28, 2026, NVIDIA launched the <strong>Open Agent Safety Platform</strong>: open-source <strong>OpenShell</strong> (kernel-isolated agent sandboxes + a deterministic policy prover) and optional <strong>NVIDIA Sentry</strong> (BlueField-4 out-of-band watchdog that can quarantine an agent in milliseconds). This post is <em>not</em> about Microsoft work-agent surfaces (see <a href="copilot-home-code-autopilot-vs-cursor-claude-2026.html">Sep 28 Autopilot</a>), not overnight coding hosts (see <a href="claude-code-cloud-sessions-vs-cursor-docker-2026.html">Sep 25 cloud sessions</a>), not PR→deploy bots (see <a href="cursor-rollouts-security-review-vs-copilot-claude-2026.html">Sep 24 Rollouts</a>), and not IDE approval rails (see <a href="copilot-agent-guardrails-vs-cursor-claude-2026.html">Sep 22 guardrails</a>). Today’s buyer question: who needs a <em>runtime</em> boundary outside the model — OpenShell under Claude / Cursor / Copilot CLI / Codex, or vendor-native sandboxes alone.</p>
+
+<h2>Quick verdict</h2>
+<div class="verdict"><strong>Enterprise / red-team / multi-agent fleets:</strong> evaluate OpenShell 0.1.0 (Apache 2.0) as the common policy layer — it runs Claude Code, Codex, OpenCode, and GitHub Copilot CLI out of the box; add Sentry + BlueField-4 only when you need host-independent quarantine.
+<strong>Claude Managed Agents shop:</strong> Anthropic is integrating OpenShell with Managed Agents (agent loop on Anthropic infra; tools in customer sandboxes) — keep Claude Pro/Max/Team seats; treat OpenShell as the sandbox harden layer, not a Claude replacement.
+<strong>Cursor daily driver:</strong> SpaceXAI has signaled platform use for Cursor coding agents / Grok; keep Cursor seats for IDE/Projects work — OpenShell is runtime containment, not a Rollouts/Security Review substitute.
+<strong>Do not:</strong> assume BlueField-4 is required (OpenShell works on CPU/K8s without it); don’t invent OpenShell SaaS pricing or claim it replaces Copilot/Cursor product seats; don’t conflate model alignment with out-of-process policy enforcement.</div>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro / Max</a>
+  <a class="btn primary" href="#AFFILIATE:cursor" rel="sponsored noopener">Cursor</a>
+  <a class="btn primary" href="#AFFILIATE:github-copilot" rel="sponsored noopener">GitHub Copilot</a>
+</div>
+
+<h2>What’s new (NVIDIA Open Agent Safety Platform, Sep 28 2026)</h2>
+<ul class="clean">
+  <li><strong>OpenShell 0.1.0</strong> (Apache 2.0): each agent in a kernel-isolated sandbox; no direct network — traffic goes through an out-of-process supervisor; declarative YAML policies</li>
+  <li><strong>Policy prover:</strong> deterministic check that permission sets can’t be composed (e.g. via sub-agents) into a path the operator didn’t intend — not “LLM as judge”</li>
+  <li><strong>NVIDIA Sentry:</strong> optional watchdog on BlueField-4 DPUs; separate trust domain; can quarantine an agent in milliseconds; open APIs, not open-sourced like OpenShell</li>
+  <li><strong>Supported agents (base image):</strong> Claude Code, Codex, OpenCode, GitHub Copilot CLI — plus OpenClaw/Hermes via NemoClaw; custom images supported</li>
+  <li><strong>Partner signals:</strong> Anthropic (Claude Managed Agents + OpenShell); SpaceXAI (Cursor coding agents / Grok); Salesforce (Slack audit/approvals); SAP (Joule Studio). OpenAI, Google, and AWS not on the partner list at launch</li>
+  <li><strong>Why now:</strong> summer 2026 sandbox-escape disclosures across frontier labs (OpenAI, Anthropic, Meta, Google eval environments) — NVIDIA’s pitch: model alignment alone can’t govern tool/network access</li>
+  <li><strong>Hardware note:</strong> optimized for NVIDIA Vera CPU + BlueField; OpenShell also targets Arm/Intel and ordinary K8s — Sentry/DPU optional for frontier eval / red-team</li>
+</ul>
+
+<h2>Comparison table</h2>
+<table>
+  <thead><tr><th>Layer</th><th>Runtime / safety story</th><th>Best for</th><th>Cost reality</th></tr></thead>
+  <tbody>
+    <tr><td>NVIDIA OpenShell</td><td>OSS kernel sandboxes + YAML policy + policy prover; common runtime under Claude Code / Codex / OpenCode / Copilot CLI</td><td>Platform / security teams who want one enforceable boundary across mixed agent fleets</td><td>Open source (Apache 2.0) — ops/infra cost; no OpenShell “seat” price published</td></tr>
+    <tr><td>NVIDIA Sentry + BlueField-4</td><td>Out-of-band, in-silicon monitor/quarantine; independent of host compromise</td><td>Frontier eval, red-team, AI-factory tenants that need hardware isolation</td><td>Requires BlueField-4 / Sentry stack — hardware + vendor path; not required for basic OpenShell</td></tr>
+    <tr><td>Claude Managed Agents + Claude Code</td><td>Anthropic keeps agent loop server-side; tool execution in customer sandboxes; OpenShell integration announced</td><td>Claude-native teams hardening Managed Agents / Claude Code without leaving Anthropic seats</td><td>Claude Pro / Max / Team (or Ent); OpenShell is additive infra</td></tr>
+    <tr><td>Cursor coding agents / Projects</td><td>IDE-native fleets + SpaceXAI platform-use signal; still need your own sandbox/policy story for untrusted tool egress</td><td>Cursor daily drivers who want IDE velocity; add OpenShell when multi-agent egress risk is real</td><td>Cursor subscription + model usage; OpenShell separate</td></tr>
+    <tr><td>GitHub Copilot CLI / agent rails</td><td>Copilot CLI runs in OpenShell base image; Biz/Ent managed permissions are approval rails (see Sep 22) — different layer from kernel policy prover</td><td>GitHub-standardized shops; pair Copilot seats with OpenShell if CLI agents leave the IDE sandbox</td><td>Copilot Pro+/Biz/Ent; OpenShell ops on top</td></tr>
+    <tr><td>Docker / cloud sandboxes (baseline)</td><td>Where overnight agents host (see Sep 25) — container isolation, not OpenShell’s agent-intent policy prover</td><td>Teams already on Docker Cloud Sandboxes / Cursor cloud agents for host location, not formal policy composition</td><td>Host/cloud bill; does not replace OpenShell prover story</td></tr>
+  </tbody>
+</table>
+
+<h2>How to adopt without overbuying</h2>
+<ol>
+  <li><strong>Start with OpenShell only</strong> — <code>openshell sandbox create -- claude</code> (or <code>codex</code> / <code>copilot</code>); prove YAML policies on one fleet before budgeting BlueField.</li>
+  <li><strong>Claude shop</strong> — keep Claude Pro/Max/Team; watch Anthropic Managed Agents + OpenShell docs; don’t drop Claude seats for an NVIDIA press release.</li>
+  <li><strong>Cursor shop</strong> — keep Cursor for IDE/Projects/Rollouts; add OpenShell when agents touch production credentials or cross-repo egress, not because of Sentry headlines.</li>
+  <li><strong>Copilot shop</strong> — Biz/Ent managed permissions (Sep 22) ≠ OpenShell. Use Copilot rails for who may approve; use OpenShell when CLI/agents need kernel-level deny paths.</li>
+  <li><strong>Don’t confuse posts</strong> — Autopilot work surface (Sep 28) ≠ cloud host location (Sep 25) ≠ Rollouts/Security Review (Sep 24) ≠ approval guardrails (Sep 22) ≠ <em>this</em> runtime safety platform buy.</li>
+</ol>
+
+<h2>Affiliate-ready picks (what we can monetize today)</h2>
+<p>Primary money: <strong>Claude Pro / Max</strong> (Managed Agents + Claude Code path under OpenShell), <strong>Cursor</strong> (coding-agent daily driver), and <strong>GitHub Copilot</strong> (CLI / Biz-Ent seats). OpenShell itself is OSS — CTA is the agent seats you wrap, plus waitlist for Aff-intel drops. Wire live URLs via <code>affiliates.md</code> placeholders. Waitlist: <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a>.</p>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro / Max →</a>
+  <a class="btn primary" href="#AFFILIATE:cursor" rel="sponsored noopener">Cursor →</a>
+  <a class="btn primary" href="#AFFILIATE:github-copilot" rel="sponsored noopener">GitHub Copilot →</a>
+  <a class="btn" href="https://www.nvidia.com/en-us/solutions/ai/agent-safety/" rel="noopener">NVIDIA Open Agent Safety →</a>
+</div>
+
+<h2>Want Aff-intel drops when agent-runtime seats shift?</h2>
+<p>Join the waitlist (no checkout): email <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a> — sharper roundups when NVIDIA, Anthropic, Cursor, and Copilot race on sandbox governance.</p>
+
+<h2>Recommendation</h2>
+<ul class="clean">
+  <li>Security / platform team with mixed agents → <strong>pilot OpenShell 0.1.0</strong>; delay Sentry/BlueField until you need out-of-band quarantine</li>
+  <li>Claude-native → <strong>keep Claude seats</strong>; track Managed Agents + OpenShell integration</li>
+  <li>Cursor / Copilot daily → <strong>keep product seats</strong>; add OpenShell only for high-egress or multi-agent composition risk</li>
+  <li>Need overnight <em>host</em> choice → see <a href="claude-code-cloud-sessions-vs-cursor-docker-2026.html">Claude cloud sessions vs Cursor / Docker</a></li>
+  <li>Related: <a href="copilot-agent-guardrails-vs-cursor-claude-2026.html">Copilot agent guardrails</a> · <a href="cursor-rollouts-security-review-vs-copilot-claude-2026.html">Cursor Rollouts &amp; Security Review</a> · <a href="copilot-home-code-autopilot-vs-cursor-claude-2026.html">Copilot Home/Code/Autopilot</a> · <a href="cursor-vs-github-copilot.html">Cursor vs GitHub Copilot</a></li>
+</ul>
+<p class="meta">Sources: <a href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Launches-Open-Agent-Safety-Platform-to-Secure-Agents-From-Testing-to-Deployment/default.aspx">NVIDIA IR — Open Agent Safety Platform</a> (Sep 28, 2026); <a href="https://www.nvidia.com/en-us/solutions/ai/agent-safety/">NVIDIA Open Agent Safety product page</a>; <a href="https://thenewstack.io/nvidia-openshell-sentry-agents/">The New Stack — OpenShell + Sentry</a> (Sep 28, 2026); <a href="https://github.com/NVIDIA/OpenShell">NVIDIA/OpenShell</a>; <a href="https://docs.nvidia.com/openshell/about/supported-agents">OpenShell supported agents</a>. Partner and hardware details move fast — re-check NVIDIA / Anthropic / Cursor before changing paid seats. No fabricated OpenShell SaaS prices; Sentry remains optional and hardware-tied.</p>
+    </article>
+    <footer class="site">
+      <p><a href="../">← All reviews</a> · <a href="../DISCLOSURE.md">Affiliate Disclosure</a> · Waitlist: <a href="mailto:toolsthathelp@agentmail.to">toolsthathelp@agentmail.to</a></p>
+    </footer>
+  </div>
+</body>
+</html>
