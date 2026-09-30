@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OpenAI Codex Cloud vs Claude Code Cloud vs Cursor / Copilot (DevDay 2026) — Aff Intel</title>
+  <meta name="description" content="OpenAI DevDay Sep 29: Codex reusable cloud environments + Security Cloud + CLI refresh vs Claude Code cloud sessions, Cursor, and GitHub Copilot — buyer guide for cloud coding agents (Sep 2026)." />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <a class="brand" href="../">Aff <span>Intel</span></a>
+      <nav>
+        <a href="../">Reviews</a>
+        <a href="../affiliates.md">Affiliates</a>
+        <a href="../DISCLOSURE.md">Disclosure</a>
+      </nav>
+    </header>
+    <aside class="disclosure" role="note">
+      <strong>Affiliate disclosure:</strong> We may earn a commission if you buy through links on this site, at no extra cost to you.
+      See the full <a href="../DISCLOSURE.md">FTC disclosure</a>.
+    </aside>
+    <article class="post">
+<p class="meta">Roundup · Updated Sep 30, 2026 · OpenAI DevDay · Codex Cloud · Security Cloud · Claude Code · Cursor · GitHub Copilot · GPT-6.1 Sol</p>
+<h1>OpenAI Codex Cloud vs Claude Code Cloud vs Cursor / Copilot (DevDay 2026)</h1>
+<p>On Sep 29, 2026 at DevDay, OpenAI pushed Codex past “spin up a remote sandbox” into <strong>reusable published cloud environments</strong>, a refreshed <strong>Codex CLI</strong>, ChatGPT-desktop code review, and research-preview <strong>Codex Security Cloud</strong> for GitHub scans that keep working while your laptop is closed. Same day, GitHub started rolling out <strong>GPT-6.1 Sol</strong> in Copilot for agentic coding. This post is <em>not</em> about NVIDIA runtime sandboxes (see <a href="nvidia-openshell-vs-claude-cursor-copilot-2026.html">Sep 29 OpenShell</a>), not Microsoft work-agent surfaces (see <a href="copilot-home-code-autopilot-vs-cursor-claude-2026.html">Sep 28 Autopilot</a>), and not a rehash of “where overnight agents host” (see <a href="claude-code-cloud-sessions-vs-cursor-docker-2026.html">Sep 25 Claude cloud sessions</a>). Today’s buyer question: after DevDay, do you buy <em>ChatGPT/Codex Cloud seats</em> for publish-once reusable envs + Security Cloud, or stay on Claude Code / Cursor / Copilot for the same cloud-agent job.</p>
+
+<h2>Quick verdict</h2>
+<div class="verdict"><strong>ChatGPT Plus/Pro (or Biz/Ent) shops that live in Codex:</strong> pilot reusable cloud environments now — publish a tested setup once, start isolated tasks from web/mobile/desktop while the machine sleeps; add Security Cloud (research preview) only if you already connect GitHub via Codex Cloud and will review human patches.
+<strong>Claude Code daily drivers:</strong> Sep 25 cloud-sessions story still stands — keep Claude Pro/Max/Team; DevDay does not force a seat swap unless your bottleneck is OpenAI-native reusable env + Security Cloud on the same account.
+<strong>Cursor daily drivers:</strong> keep Cursor for IDE/Projects/Rollouts; Codex Cloud is a parallel cloud host, not a Cursor replacement.
+<strong>Copilot shops:</strong> GPT-6.1 Sol is a model-picker upgrade (Pro+/Max/Biz/Ent, usage-based) — useful, but not the same product as Codex Cloud environments.
+<strong>Do not:</strong> assume Security Cloud is GA (research preview; Ent/Edu/Biz/Pro per OpenAI Help); don’t invent Codex Cloud seat prices beyond published plan VM tiers; don’t conflate reusable envs with OpenShell kernel policy (Sep 29) or Copilot Autopilot work surfaces (Sep 28).</div>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:chatgpt-plus" rel="sponsored noopener">ChatGPT Plus / Pro</a>
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro / Max</a>
+  <a class="btn primary" href="#AFFILIATE:cursor" rel="sponsored noopener">Cursor</a>
+  <a class="btn primary" href="#AFFILIATE:github-copilot" rel="sponsored noopener">GitHub Copilot</a>
+</div>
+
+<h2>What’s new (OpenAI DevDay + Copilot, Sep 29 2026)</h2>
+<ul class="clean">
+  <li><strong>Reusable Codex Cloud environments:</strong> Codex inspects GitHub repos, installs deps/tools, tests the setup with you, then you <em>Publish</em> — new tasks start from that prepared filesystem in isolated workspaces; continue from web, mobile, or desktop while the computer sleeps</li>
+  <li><strong>Legacy path still exists:</strong> “Codex Cloud (Legacy)” still supports Code Review + Linear/GitHub integrations; OpenAI plans to deprecate it — migrate new work to published environments</li>
+  <li><strong>Codex Security Cloud (research preview):</strong> scan connected GitHub repos on demand / schedule / new commits; build threat model, validate findings in isolation, prepare patches for human review — even offline laptop; Daybreak Blue cyber models called out in press coverage without a separate application</li>
+  <li><strong>Codex CLI refresh:</strong> cleaner full-screen TUI, <code>/agents</code> for parallel task switching, <code>/fork</code> for parallel sessions with shared context, voice to start/direct tasks, worktree improvements</li>
+  <li><strong>Code review in ChatGPT desktop:</strong> summaries, explore diffs, ask Codex about issues before GitHub PR / GitLab MR feedback; automatic initial reviews while you step away</li>
+  <li><strong>GPT-6.1 Sol in GitHub Copilot:</strong> GA rolling out for agentic coding + terminal workflows; billed at provider list pricing under usage-based billing; available to Copilot Pro+, Max, Business, Enterprise across VS Code, Visual Studio, Copilot CLI, coding agent, github.com, Mobile, JetBrains, Xcode, Eclipse</li>
+  <li><strong>Known Cloud limits (docs):</strong> no computer/browser use in cloud environments yet; GitLab and self-hosted GitHub Enterprise Server unsupported; OIDC for Enterprise by request</li>
+  <li><strong>Default VM tiers (docs):</strong> Plus/Edu Plus → 2 vCPU / 8 GiB / 8 GiB disk; Pro/Business/Enterprise (and Edu/Edu Pro) → 4 vCPU / 16 GiB / 32 GiB disk; task VM state recoverable up to ~7 days after last turn</li>
+</ul>
+
+<h2>Comparison table</h2>
+<table>
+  <thead><tr><th>Product</th><th>Cloud / agent story after DevDay</th><th>Best for</th><th>Cost reality</th></tr></thead>
+  <tbody>
+    <tr><td>OpenAI Codex Cloud (reusable envs)</td><td>Publish once → isolated tasks from prepared FS; cross-device while laptop sleeps; Agent Security + network/VPN/OIDC controls</td><td>Teams standardized on ChatGPT + GitHub.com who want shared approved setups</td><td>ChatGPT Plus/Pro (rollout) or Biz/Ent/Edu/Healthcare workspaces — check plan eligibility; VM size by plan</td></tr>
+    <tr><td>Codex Security Cloud</td><td>Research-preview AppSec on connected GitHub repos; threat model + validated findings + patch PRs</td><td>Pro/Biz/Ent/Edu shops already on Codex Cloud who will review AI patches</td><td>Research preview; requires Codex Cloud + Security access; not a substitute for human AppSec</td></tr>
+    <tr><td>Codex CLI (refreshed)</td><td>Local/terminal agent with /agents, /fork, voice, cleaner TUI — pairs with cloud when you close the laptop</td><td>CLI-first OpenAI developers</td><td>Same ChatGPT / API plan story as Codex</td></tr>
+    <tr><td>Claude Code cloud sessions</td><td>Anthropic overnight/parallel cloud threads (see Sep 25 / Projects) — different vendor account + harness</td><td>Claude Pro/Max/Team shops already in Claude Code</td><td>Claude Pro / Max / Team (or Ent)</td></tr>
+    <tr><td>Cursor (IDE + cloud agents)</td><td>IDE-native Projects/Rollouts/Security Review; cloud agents for host location — not OpenAI published-env product</td><td>Cursor daily drivers who want editor velocity + Cursor’s own cloud</td><td>Cursor subscription + model usage</td></tr>
+    <tr><td>GitHub Copilot + GPT-6.1 Sol</td><td>Model in Copilot picker for agentic/terminal work across GitHub surfaces — not Codex Cloud environments</td><td>GitHub-standardized shops upgrading the Copilot model tier</td><td>Copilot Pro+/Max/Biz/Ent + usage-based Sol pricing</td></tr>
+  </tbody>
+</table>
+
+<h2>How to adopt without overbuying</h2>
+<ol>
+  <li><strong>OpenAI-native shop</strong> — create one environment for a non-critical repo → Get started → Publish → run a short task from phone/web; only then enable Security Cloud on that same connection.</li>
+  <li><strong>Claude shop</strong> — keep Claude seats if Claude Code Projects / cloud sessions already cover overnight work; re-evaluate only if Security Cloud + reusable env on one ChatGPT bill is the missing piece.</li>
+  <li><strong>Cursor shop</strong> — keep Cursor for IDE/Rollouts; treat Codex Cloud as optional second host for GitHub.com-only repos, not a Cursor cancel.</li>
+  <li><strong>Copilot shop</strong> — enable GPT-6.1 Sol in the model picker when it appears; Biz/Ent admins: check model policy defaults. Sol ≠ Codex Cloud.</li>
+  <li><strong>Don’t confuse layers</strong> — Autopilot work surface (Sep 28) ≠ Claude overnight host (Sep 25) ≠ OpenShell runtime policy (Sep 29) ≠ <em>this</em> OpenAI reusable-env + Security Cloud buy.</li>
+</ol>
+
+<h2>Affiliate-ready picks (what we can monetize today)</h2>
+<p>Primary money: <strong>ChatGPT Plus / Pro</strong> (Codex Cloud path), <strong>Claude Pro / Max</strong> (stay/compare), <strong>Cursor</strong>, and <strong>GitHub Copilot</strong> (Sol model upgrade). Wire live URLs via <code>affiliates.md</code> placeholders. Official Codex/Security docs for anything without a slug. Waitlist: <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a>.</p>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:chatgpt-plus" rel="sponsored noopener">ChatGPT Plus / Pro →</a>
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro / Max →</a>
+  <a class="btn primary" href="#AFFILIATE:cursor" rel="sponsored noopener">Cursor →</a>
+  <a class="btn primary" href="#AFFILIATE:github-copilot" rel="sponsored noopener">GitHub Copilot →</a>
+  <a class="btn" href="https://learn.chatgpt.com/docs/environments/cloud-environments" rel="noopener">Codex Cloud envs docs →</a>
+</div>
+
+<h2>Want Aff-intel drops when cloud-agent seats shift?</h2>
+<p>Join the waitlist (no checkout): email <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a> — sharper roundups when OpenAI, Anthropic, Cursor, and Copilot race on cloud coding agents.</p>
+
+<h2>Recommendation</h2>
+<ul class="clean">
+  <li>Already on ChatGPT + GitHub.com → <strong>publish one Codex Cloud environment this week</strong>; hold Security Cloud until you have review capacity</li>
+  <li>Claude-native overnight → <strong>keep Claude seats</strong>; use Sep 25 guide for host choice</li>
+  <li>Cursor / Copilot daily → <strong>keep product seats</strong>; Sol is a Copilot model bump; Codex Cloud is optional parallel infra</li>
+  <li>Need runtime kernel policy → see <a href="nvidia-openshell-vs-claude-cursor-copilot-2026.html">NVIDIA OpenShell</a></li>
+  <li>Related: <a href="claude-code-cloud-sessions-vs-cursor-docker-2026.html">Claude cloud sessions vs Cursor / Docker</a> · <a href="copilot-home-code-autopilot-vs-cursor-claude-2026.html">Copilot Home/Code/Autopilot</a> · <a href="copilot-opus-55-gpt6-sol-luna-vs-cursor-2026.html">Copilot Opus 5.5 &amp; GPT-6 Sol/Luna</a> · <a href="cursor-vs-github-copilot.html">Cursor vs GitHub Copilot</a></li>
+</ul>
+<p class="meta">Sources: <a href="https://learn.chatgpt.com/docs/whats-new/devday-2026">OpenAI — DevDay 2026 what’s new</a> (Sep 29, 2026); <a href="https://learn.chatgpt.com/docs/environments/cloud-environments">Codex Cloud environments docs</a>; <a href="https://techcrunch.com/2026/09/29/openai-gives-codex-reusable-cloud-environments-that-work-across-devices/">TechCrunch — Codex reusable cloud environments</a> (Sep 29, 2026); <a href="https://developers.openai.com/codex/security">OpenAI Developers — Codex Security</a>; <a href="https://help.openai.com/en/articles/20001107-codex-security">OpenAI Help — Codex Security</a>; <a href="https://github.blog/changelog/2026-09-29-gpt-6-1-sol-in-github-copilot/">GitHub Changelog — GPT-6.1 Sol in Copilot</a> (Sep 29, 2026). Plan eligibility, research-preview status, and VM tiers move fast — re-check OpenAI / GitHub before changing paid seats. No fabricated Codex Cloud prices beyond documented VM defaults.</p>
+    </article>
+    <footer class="site">
+      <p><a href="../">← All reviews</a> · <a href="../DISCLOSURE.md">Affiliate Disclosure</a> · Waitlist: <a href="mailto:toolsthathelp@agentmail.to">toolsthathelp@agentmail.to</a></p>
+    </footer>
+  </div>
+</body>
+</html>
