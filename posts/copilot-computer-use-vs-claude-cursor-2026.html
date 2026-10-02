@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Copilot Computer Use vs Claude Cowork / Cursor (2026) — Aff Intel</title>
+  <meta name="description" content="GitHub Copilot Computer Use public preview (Oct 1, 2026) vs Claude Desktop computer use vs Cursor Self-Hosted computer use — buyer guide for desktop GUI agents." />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <a class="brand" href="../">Aff <span>Intel</span></a>
+      <nav>
+        <a href="../">Reviews</a>
+        <a href="../affiliates.md">Affiliates</a>
+        <a href="../DISCLOSURE.md">Disclosure</a>
+      </nav>
+    </header>
+    <aside class="disclosure" role="note">
+      <strong>Affiliate disclosure:</strong> We may earn a commission if you buy through links on this site, at no extra cost to you.
+      See the full <a href="../DISCLOSURE.md">FTC disclosure</a>.
+    </aside>
+    <article class="post">
+<p class="meta">Roundup · Updated Oct 2, 2026 · GitHub Copilot · Computer Use · Claude Cowork · Cursor · Desktop agents</p>
+<h1>Copilot Computer Use vs Claude Cowork / Cursor (desktop GUI agents, 2026)</h1>
+<p>On Oct 1, 2026 GitHub shipped <strong>Computer Use</strong> in public preview for the <strong>GitHub Copilot CLI</strong> and <strong>GitHub Copilot app</strong> on macOS and Windows — Copilot can click, type, scroll, drag, and move across desktop apps when APIs, CLIs, or MCP aren’t available. This post is <em>not</em> the Sep 28 Copilot Home / Code / Autopilot work-agent roundup, not Codex Cloud reusable envs (Sep 30), and not OpenShell runtime sandboxes (Sep 29). Today’s buyer question: for <em>GUI-only / legacy desktop workflows</em>, do you enable Copilot Computer Use, Claude Desktop computer use (Pro/Max), or Cursor Self-Hosted Machines <code>--computer-use</code>.</p>
+
+<h2>Quick verdict</h2>
+<div class="verdict"><strong>Already on GitHub Copilot app / CLI (Win/macOS):</strong> pilot Computer Use on a non-sensitive GUI workflow — enable with <code>/computer on</code> (CLI) or Settings → Computer Use (app); keep approval prompts on; prefer MCP/API/CLI when they exist.
+<strong>Claude Pro / Max daily driver:</strong> Claude Desktop computer use (beta in Cowork + Claude Code) is the Anthropic-native path — connectors first, then browser, then screen; Team/Enterprise don’t get computer use yet per Anthropic help docs.
+<strong>Cursor cloud-agent / self-hosted shop:</strong> use <code>agent worker --computer-use start</code> on macOS or Linux workers when the agent loop stays in Cursor’s cloud but clicks/screenshots must run on your machine; grant Accessibility + Screen Recording to <em>Cursor Computer Use</em>, not Terminal.
+<strong>Do not:</strong> invent a separate Computer Use SKU price (GitHub did not list one in the changelog); don’t conflate Copilot Computer Use with Microsoft Copilot Autopilot / Home; don’t grant computer-use agents banking, healthcare, or other sensitive apps.</div>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:github-copilot" rel="sponsored noopener">GitHub Copilot</a>
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro / Max</a>
+  <a class="btn primary" href="#AFFILIATE:cursor" rel="sponsored noopener">Cursor</a>
+</div>
+
+<h2>What’s new (Copilot Computer Use, Oct 1 2026)</h2>
+<ul class="clean">
+  <li><strong>Public preview surfaces:</strong> GitHub Copilot CLI and GitHub Copilot app on <strong>macOS and Windows</strong> (Linux not called out in the changelog)</li>
+  <li><strong>What it can do:</strong> read accessible app content and visual context; click controls; enter/edit text; press keys; scroll; drag; navigate multi-app GUI workflows — aimed at legacy / GUI-only software without API, CLI, or MCP</li>
+  <li><strong>Opt-in + approvals:</strong> disabled by default; Copilot asks before controlling an app; you can allow for a session or always allow; review/reset always-allowed apps; org managed settings can disable the feature</li>
+  <li><strong>Enable path:</strong> CLI — <code>/computer on</code>, <code>/computer show</code>, <code>/computer off</code>; app — Settings → Computer Use → Enable Computer Use (or <code>/computer on</code>)</li>
+  <li><strong>macOS permissions:</strong> Accessibility and Screen Recording required when visual/OS access is needed</li>
+  <li><strong>GitHub’s guidance:</strong> prefer APIs, MCP, terminal, and dedicated browser tools when available — Computer Use fills the gap, it doesn’t replace structured tools</li>
+  <li><strong>Pricing / GA:</strong> changelog does not list a separate Computer Use price, Free-tier eligibility, or GA date — treat as a capability of the Copilot app/CLI seat you already have until GitHub says otherwise</li>
+</ul>
+
+<h2>Comparison table</h2>
+<table>
+  <thead><tr><th>Product</th><th>Desktop / GUI story</th><th>Best for</th><th>Cost reality</th></tr></thead>
+  <tbody>
+    <tr><td>GitHub Copilot Computer Use</td><td>Public preview GUI control in Copilot CLI + Copilot app (Win/macOS); approval-gated; org can disable</td><td>Devs already in Copilot app/CLI who hit GUI-only or legacy tools (expense apps, old desktop UIs, presentation edits)</td><td>Uses your existing Copilot app/CLI plan — no separate Computer Use price announced in the Oct 1 changelog</td></tr>
+    <tr><td>Claude Desktop computer use</td><td>Beta in Cowork + Claude Code on Claude Desktop (macOS/Windows); prefers connectors → browser → screen; per-app prompts</td><td>Claude Pro/Max users who want Anthropic to drive local apps when connectors don’t exist</td><td>Claude Pro / Max (beta); Team/Enterprise: computer use not available per Anthropic help (as of this write-up)</td></tr>
+    <tr><td>Cursor Self-Hosted computer use</td><td><code>agent worker --computer-use</code> on macOS/Linux workers; cloud agent loop, local clicks/screenshots; optional Linux desktop sharing</td><td>Teams that want Cursor Cloud Agents to drive a Mac/Linux desktop they control (My Machines or Team Pools)</td><td>Cursor subscription + cloud-agent/worker setup; computer use is an explicit worker opt-in, not a separate listed SKU</td></tr>
+    <tr><td>Microsoft Copilot Home / Autopilot (context)</td><td>M365 work-agent surfaces (chat, Cowork, persistent Autopilot) — different buy from GitHub Copilot GUI Computer Use</td><td>M365 knowledge-work hubs — see <a href="copilot-home-code-autopilot-vs-cursor-claude-2026.html">Sep 28 roundup</a></td><td>USL / UBB as covered in the Sep 28 post — don’t mix with GitHub Computer Use pricing assumptions</td></tr>
+  </tbody>
+</table>
+
+<h2>How to adopt without overbuying</h2>
+<ol>
+  <li><strong>Already on GitHub Copilot Pro / Pro+ / Business / Enterprise with the Copilot app or CLI</strong> — enable Computer Use on one low-risk GUI task (e.g. summarize a desktop window, update a slide deck). Keep per-app approvals. Prefer MCP/API when the app has them.</li>
+  <li><strong>Claude Pro / Max shop</strong> — latest Claude Desktop → Settings → General → Enable computer use → try Cowork or Claude Code on a non-sensitive app. Remember: desktop must stay awake; Team/Ent don’t get this beta yet.</li>
+  <li><strong>Cursor Self-Hosted / My Machines</strong> — <code>agent update</code>, then <code>agent worker --computer-use start</code>; on macOS grant Accessibility + Screen Recording to <strong>Cursor Computer Use</strong> (<code>co.anysphere.cursor-computer-use</code>), verify with a screenshot task. Linux: install X11/desktop deps first.</li>
+  <li><strong>Security hygiene (all three)</strong> — block banking/health/gov apps; don’t always-allow sensitive tools; treat screen capture as data leaving the machine into the model path; org admins should decide whether to allow Copilot Computer Use via managed settings.</li>
+  <li><strong>Don’t conflate layers</strong> — Computer Use is the <em>GUI action</em> layer. Copilot Home/Code/Autopilot (Sep 28), Codex Cloud envs (Sep 30), and OpenShell sandboxes (Sep 29) answer different buy questions.</li>
+</ol>
+
+<h2>Affiliate-ready picks (what we can monetize today)</h2>
+<p>Primary money: <strong>GitHub Copilot</strong> (app/CLI seat that unlocks Computer Use preview), <strong>Claude Pro / Max</strong> (Desktop computer use beta), and <strong>Cursor</strong> (Self-Hosted / cloud-agent workers with <code>--computer-use</code>). Wire live URLs via <code>affiliates.md</code> placeholders. Waitlist: <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a>.</p>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:github-copilot" rel="sponsored noopener">GitHub Copilot →</a>
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro / Max →</a>
+  <a class="btn primary" href="#AFFILIATE:cursor" rel="sponsored noopener">Cursor →</a>
+  <a class="btn" href="https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps/" rel="noopener">GitHub changelog →</a>
+</div>
+
+<h2>Want Aff-intel drops when desktop agents shift?</h2>
+<p>Join the waitlist (no checkout): email <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a> — sharper roundups when Copilot, Claude, and Cursor race on computer-use controls.</p>
+
+<h2>Recommendation</h2>
+<ul class="clean">
+  <li>Copilot app/CLI daily → <strong>pilot Computer Use this week on one GUI-only workflow</strong>; keep approvals; don’t buy a second seat just for the preview</li>
+  <li>Claude Pro/Max desktop → <strong>enable Claude computer use</strong> for connector-less apps; stay off Team/Ent expectations until Anthropic expands access</li>
+  <li>Cursor self-hosted fleets → <strong>opt in <code>--computer-use</code> on a template Mac/Linux worker</strong>; snapshot after permissions work</li>
+  <li>Need always-on M365 teammates / NL apps → see <a href="copilot-home-code-autopilot-vs-cursor-claude-2026.html">Copilot Home / Code / Autopilot</a></li>
+  <li>Related: <a href="copilot-agent-guardrails-vs-cursor-claude-2026.html">Copilot guardrails</a> · <a href="cursor-vs-github-copilot.html">Cursor vs GitHub Copilot</a> · <a href="openai-codex-cloud-vs-claude-cursor-copilot-2026.html">Codex Cloud DevDay</a></li>
+</ul>
+<p class="meta">Sources: <a href="https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps/">GitHub Changelog — Copilot computer use (Oct 1, 2026)</a>; <a href="https://thewincentral.com/github-copilot-computer-use-desktop-app-control/">WinCentral — Copilot desktop app control</a>; <a href="https://support.claude.com/en/articles/14128542-let-claude-use-your-computer-in-cowork">Claude Help — Let Claude use your computer in Cowork</a>; <a href="https://cursor.com/docs/cloud-agent/self-hosted/computer-use">Cursor Docs — Computer use and desktop sharing</a>; <a href="https://cursor.com/docs/cloud-agent/self-hosted/my-machines">Cursor Docs — My Machines</a>. Preview status, plan eligibility, and org policies move fast — re-check GitHub / Anthropic / Cursor docs before changing paid seats. No fabricated Computer Use prices.</p>
+    </article>
+    <footer class="site">
+      <p><a href="../">← All reviews</a> · <a href="../DISCLOSURE.md">Affiliate Disclosure</a> · Waitlist: <a href="mailto:toolsthathelp@agentmail.to">toolsthathelp@agentmail.to</a></p>
+    </footer>
+  </div>
+</body>
+</html>
