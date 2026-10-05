@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Claude Cowork Goes Cloud Oct 6 vs Claude Code / Copilot / Cursor (2026) — Aff Intel</title>
+  <meta name="description" content="On Oct 6, 2026 new Claude Cowork tasks on Pro and Max run in Anthropic’s cloud and the “Only on your computer” option is removed. What changes, who should move to Claude Code desktop, and how it compares to GitHub Copilot and Cursor local agents." />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <a class="brand" href="../">Aff <span>Intel</span></a>
+      <nav>
+        <a href="../">Reviews</a>
+        <a href="../affiliates.md">Affiliates</a>
+        <a href="../DISCLOSURE.md">Disclosure</a>
+      </nav>
+    </header>
+    <aside class="disclosure" role="note">
+      <strong>Affiliate disclosure:</strong> We may earn a commission if you buy through links on this site, at no extra cost to you.
+      See the full <a href="../DISCLOSURE.md">FTC disclosure</a>.
+    </aside>
+    <article class="post">
+<p class="meta">Roundup · Updated Oct 5, 2026 · Claude Cowork · Claude Code · GitHub Copilot · Cursor · Cloud vs local agents</p>
+<h1>Claude Cowork goes cloud on Oct 6: stay with Cowork, move to Claude Code, or run Copilot / Cursor locally? (2026)</h1>
+<p>Anthropic’s Help Center says that on <strong>October 6, 2026</strong>, new Claude Cowork tasks on <strong>Pro and Max</strong> plans run in the cloud, and the <strong>“Only on your computer”</strong> option in Settings → General is removed. Tasks you already started on your computer stay there until they’re done. This is <em>not</em> the Sep 17 One Claude / Docs / Slides post (that was the chat + Cowork merge), and not the Sep 25 Claude Code cloud sessions post (where coding agents run). Today’s buyer question: if you relied on Cowork staying local, do you accept cloud Cowork, move that work to <strong>Claude Code desktop</strong>, or put local desktop automation on <strong>GitHub Copilot</strong> or <strong>Cursor</strong>?</p>
+
+<h2>Quick verdict</h2>
+<div class="verdict"><strong>Your Cowork tasks only use connectors, web search, and files saved in your Claude account:</strong> accept cloud. Those tasks keep running with the laptop closed, and scheduled tasks run with no device online.
+<strong>Your tasks touch local folders, the browser, or computer use:</strong> the cloud session still needs Claude Desktop open on that machine, so you mostly get the cloud trade-offs without the “laptop closed” benefit. Decide today which ones should move to <strong>Claude Code desktop</strong>, which Anthropic itself names as the local option.
+<strong>Team / Enterprise:</strong> the Oct 6 notice is written for Pro and Max. Team has “Run Cowork in the cloud” <em>on</em> by default and an owner can turn it off. Enterprise has it <em>off</em> by default.
+<strong>Do not:</strong> assume your projects and scheduled tasks carry over to Claude Code (Anthropic says they don’t). Don’t expect cloud sessions to reach local files when Desktop is closed. And don’t invent a new price: Anthropic announced no plan or price change with this switch.</div>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro / Max</a>
+  <a class="btn primary" href="#AFFILIATE:github-copilot" rel="sponsored noopener">GitHub Copilot</a>
+  <a class="btn primary" href="#AFFILIATE:cursor" rel="sponsored noopener">Cursor</a>
+</div>
+
+<h2>What changes on Oct 6 (Pro &amp; Max)</h2>
+<ul class="clean">
+  <li><strong>Cloud by default:</strong> new Cowork tasks run on Anthropic’s servers, and sessions and files are saved to your Claude account. “Only on your computer” disappears from Settings → General, and there’s nothing to set up</li>
+  <li><strong>In-flight local tasks:</strong> they stay on your computer until finished. Each one shows a note with a button to download its transcript so you can continue in Claude Code</li>
+  <li><strong>Scheduled tasks move to the cloud too:</strong> that includes ones that use files on your computer, and those still need the desktop app open to run</li>
+  <li><strong>Local folders:</strong> they stay on your machine. Claude reaches only folders you’ve connected, only through the open desktop app, and fetches a copy of just the file a task needs. Deleting a session deletes those copies (per Anthropic’s retention practices)</li>
+  <li><strong>Desktop-only reach:</strong> local file access, local connectors and plugins with local MCP servers, browser use, and computer use still need the Claude Desktop app open, even when the session runs in the cloud</li>
+  <li><strong>Escape hatch:</strong> Anthropic points work that “has to stay on one machine” to <strong>Claude Code in the desktop app</strong>, which runs on your computer and keeps folders and history there. Projects and scheduled tasks don’t carry over</li>
+  <li><strong>Status:</strong> Cowork in the cloud is labeled beta, and some features aren’t available yet on every surface. No beta-exit date is given</li>
+</ul>
+
+<h2>Comparison table</h2>
+<table>
+  <thead><tr><th>Option</th><th>Where the work runs</th><th>Best for</th><th>Cost reality</th></tr></thead>
+  <tbody>
+    <tr><td>Claude Cowork (cloud default, Pro/Max from Oct 6)</td><td>Isolated, temporary sandbox on Anthropic infrastructure per session. Steer from desktop, web, mobile. Reaches local files and browser only through an open Claude Desktop app</td><td>Connector-heavy knowledge work (Gmail, Drive, Slack, calendar), recurring briefings, and tasks you want running while the laptop is closed</td><td>Included in Claude Pro / Max. Counts toward plan usage limits, and longer agentic tasks use more. No new price announced for the switch</td></tr>
+    <tr><td>Claude Code desktop (local)</td><td>Runs on your computer and keeps your folders and history there, per Anthropic’s Help Center</td><td>Work that must stay on one machine. Also good for people who want task history on disk and not in the cloud</td><td>Same Claude subscription. Migration is manual (transcript download), and projects and scheduled tasks don’t move</td></tr>
+    <tr><td>Claude Cowork on Team / Enterprise</td><td>Cloud or local. Team: cloud on by default (owner can turn off). Enterprise: cloud off by default, enabled per group via custom roles</td><td>Orgs that need an admin switch on where agent work runs. Note that EDR can’t observe the local VM or cloud sessions</td><td>Team / Enterprise seats. The Oct 6 Pro/Max change notice doesn’t set the org default</td></tr>
+    <tr><td>GitHub Copilot app / CLI Computer Use</td><td>Local GUI control on macOS/Windows (public preview since Oct 1), approval-gated, and org settings can disable it</td><td>Devs already on Copilot who want local desktop automation that stays on their own machine</td><td>Existing Copilot app/CLI plan. No separate Computer Use price listed. See <a href="copilot-computer-use-vs-claude-cursor-2026.html">Oct 2 roundup</a></td></tr>
+    <tr><td>Cursor Self-Hosted workers</td><td>The inverse of Cowork: Cursor’s cloud agent loop with execution (and optional <code>--computer-use</code>) on a Mac/Linux machine you control</td><td>Teams that want cloud orchestration but local execution on hardware they own</td><td>Cursor subscription plus worker setup. Computer use is a worker opt-in, not a listed SKU</td></tr>
+  </tbody>
+</table>
+
+<h2>Checklist before Oct 6</h2>
+<ol>
+  <li><strong>Inventory scheduled tasks.</strong> Open Scheduled in Claude and sort tasks into two groups: those that use only connectors, web search, and account files (fine in the cloud) and those that need local folders or the browser (Desktop must stay open).</li>
+  <li><strong>Download transcripts</strong> for any local task you’ll want to keep or move. The note on each local task has a download button, and Anthropic also offers a full Cowork history download from the in-app notice.</li>
+  <li><strong>Move “must stay local” work to Claude Code desktop.</strong> Recreate projects and schedules by hand, because they don’t carry over.</li>
+  <li><strong>Review privacy settings.</strong> Training use follows Settings → Privacy → “Help improve our AI models.” Cloud sessions process the files they open on Anthropic’s servers.</li>
+  <li><strong>Org admins:</strong> check Organization settings → Cowork → “Run Cowork in the cloud,” network-access policy, “always allow” approvals, and trusted-device requirements before members start relying on cloud sessions.</li>
+  <li><strong>Need local GUI automation outside Claude?</strong> Pilot Copilot Computer Use or a Cursor Self-Hosted worker on one non-sensitive workflow. Don’t buy a second seat just to stay local.</li>
+</ol>
+
+<h2>Affiliate-ready picks (what we can monetize today)</h2>
+<p>Primary money: <strong>Claude Pro / Max</strong> (Cowork in the cloud plus Claude Code desktop for local work), <strong>GitHub Copilot</strong> (local Computer Use preview in the app/CLI), and <strong>Cursor</strong> (Self-Hosted workers that keep execution on your hardware). Live URLs are wired via <code>affiliates.md</code> placeholders. Waitlist: <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a>.</p>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro / Max →</a>
+  <a class="btn primary" href="#AFFILIATE:github-copilot" rel="sponsored noopener">GitHub Copilot →</a>
+  <a class="btn primary" href="#AFFILIATE:cursor" rel="sponsored noopener">Cursor →</a>
+  <a class="btn" href="https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile" rel="noopener">Anthropic Help Center →</a>
+</div>
+
+<h2>Want Aff-intel drops when agent defaults shift?</h2>
+<p>Join the waitlist (no checkout): email <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a>. You’ll get short roundups when Claude, Copilot, and Cursor change where your agents run.</p>
+
+<h2>Recommendation</h2>
+<ul class="clean">
+  <li>Connector-only Cowork user on Pro/Max → <strong>do nothing and let cloud take over</strong>. You gain laptop-closed scheduled runs</li>
+  <li>Local-folder or browser-heavy Cowork user → <strong>download transcripts today</strong>, then move must-stay-local work to Claude Code desktop and keep Desktop open for the rest</li>
+  <li>Team owner → <strong>decide the “Run Cowork in the cloud” toggle deliberately</strong> (on by default). Enterprise → it stays off until you grant it</li>
+  <li>Want local desktop automation outside Claude → see <a href="copilot-computer-use-vs-claude-cursor-2026.html">Copilot Computer Use vs Claude / Cursor</a></li>
+  <li>Related: <a href="one-claude-docs-slides-2026.html">One Claude: Docs, Slides &amp; Cowork</a> · <a href="claude-code-cloud-sessions-vs-cursor-docker-2026.html">Claude Code cloud sessions</a> · <a href="personal-ai-agents-2026.html">Personal AI agents</a></li>
+</ul>
+<p class="meta">Sources: <a href="https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile">Claude Help — Use Claude Cowork on web, desktop, and mobile (Oct 6 changes)</a>; <a href="https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-claude-cowork">Claude Help — Schedule recurring tasks in Claude Cowork</a>; <a href="https://support.claude.com/en/articles/14479288-claude-cowork-architecture-overview">Claude Help — Claude Cowork architecture overview</a>; <a href="https://support.claude.com/en/articles/13455879-use-claude-cowork-on-team-and-enterprise-plans">Claude Help — Cowork on Team and Enterprise plans</a>; <a href="https://support.claude.com/en/articles/16761823-claude-cowork-and-chat-are-one-claude">Claude Help — Claude Cowork and chat are one Claude</a>; <a href="https://claude.com/blog/cowork-web-mobile">Claude blog — Cowork on web and mobile</a>; <a href="https://promtime.net/c/en/post/claude-cowork-s-local-only-switch-disappears-october-6">Promtime — Cowork’s local-only switch disappears Oct 6 (Sep 30)</a>; <a href="https://artificialcorner.com/p/claude-local">Artificial Corner — If You Use Claude, Do This Before October 6 (Oct 4)</a>; <a href="https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps/">GitHub Changelog — Copilot computer use (Oct 1, 2026)</a>; <a href="https://cursor.com/docs/cloud-agent/self-hosted/computer-use">Cursor Docs — Self-hosted computer use</a>. Rollout timing, plan eligibility, and beta features move fast. Re-check Anthropic, GitHub, and Cursor docs before you change paid seats. No prices were invented for this post.</p>
+    </article>
+    <footer class="site">
+      <p><a href="../">← All reviews</a> · <a href="../DISCLOSURE.md">Affiliate Disclosure</a> · Waitlist: <a href="mailto:toolsthathelp@agentmail.to">toolsthathelp@agentmail.to</a></p>
+    </footer>
+  </div>
+</body>
+</html>
