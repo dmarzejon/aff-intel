@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JetBrains Air in IDEs vs Cursor / Copilot / Claude Code (2026) — Aff Intel</title>
+  <meta name="description" content="JetBrains opened the Air in IDEs EAP: a plugin that runs Codex, GitHub Copilot, Claude Agent, Gemini, Junie and ACP agents in parallel sessions inside IntelliJ-based IDEs, with free Junie Lite runs. Who should use it as a bring-your-own-agent hub, and who should stay on Cursor, Copilot, or Claude Code." />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <a class="brand" href="../">Aff <span>Intel</span></a>
+      <nav>
+        <a href="../">Reviews</a>
+        <a href="../affiliates.md">Affiliates</a>
+        <a href="../DISCLOSURE.md">Disclosure</a>
+      </nav>
+    </header>
+    <aside class="disclosure" role="note">
+      <strong>Affiliate disclosure:</strong> We may earn a commission if you buy through links on this site, at no extra cost to you.
+      See the full <a href="../DISCLOSURE.md">FTC disclosure</a>.
+    </aside>
+    <article class="post">
+<p class="meta">Roundup · Updated Oct 6, 2026 · JetBrains Air · Cursor · GitHub Copilot · Claude Code · Multi-agent IDEs</p>
+<h1>JetBrains Air in IDEs: one place to run Codex, Copilot, Claude and Junie, or stay on Cursor / Copilot / Claude Code? (2026)</h1>
+<p>JetBrains has opened the <strong>Early Access Program for Air in JetBrains IDEs</strong> (blog post dated Oct 1, 2026). It comes as a plugin on JetBrains Marketplace or built into the <strong>2026.3 EAP builds</strong>, and the docs say it works with IntelliJ-based IDEs from <strong>2026.2</strong>. JetBrains is clear that Air <em>“is not an AI provider, and it ships with no agents installed.”</em> It is a tool window that finds the agents you already have, such as Codex, GitHub Copilot, Claude Agent, Gemini, Junie, and other ACP-compatible agents, and runs them in parallel <strong>sessions</strong> inside the IDE. This is <em>not</em> the Sep 24 Cursor Rollouts post or the Sep 28 Copilot Home/Code/Autopilot post. Today’s buyer question is different: if you already pay for one or more agents, should a JetBrains IDE be the place where you run them all, or should you stay in Cursor, Copilot, or Claude Code?</p>
+
+<h2>Quick verdict</h2>
+<div class="verdict"><strong>You live in IntelliJ IDEA, PyCharm, WebStorm, or another IntelliJ-based IDE and already pay for Claude, Copilot, or an OpenAI/Codex account:</strong> try Air. JetBrains says you don’t need a JetBrains AI subscription to use your own agents, and with a third-party subscription your data goes straight to that provider, not through JetBrains.
+<strong>You want one editor where AI is the product:</strong> Cursor is still the simpler choice. Air is an EAP, and JetBrains warns about UI changes and rough edges.
+<strong>You want agents that keep running with the laptop closed:</strong> Air cloud runs currently need a <strong>JetBrains AI subscription</strong> (the EAP post says “available to orgs with AI seats”). If you don’t have that, Copilot’s cloud agent or Claude Code cloud sessions cover the same need.
+<strong>Do not:</strong> install Air from the AI Assistant notification without knowing what happens: that path turns off AI Assistant (you can turn it back on in Settings | Plugins). And don’t expect “free” to mean unlimited. Free Junie Lite runs need a JetBrains Account, and JetBrains says terms and models may change. No Air price has been announced.</div>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:github-copilot" rel="sponsored noopener">GitHub Copilot</a>
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro / Max</a>
+  <a class="btn primary" href="#AFFILIATE:cursor" rel="sponsored noopener">Cursor</a>
+</div>
+
+<h2>What JetBrains actually shipped</h2>
+<ul class="clean">
+  <li><strong>Bring your own agents:</strong> Codex, Gemini, GitHub Copilot, Claude Agent, and Junie work out of the box, and other agents connect through ACP. Air finds compatible agents on your machine and connects them with one click, and you can add more from an agent registry</li>
+  <li><strong>Claude subscription supported:</strong> run Claude Code with your Claude subscription in Air’s terminal and full-screen IDE tab, signing in the same way you would in any terminal</li>
+  <li><strong>Sessions instead of a chat:</strong> parallel agent sessions across projects in one view, showing activity, unread updates, changed files, outgoing commits, and <strong>cost per session</strong></li>
+  <li><strong>Worktrees:</strong> start a session from any branch, on a new branch or detached, in a temporary worktree, then cherry-pick the result back</li>
+  <li><strong>IDE intelligence for agents:</strong> built-in IDE skills and tools for debugging, profiling, database exploration, and semantic code search. JetBrains says this can mean fewer tokens on some tasks</li>
+  <li><strong>Review in place:</strong> open diffs from a session, leave notes on specific diff lines for the agent, send your local changes to an agent for review, and resolve merge conflicts with an agent</li>
+  <li><strong>Presets:</strong> save an agent, model, effort level, and access level under a name and reuse it</li>
+  <li><strong>Flexible billing:</strong> use your provider subscription, an API key, or a base URL, or use JetBrains AI with credits billed at public API rates. You can switch subscriptions mid-session</li>
+  <li><strong>Privacy defaults:</strong> with no agents signed in, nothing leaves your machine, and Air needs no login until you start an agent. Turning off the plugin changes nothing else</li>
+</ul>
+
+<h2>Comparison table</h2>
+<table>
+  <thead><tr><th>Option</th><th>What it is</th><th>Best for</th><th>Cost reality</th></tr></thead>
+  <tbody>
+    <tr><td>JetBrains Air in IDEs (EAP)</td><td>A plugin and tool window that orchestrates agents you already have (Codex, Copilot, Claude Agent, Gemini, Junie, ACP) in parallel sessions with worktrees, inside IntelliJ-based IDEs</td><td>JetBrains users who pay for more than one agent and want to run them side by side, with IDE review tools and visible per-session cost</td><td>JetBrains says you can try Air “without paying for anything” via free Junie Lite runs, which need a JetBrains Account and are free “for a limited time” (T&amp;Cs apply). Third-party agents bill through your own provider. Cloud runs need a JetBrains AI subscription. No Air price announced</td></tr>
+    <tr><td>Cursor</td><td>An AI-first editor with its own agent, cloud agents, Projects, and Self-Hosted workers</td><td>People who want one integrated AI editor and cloud agents without building a multi-agent setup</td><td>Cursor subscription. See <a href="cursor-vs-github-copilot.html">Cursor vs Copilot</a></td></tr>
+    <tr><td>GitHub Copilot</td><td>GitHub’s agent in VS Code, the Copilot CLI, and the Copilot app, plus the cloud agent on GitHub. Air lists Copilot as a supported agent</td><td>Teams standardized on GitHub who want PR-native cloud runs. If you’re on JetBrains, you can run it inside Air</td><td>Existing Copilot plan. No JetBrains AI subscription needed; you sign in with your own Copilot account</td></tr>
+    <tr><td>Claude Code (Pro / Max)</td><td>Anthropic’s terminal and desktop coding agent, which can run inside Air’s terminal tab with your Claude subscription</td><td>Claude-first developers. Air gives you a JetBrains review surface next to the terminal</td><td>Claude Pro / Max usage limits apply. See <a href="claude-code-cloud-sessions-vs-cursor-docker-2026.html">Claude Code cloud sessions</a></td></tr>
+    <tr><td>JetBrains Air Teams</td><td>The team layer: shared cloud environments, Automations triggered by events or schedules, cloud tasks, and team projects with shared credits</td><td>JetBrains business customers who want recurring agent work (PR review, dependency bumps) without tying up a laptop</td><td>Available to JetBrains business customers now, with individuals planned later. Project AI credits. No public price on the post</td></tr>
+  </tbody>
+</table>
+
+<h2>Checklist before you switch</h2>
+<ol>
+  <li><strong>Check your IDE version.</strong> The plugin needs IntelliJ-based IDEs 2026.2 or later. The 2026.3 EAP builds include Air natively.</li>
+  <li><strong>Install from Marketplace if you want to keep AI Assistant.</strong> The docs say the standalone plugin doesn’t replace or turn off AI Assistant. The AI Assistant notification path does turn it off.</li>
+  <li><strong>List the agent subscriptions you already pay for.</strong> If you have Copilot, Claude, and Codex, Air can run all three, so don’t buy a new seat just to try it.</li>
+  <li><strong>Run one parallel task with worktrees.</strong> For example, have Junie Lite (free) and your paid agent each fix the same bug on separate branches, compare the diffs and session costs, then cherry-pick the winner.</li>
+  <li><strong>Decide on cloud on purpose.</strong> Cloud runs need a JetBrains AI subscription and JetBrains says rollout is gradual. If you already get cloud runs from Copilot or Claude Code, you may not need a second cloud.</li>
+  <li><strong>Org admins:</strong> look at Air Governance (AI access, policies, usage, spend) before developers bring personal agent subscriptions into company repos.</li>
+</ol>
+
+<h2>Affiliate-ready picks (what we can monetize today)</h2>
+<p>Primary money: <strong>GitHub Copilot</strong> (supported in Air out of the box), <strong>Claude Pro / Max</strong> (Claude Code inside Air’s terminal tab), and <strong>Cursor</strong> (the all-in-one alternative if you don’t want a JetBrains multi-agent setup). Air itself isn’t in our affiliate map, so we link to JetBrains directly. Live URLs are wired via <code>affiliates.md</code> placeholders. Waitlist: <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a>.</p>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:github-copilot" rel="sponsored noopener">GitHub Copilot →</a>
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro / Max →</a>
+  <a class="btn primary" href="#AFFILIATE:cursor" rel="sponsored noopener">Cursor →</a>
+  <a class="btn" href="https://www.jetbrains.com/air/ides/" rel="noopener">JetBrains Air in IDEs →</a>
+</div>
+
+<h2>Want Aff-intel drops when coding-agent tools shift?</h2>
+<p>Join the waitlist (no checkout): email <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a>. You’ll get short roundups when JetBrains, Cursor, Copilot, and Claude change how and where your agents run.</p>
+
+<h2>Recommendation</h2>
+<ul class="clean">
+  <li>JetBrains user paying for two or more agents → <strong>install Air from Marketplace this week</strong> and run them in parallel sessions. It costs nothing extra with your own subscriptions</li>
+  <li>JetBrains user with no AI subscription → <strong>try free Junie Lite runs first</strong>, then add Copilot or Claude Pro if a paid agent wins your side-by-side test</li>
+  <li>Wants AI to be the editor itself → <strong>stay on or switch to Cursor</strong>. Air is EAP software built around an existing IDE</li>
+  <li>Needs laptop-closed runs without a JetBrains AI seat → use <strong>Copilot’s cloud agent or Claude Code cloud sessions</strong>, and keep Air for local, side-by-side sessions</li>
+  <li>Related: <a href="copilot-home-code-autopilot-vs-cursor-claude-2026.html">Copilot Home / Code / Autopilot</a> · <a href="cursor-rollouts-security-review-vs-copilot-claude-2026.html">Cursor Rollouts &amp; Security Review</a> · <a href="openai-codex-cloud-vs-claude-cursor-copilot-2026.html">OpenAI Codex Cloud</a> · <a href="claude-cowork-cloud-switch-vs-claude-code-copilot-cursor-2026.html">Claude Cowork cloud switch</a></li>
+</ul>
+<p class="meta">Sources: <a href="https://blog.jetbrains.com/ai/2026/10/air-in-ides-eap/">JetBrains AI Blog — A New Agentic Experience: JetBrains Air in IDEs, EAP Now Open (Oct 1, 2026)</a>; <a href="https://www.jetbrains.com/air/ides/">JetBrains — Air in JetBrains IDEs product page</a>; <a href="https://www.jetbrains.com/help/idea/air-in-jetbrains-ides.html">IntelliJ IDEA Docs — JetBrains Air in IDEs</a>; <a href="https://www.jetbrains.com/air/">JetBrains Air overview</a>; <a href="https://blog.jetbrains.com/air/2026/09/introducing-air-teams/">JetBrains Air Blog — Introducing Air Teams</a>; <a href="https://cursor.com/changelog">Cursor Changelog</a>; <a href="https://github.blog/changelog/">GitHub Changelog</a>. EAP features, free-run terms, and cloud availability change fast. Re-check JetBrains, GitHub, Anthropic, and Cursor pages before you change paid seats. No prices were invented for this post.</p>
+    </article>
+    <footer class="site">
+      <p><a href="../">← All reviews</a> · <a href="../DISCLOSURE.md">Affiliate Disclosure</a> · Waitlist: <a href="mailto:toolsthathelp@agentmail.to">toolsthathelp@agentmail.to</a></p>
+    </footer>
+  </div>
+</body>
+</html>
