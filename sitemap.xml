@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://dmarzejon.github.io/aff-intel/posts/meta-muse-code-wonder-full-plans-vs-claude-code-cursor-copilot-codex-2026.html</loc>
+    <lastmod>2026-10-15</lastmod>
+  </url>
+  <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/gemini-4-argon-google-ai-pro-vs-ultra-vs-cursor-copilot-claude-2026.html</loc>
     <lastmod>2026-10-14</lastmod>
   </url>
@@ -22,7 +26,7 @@
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/gemini-free-tier-flash-lite-oct-9-vs-chatgpt-claude-2026.html</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-15</lastmod>
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/jetbrains-air-ides-vs-cursor-copilot-claude-code-2026.html</loc>
@@ -90,7 +94,7 @@
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
