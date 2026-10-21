@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OpenAI's New 12-Hour Prompt Caching vs Claude's 1-Hour Cache: When the 2.5x Write Pays Off (GPT-6.1 Sol vs Opus 5.5 / Sonnet 5.5), Plus Opus 5.5 Fast Mode at $8/$40 (2026) — Aff Intel</title>
+  <meta name="description" content="On Oct 20, 2026 OpenAI added 12-hour prompt caching to the Responses API: cache writes cost 2.5x input, and reads stay at 0.1x (0.05x on GPT-6.1 Sol). Claude's longest published cache is 1 hour at 2x. Worked costs for a 100k-token prefix, the break-even rule by request gap, Opus 5.5 fast mode ($8/$40) vs GPT-6.1 Sol Fast ($4/$20), and what Codex subscribers get." />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <a class="brand" href="../">Aff <span>Intel</span></a>
+      <nav>
+        <a href="../">Reviews</a>
+        <a href="../affiliates.md">Affiliates</a>
+        <a href="../DISCLOSURE.md">Disclosure</a>
+      </nav>
+    </header>
+    <aside class="disclosure" role="note">
+      <strong>Affiliate disclosure:</strong> We may earn a commission if you buy through links on this site, at no extra cost to you.
+      See the full <a href="../DISCLOSURE.md">FTC disclosure</a>.
+    </aside>
+    <article class="post">
+<p class="meta">Roundup · Updated Oct 21, 2026 · API costs · OpenAI API (GPT-6.1 Sol) · Claude API (Opus 5.5 / Sonnet 5.5) · Codex · ChatGPT Plus · Claude Pro</p>
+<h1>OpenAI's new 12-hour prompt caching vs Claude's 1-hour cache: when the 2.5x write pays off, plus Opus 5.5 fast mode at $8/$40 (2026)</h1>
+<p>On Tuesday, Oct 20, OpenAI added <strong>12-hour prompt caching</strong> to the Responses API. Codex lead Tibo Sottiaux made it "Day 16" of the 28-day Codex challenge, and his post passed <strong>1.3 million views</strong> overnight. The headline numbers from OpenAI's docs: a 12-hour cache write costs <strong>2.5x</strong> the normal input price, the default 30-minute write costs <strong>1.25x</strong>, and a cache read costs <strong>0.1x</strong> (<strong>0.05x on GPT-6.1 Sol</strong>) whichever lifetime you pick. Anthropic's longest published cache is still <strong>1 hour</strong>, at <strong>2x</strong>. Separately, Anthropic's API pricing now lists <strong>fast mode for Opus 5.5 at $8 input / $40 output</strong> per million tokens, 2x the standard price. Below: what each option costs on a real workload, a simple rule for which cache to use, and what changes for people on a Codex or Claude subscription. We read OpenAI's and Anthropic's pricing and caching docs on the morning of Oct 21.</p>
+
+<h2>Quick verdict</h2>
+<div class="verdict"><strong>Your app reuses the same big prompt (instructions, tools, docs) with gaps over an hour:</strong> use OpenAI's <strong>12h</strong> cache on that prefix. It beats not caching from the <strong>second reuse</strong> onward. Claude has no published cache that lasts that long.
+<strong>Requests come every 5–60 minutes:</strong> Claude's <strong>1-hour</strong> cache (2x write) and OpenAI's 12h (2.5x) both work. On the same $2 input price, Claude Sonnet 5.5 comes out slightly cheaper (example below).
+<strong>Requests come within 30 minutes of each other:</strong> OpenAI's default <strong>30-minute</strong> cache (1.25x) is enough. Don't pay for 12h.
+<strong>You want Opus 5.5 faster:</strong> fast mode is <strong>$8/$40</strong> (up to 2.5x faster, per Anthropic). GPT-6.1 Sol's Fast tier is <strong>$4/$20</strong>, and its Ultrafast tier is <strong>$12/$60</strong>.
+<strong>You use Codex or Claude Code on a subscription, not the API:</strong> none of these per-token prices hit you directly. Codex Plus is <strong>$20</strong>, Pro is <strong>$100 / $200 / $500</strong>. Claude Pro is <strong>$20</strong> ($17/month annually).</div>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:chatgpt-plus" rel="sponsored noopener">ChatGPT Plus (Codex)</a>
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro (Claude Code)</a>
+  <a class="btn" href="https://developers.openai.com/api/docs/guides/prompt-caching" rel="noopener">OpenAI caching docs →</a>
+</div>
+
+<h2>What changed on Oct 20</h2>
+<ul class="clean">
+  <li><strong>New 12-hour cache lifetime (OpenAI):</strong> on GPT-5.6 and later, in the Responses API, set <code>prompt_cache_options.ttl</code> to <code>"12h"</code>. You can also set it on one breakpoint with <code>prompt_cache_breakpoint.ttl</code>. The default stays <code>"30m"</code></li>
+  <li><strong>Prices:</strong> 12-hour writes are <strong>2.5x</strong> the uncached input price, and 30-minute writes are <strong>1.25x</strong>. OpenAI says these are total rates, not surcharges on top of normal input. Reads are <strong>0.1x</strong> on most GPT-5.6+ models and <strong>0.05x on GPT-6.1 Sol</strong>, for either lifetime</li>
+  <li><strong>"12h" is a minimum, not a guarantee of a hit:</strong> OpenAI says the lifetime governs eligibility for cached pricing. It "does not guarantee that every request reuses stored KV tensors or has lower latency." A 30-minute read doesn't restart the 12-hour clock</li>
+  <li><strong>Upgrades aren't credited:</strong> moving tokens that already have valid 30-minute coverage up to 12 hours bills a new 12-hour write, with no credit for the earlier write</li>
+  <li><strong>Mix both in one request:</strong> put stable instructions and reference material first with a 12h breakpoint, and session context after it with 30m. Each request can create up to four cache writes, and the minimum cacheable prefix is 1,024 tokens</li>
+  <li><strong>Codex and ChatGPT Work:</strong> Tibo's Day 16 post says that for logged-in users "across Codex &amp; Work we keep cache forever," so coming back to an old conversation hours later is "guaranteed to hit the cache." OpenAI hasn't published how much that stretches Plus or Pro usage limits</li>
+</ul>
+
+<h2>The rates side by side</h2>
+<table>
+  <thead><tr><th>Per million tokens (standard tier)</th><th>Input</th><th>Short write</th><th>Long write</th><th>Cache read</th><th>Output</th></tr></thead>
+  <tbody>
+    <tr><td>GPT-6.1 Sol (≤272K context)</td><td>$2.00</td><td>$2.50 (30 min)</td><td>$5.00 (12 h)</td><td>$0.10</td><td>$10.00</td></tr>
+    <tr><td>GPT-6 Astra (≤272K)</td><td>$10.00</td><td>$12.50 (30 min)</td><td>$25.00 (12 h)</td><td>$1.00</td><td>$50.00</td></tr>
+    <tr><td>Claude Sonnet 5.5</td><td>$2.00</td><td>$2.50 (5 min)</td><td>$4.00 (1 h)</td><td>$0.10</td><td>$10.00</td></tr>
+    <tr><td>Claude Opus 5.5</td><td>$4.00</td><td>$5.00 (5 min)</td><td>$8.00 (1 h)</td><td>$0.20</td><td>$20.00</td></tr>
+    <tr><td>Claude Fable 5.1</td><td>$10.00</td><td>$12.50 (5 min)</td><td>$20.00 (1 h)</td><td>$0.25</td><td>$50.00</td></tr>
+  </tbody>
+</table>
+<p>Anthropic says a cache hit also refreshes the cache. So on Claude, a 1-hour entry stays alive as long as each request lands within an hour of the last one. Above 272K input tokens, OpenAI's long-context rates apply. GPT-6.1 Sol is $4 input, $0.20 cached, $5 for a 30-minute write, and $10 for a 12-hour write.</p>
+
+<h2>Worked example: a 100k-token prefix reused 8 times in a day</h2>
+<p>Say your agent sends the same 100,000-token prefix (system prompt, tool definitions, a codebase or policy doc) 9 times in a workday: once to start, then 8 reuses. The figures below are our own math from the published per-token prices. They cover the cost of that prefix only, not the new question or the output.</p>
+<table>
+  <thead><tr><th>Gap between requests</th><th>GPT-6.1 Sol, no cache</th><th>GPT-6.1 Sol, 30 min (default)</th><th>GPT-6.1 Sol, 12 h</th><th>Sonnet 5.5, 1 h</th><th>Opus 5.5, 1 h</th></tr></thead>
+  <tbody>
+    <tr><td>~10 minutes</td><td>$1.80</td><td><strong>$0.33</strong></td><td>$0.58</td><td>$0.48</td><td>$0.96</td></tr>
+    <tr><td>~45 minutes</td><td>$1.80</td><td>$2.25 (misses every time)</td><td>$0.58</td><td><strong>$0.48</strong></td><td>$0.96</td></tr>
+    <tr><td>~75 minutes (10 hours total)</td><td>$1.80</td><td>$2.25 (misses every time)</td><td><strong>$0.58</strong></td><td>$1.80 without caching (the 1 h cache expires; caching anyway costs $3.60)</td><td>$3.60 without caching</td></tr>
+  </tbody>
+</table>
+<ul class="clean">
+  <li><strong>How we got these numbers:</strong> 100k tokens costs $0.20 uncached on Sol, $0.25 as a 30-minute write, $0.50 as a 12-hour write, and $0.01 as a read. For Sol 12h, that's one write plus 8 reads = $0.58. With the 30-minute default and gaps over 30 minutes, every request writes again: 9 × $0.25 = $2.25, which is <em>more</em> than not caching. Sonnet 1h = $0.40 + 8 × $0.01 = $0.48. Opus 1h = $0.80 + 8 × $0.02 = $0.96</li>
+  <li><strong>Break-even for 12h vs no cache:</strong> at 2.5x for the write and 0.05x per read (Sol), two reuses cost 2.6x the input price against 3x uncached. So 12h wins from the <strong>second reuse</strong>. At the 0.1x read rate on other GPT-5.6+ models, it's 2.7x vs 3x, so the same rule holds</li>
+  <li><strong>The trap:</strong> if your requests are more than 30 minutes apart and you leave OpenAI on the default 30-minute cache, you pay the 1.25x write every time and never get a read. Use <code>"12h"</code> on the stable prefix, or explicit-only mode, which skips the write</li>
+</ul>
+
+<h2>Fast modes, priced</h2>
+<table>
+  <thead><tr><th>Model and tier</th><th>Input / output per 1M</th><th>Notes (as published)</th></tr></thead>
+  <tbody>
+    <tr><td>Claude Opus 5.5, fast mode</td><td>$8 / $40</td><td>"Up to 2.5x faster speeds… at 2x standard pricing." Claude API (first-party) and Azure-hosted Foundry only, not Batch. Caching and data-residency multipliers stack on top</td></tr>
+    <tr><td>Claude Opus 5.5, standard</td><td>$4 / $20</td><td>Batch $2 / $10</td></tr>
+    <tr><td>GPT-6.1 Sol, Fast</td><td>$4 / $20</td><td>Cached $0.20. Writes $5 (30 min) / $10 (12 h). "Priority processing" was renamed Fast mode on Jul 30, 2026</td></tr>
+    <tr><td>GPT-6.1 Sol, Ultrafast</td><td>$12 / $60</td><td>In ChatGPT, Ultrafast mode is a Pro $500 feature</td></tr>
+    <tr><td>GPT-6.1 Sol, standard</td><td>$2 / $10</td><td>Batch and Flex $1 / $5</td></tr>
+  </tbody>
+</table>
+<p>So Opus 5.5 in fast mode costs twice GPT-6.1 Sol Fast per token, and two-thirds of Sol Ultrafast. Opus 5.5 also uses Anthropic's newer tokenizer, which Anthropic says produces about 30% more tokens for the same text than models before 4.7. Compare real bills, not just list prices.</p>
+
+<h2>What this means if you're on a subscription</h2>
+<ul class="clean">
+  <li><strong>Codex (ChatGPT Plus $20, Pro $100 / $200 / $500):</strong> you don't pay per token. Per Tibo, Codex and Work now keep your conversation cache indefinitely while you're logged in, so resuming an old thread shouldn't cost you a full re-read. OpenAI hasn't put a number on how much further that stretches your 5-hour limits</li>
+  <li><strong>The weekend usage bug:</strong> on Oct 20, Tibo said about <strong>40,000 accounts</strong> had usage limits that "did not correspond to their actual selected plan." OpenAI says it fixed the problem, is contacting each affected user, and will add credits to their accounts. The amounts going around on X come from user-shared emails, and OpenAI hasn't published them. If your Codex limits drained unusually fast over the weekend of Oct 17–18, check your email</li>
+  <li><strong>Claude Code (Pro $20 / $17 annually, Max from $100):</strong> also no per-token billing in the app. If you're on Max and use the $100–$200 monthly API credits, the 1-hour cache and fast-mode prices above are what those credits buy. See our <a href="claude-max-api-credits-haiku-5-5-vs-chatgpt-pro-google-ai-2026.html">Max API credits breakdown</a></li>
+</ul>
+
+<h2>Affiliate-ready picks (what we can monetize today)</h2>
+<p>Developers comparing OpenAI and Anthropic costs usually end up on a subscription for day-to-day coding and the API for their product. The two subscriptions we can monetize are <strong>ChatGPT Plus</strong> (Codex) and <strong>Claude Pro</strong> (Claude Code). Live URLs are wired via <code>affiliates.md</code> placeholders. Waitlist: <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a>.</p>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:chatgpt-plus" rel="sponsored noopener">ChatGPT Plus →</a>
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro →</a>
+  <a class="btn" href="https://platform.claude.com/docs/en/about-claude/pricing" rel="noopener">Claude API pricing (docs) →</a>
+</div>
+
+<h2>Want Aff-intel drops when AI pricing changes?</h2>
+<p>Join the waitlist (no checkout): email <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a>. You'll get short roundups when OpenAI, Anthropic, Google, Cursor, and Copilot change prices, limits, or caching.</p>
+
+<h2>Recommendation</h2>
+<ul class="clean">
+  <li>Long-lived agents and daily batch jobs on OpenAI → put the stable prefix on a <strong>12h</strong> breakpoint and leave session context on <strong>30m</strong></li>
+  <li>Chat-style apps with steady traffic → the 30-minute default (OpenAI) or the 1-hour cache (Claude) is enough. 12h only adds write cost</li>
+  <li>Choosing between Sonnet 5.5 and GPT-6.1 Sol on cost → same $2 / $10 list price and the same $0.10 cached read. Claude's long write is cheaper (2x vs 2.5x) but lasts 1 hour instead of 12</li>
+  <li>Need Opus 5.5 speed → budget <strong>2x</strong> for fast mode ($8/$40), and test GPT-6.1 Sol Fast ($4/$20) on the same task first</li>
+  <li>You just code in an app → this is API plumbing. Pick <strong>ChatGPT Plus</strong> or <strong>Claude Pro</strong> by which agent you like, and watch Nov 1 (the end of the Codex challenge)</li>
+  <li>Related: <a href="replit-agent-openai-default-keep-claude-vs-claude-code-codex-cursor-copilot-2026.html">Replit Agent defaults to OpenAI</a> · <a href="claude-max-api-credits-haiku-5-5-vs-chatgpt-pro-google-ai-2026.html">Claude Max API credits + Haiku 5.5</a> · <a href="notion-ai-credits-standard-select-business-vs-chatgpt-plus-claude-pro-2026.html">Notion AI's new credit system</a> · <a href="chatgpt-plus-vs-claude-pro.html">ChatGPT Plus vs Claude Pro</a></li>
+</ul>
+<p class="meta">Sources: <a href="https://developers.openai.com/api/docs/changelog">OpenAI API changelog, Oct 20, 2026 ("12-hour cache writes cost 2.5x the input token price")</a>; <a href="https://developers.openai.com/api/docs/guides/prompt-caching">OpenAI, Prompt caching guide</a>; <a href="https://developers.openai.com/api/docs/pricing">OpenAI, API pricing</a>; <a href="https://x.com/OpenAIDevs/status/2112603916076781778">@OpenAIDevs on X (Oct 20, 2026)</a>; <a href="https://x.com/thsottiaux/status/2112712984644784534">@thsottiaux on X, Day 16 (Oct 21, 2026 UTC)</a>; <a href="https://x.com/thsottiaux/status/2112592264686149749">@thsottiaux on X, the usage-limit issue on ~40,000 accounts (Oct 20, 2026)</a>; <a href="https://platform.claude.com/docs/en/about-claude/pricing">Anthropic, Claude API pricing (docs)</a>; <a href="https://claude.com/pricing">Claude, Pricing</a>; <a href="https://learn.chatgpt.com/docs/pricing">ChatGPT Learn, Codex pricing</a>. Pages were read Oct 21, 2026. The cost tables are our own math from published per-token prices, using GPT-6.1 Sol short-context rates (≤272K) and Claude standard rates. Actual cache hit rates depend on your traffic. No prices were invented for this post.</p>
+    </article>
+    <footer class="site">
+      <p><a href="../">← All reviews</a> · <a href="../DISCLOSURE.md">Affiliate Disclosure</a> · Waitlist: <a href="mailto:toolsthathelp@agentmail.to">toolsthathelp@agentmail.to</a></p>
+    </footer>
+  </div>
+</body>
+</html>
