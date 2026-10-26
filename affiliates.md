@@ -21,6 +21,7 @@
 | `meta-muse` | Meta Muse | `#AFFILIATE:meta-muse` | _pending_ | muse.ai — partner link TBD |
 | `sesame` | Sesame | `#AFFILIATE:sesame` | _pending_ | Sesame iOS agents — partner link TBD |
 | `gemini-spark` | Gemini Spark | `#AFFILIATE:gemini-spark` | _pending_ | Google AI Pro / Spark |
+| `kimi` | Kimi (Moonshot AI) | `#AFFILIATE:kimi` | _pending_ | Kimi Plus/Pro/Max/Ultra membership (incl. Kimi Code) — partner link TBD |
 
 ## Placeholder convention
 
@@ -52,3 +53,4 @@ Affiliate Bot should rewrite `href="#AFFILIATE:<slug>"` → live URL and optiona
 | meta-muse | https://muse.ai/ |
 | sesame | https://www.sesame.com/ |
 | gemini-spark | https://gemini.google.com/ |
+| kimi | https://www.kimi.ai/ |
