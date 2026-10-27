@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GPT-6.1 Terra at $1/$5: Half the Price of GPT-6.1 Sol and Claude Sonnet 5.5, vs Haiku 5.5, Opus 5.5, Kimi K3.1 Pro, and What ChatGPT Plus/Pro Get in Codex (2026) — Aff Intel</title>
+  <meta name="description" content="OpenAI released GPT-6.1 Terra on Oct 26, 2026: $1 input / $0.05 cached / $5 output per million API tokens, exactly half of GPT-6.1 Sol and Claude Sonnet 5.5 and a quarter of Opus 5.5. It's in ChatGPT Work and Codex on Plus, Pro, Business, Enterprise, and Edu (not in Chat, not on Free or Go). Plus gets an estimated 35–285 local Terra messages per 5 hours vs 15–160 on Sol. API price table, worked costs, and which model to pick." />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <a class="brand" href="../">Aff <span>Intel</span></a>
+      <nav>
+        <a href="../">Reviews</a>
+        <a href="../affiliates.md">Affiliates</a>
+        <a href="../DISCLOSURE.md">Disclosure</a>
+      </nav>
+    </header>
+    <aside class="disclosure" role="note">
+      <strong>Affiliate disclosure:</strong> We may earn a commission if you buy through links on this site, at no extra cost to you.
+      See the full <a href="../DISCLOSURE.md">FTC disclosure</a>.
+    </aside>
+    <article class="post">
+<p class="meta">Roundup · Oct 27, 2026 · GPT-6.1 Terra · GPT-6.1 Sol · GPT-6 Luna · Claude Sonnet 5.5 · Claude Haiku 5.5 · Claude Opus 5.5 · Kimi K3.1 Pro · Codex · ChatGPT Plus · API pricing</p>
+<h1>GPT-6.1 Terra at $1/$5: half the price of GPT-6.1 Sol and Claude Sonnet 5.5, vs Haiku 5.5, Opus 5.5, and Kimi K3.1 Pro, and what ChatGPT Plus and Pro get in Codex (2026)</h1>
+<p>OpenAI released <strong>GPT-6.1 Terra</strong> on Monday, Oct 26 (2:06 PM ET). Its launch post on X passed <strong>3.9 million views</strong> overnight. Terra is OpenAI's mid-size model, built for screens, images, computer use, and writing. The API price is <strong>$1 input / $0.05 cached / $5 output</strong> per million tokens. That's exactly half of GPT-6.1 Sol and Claude Sonnet 5.5 ($2/$10), a quarter of Claude Opus 5.5 ($4/$20), and half of the older GPT-5.6 Terra. On subscriptions, it's in <strong>ChatGPT Work and Codex</strong> on Plus, Pro, Business, Enterprise, and Edu. It isn't in regular Chat, and it isn't on Free or Go. Codex lead Tibo Sottiaux made it "Day 22" of OpenAI's 28-day Codex run and said it "gives 2X more usage than 6.1 Sol across API and subscriptions." Below: the full price table, what Plus and Pro users get, worked costs, and when Terra is the wrong pick. We read OpenAI's, Anthropic's, and Moonshot's pricing pages on Oct 27.</p>
+
+<h2>Quick verdict</h2>
+<div class="verdict"><strong>You run high-volume agents that read screens, forms, or documents:</strong> test Terra first. It costs half of Sol or Sonnet 5.5 on every line of the price sheet, and it supports the <code>computer_use</code> tool in the Responses API. For very simple extraction, also try GPT-6 Luna or Claude Haiku 5.5. Both are 10x cheaper again ($0.10/$0.50).
+<strong>You're on ChatGPT Plus ($20) and run out of Codex usage:</strong> switch routine tasks to Terra. OpenAI's own estimate is <strong>35–285</strong> local messages per 5 hours on Terra vs <strong>15–160</strong> on GPT-6.1 Sol. Your overall plan limit doesn't change; each task just uses less of it.
+<strong>You do hard coding or long refactors:</strong> stay on GPT-6.1 Sol, GPT-6 Astra, or Claude Opus 5.5. OpenAI says so itself: "For the most complex coding tasks, GPT-6.1 Sol and GPT-6 Astra remain the better choice." Terra scores 50.3% on Terminal-Bench 4.0 at max effort; Moonshot's chart has Opus 5.5 at 66.4%.
+<strong>You're choosing a $20 plan:</strong> Terra is a reason to pick ChatGPT Plus if your work is browser and desktop tasks. For coding-first work, Claude Pro ($20) and Kimi Plus ($19) are still in the running.</div>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:chatgpt-plus" rel="sponsored noopener">ChatGPT Plus / Pro</a>
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro / Max</a>
+  <a class="btn primary" href="#AFFILIATE:kimi" rel="sponsored noopener">Kimi plans</a>
+  <a class="btn" href="https://developers.openai.com/api/docs/models/gpt-6.1-terra" rel="noopener">Terra model page →</a>
+</div>
+
+<h2>What GPT-6.1 Terra is</h2>
+<ul class="clean">
+  <li><strong>Model:</strong> OpenAI calls it "a fast, efficient model for visual reasoning, precise computer use, and clear, natural writing." It replaces GPT-5.6 Terra in the middle of OpenAI's lineup, between GPT-6 Luna (cheapest) and GPT-6.1 Sol / GPT-6 Astra (strongest)</li>
+  <li><strong>Specs (API):</strong> model ID <code>gpt-6.1-terra</code>. Text and image input, text output. 1,050,000-token context window (922,000 max input), 128,000 max output, June 1, 2026 knowledge cutoff. Reasoning effort goes from <code>none</code> to <code>max</code>, with <code>medium</code> as the default. Tool calling requires the Responses API</li>
+  <li><strong>Where it runs:</strong> the OpenAI API, ChatGPT Work (web, desktop, and mobile), and Codex. Pick it from the model list under Advanced. Microsoft also made it generally available in Foundry on Oct 26</li>
+  <li><strong>OpenAI's benchmark claims (not independently checked by us):</strong> on Agents' Last Exam, Terra performs "on par with GPT-6 Astra at only one-tenth its price per token" and finishes tasks "over three times faster" than Astra and Sol. At max effort, OpenAI says it's "over three times as token efficient as Claude Opus 5.5" for "a ~9x lower cost per task." Terminal-Bench 4.0 at max effort: 50.3%, up from 21.5% for GPT-5.6 Terra. OpenAI's internal error rate at max effort fell to 4.3%</li>
+  <li><strong>Safety note:</strong> OpenAI says Terra "meets the Critical threshold in cybersecurity" under its Preparedness Framework and keeps the safeguards built for GPT-6 Astra</li>
+</ul>
+
+<h2>API pricing side by side</h2>
+<table>
+  <thead><tr><th>Per million tokens (standard)</th><th>Input</th><th>Cached input</th><th>Output</th><th>Long prompts</th></tr></thead>
+  <tbody>
+    <tr><td><strong>GPT-6.1 Terra</strong></td><td><strong>$1.00</strong></td><td><strong>$0.05</strong></td><td><strong>$5.00</strong></td><td>Over 272K input: $2 / $0.10 / $7.50 for the whole request</td></tr>
+    <tr><td>GPT-6.1 Sol</td><td>$2.00</td><td>$0.10</td><td>$10.00</td><td>Over 272K: $4 / $0.20 / $15</td></tr>
+    <tr><td>GPT-6 Astra</td><td>$10.00</td><td>$1.00</td><td>$50.00</td><td>Over 272K: $20 / $2 / $75</td></tr>
+    <tr><td>GPT-6 Luna</td><td>$0.10</td><td>$0.01</td><td>$0.50</td><td>Over 272K: $0.20 / $0.02 / $0.75</td></tr>
+    <tr><td>GPT-5.6 Terra (old)</td><td>$2.00</td><td>$0.20</td><td>$12.00</td><td>Over 272K: $4 / $0.40 / $18</td></tr>
+    <tr><td>Claude Sonnet 5.5</td><td>$2.00</td><td>$0.10</td><td>$10.00</td><td>Flat across the 1M context</td></tr>
+    <tr><td>Claude Opus 5.5</td><td>$4.00</td><td>$0.20</td><td>$20.00</td><td>Flat across the 1M context</td></tr>
+    <tr><td>Claude Haiku 5.5</td><td>$0.10</td><td>$0.01</td><td>$0.50</td><td>Prompts over 100K: $0.50 / $0.05 / $2.50</td></tr>
+    <tr><td>Kimi K3.1 Pro</td><td>$2.00</td><td>$0.20</td><td>$10.00</td><td>Flat across the 1M context</td></tr>
+  </tbody>
+</table>
+<p>Terra's cache writes are $1.25 (30-minute retention) or $2.50 (12-hour retention), and cache reads cost 5% of input. Batch and Flex are 50% off ($0.50 / $2.50). Fast mode is 2x ($2 / $10). Regional processing adds 10%. Every Terra price is exactly half the matching GPT-6.1 Sol price, including long-context and cache rates. Token counts aren't directly comparable across providers: Anthropic says Claude 4.7 and later models use a tokenizer that produces about 30% more tokens for the same text, and reasoning tokens bill as output on all of these models.</p>
+
+<h2>Worked example: a screen-reading agent</h2>
+<p><strong>Our arithmetic, list prices, short prompts, cache writes ignored.</strong> Say an invoice-entry agent processes a day's work with 10M fresh input tokens (screenshots and documents), 50M cached input tokens (instructions and tool definitions it re-sends), and 2M output tokens.</p>
+<table>
+  <thead><tr><th>Model</th><th>Fresh input</th><th>Cached input</th><th>Output</th><th>Total per day</th></tr></thead>
+  <tbody>
+    <tr><td>GPT-6 Luna / Claude Haiku 5.5</td><td>$1.00</td><td>$0.50</td><td>$1.00</td><td><strong>$2.50</strong></td></tr>
+    <tr><td><strong>GPT-6.1 Terra</strong></td><td>$10.00</td><td>$2.50</td><td>$10.00</td><td><strong>$22.50</strong></td></tr>
+    <tr><td>GPT-6.1 Sol / Claude Sonnet 5.5</td><td>$20.00</td><td>$5.00</td><td>$20.00</td><td>$45.00</td></tr>
+    <tr><td>Kimi K3.1 Pro</td><td>$20.00</td><td>$10.00</td><td>$20.00</td><td>$50.00</td></tr>
+    <tr><td>GPT-5.6 Terra (old)</td><td>$20.00</td><td>$10.00</td><td>$24.00</td><td>$54.00</td></tr>
+    <tr><td>Claude Opus 5.5</td><td>$40.00</td><td>$10.00</td><td>$40.00</td><td>$90.00</td></tr>
+  </tbody>
+</table>
+<p>At the same token counts, Terra is half of Sol and Sonnet and a quarter of Opus. Run it through Batch and it's about $11. Real costs depend on how many tokens each model spends on the same task: OpenAI's "~9x cheaper than Opus 5.5 per task" claim includes Terra using fewer tokens, which we can't check. If Luna or Haiku 5.5 does your task well enough, they're about 9x cheaper than Terra. Test the cheap tier first.</p>
+
+<h2>What ChatGPT and Codex subscribers get</h2>
+<table>
+  <thead><tr><th>Plan</th><th>Price</th><th>GPT-6.1 Terra?</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>Free</td><td>$0</td><td>No</td><td>GPT-6 Luna in the desktop app, subject to rollout</td></tr>
+    <tr><td>Go</td><td>$8/month</td><td>No</td><td>GPT-6 Luna in the desktop app, subject to rollout</td></tr>
+    <tr><td>Plus</td><td><strong>$20/month</strong></td><td><strong>Yes</strong>, in Work and Codex</td><td>5-hour limits apply; "weekly limits may also apply"</td></tr>
+    <tr><td>Pro</td><td>$100, $200, or $500/month</td><td>Yes</td><td>"Pro plans currently have no five-hour limit." Ultrafast on Pro $500 (Astra and Sol only)</td></tr>
+    <tr><td>Business / Enterprise / Edu</td><td>Per seat</td><td>Yes</td><td>Enterprise access depends on admin controls</td></tr>
+  </tbody>
+</table>
+<p>Terra isn't available in regular ChatGPT Chat; you pick it in ChatGPT Work or Codex. OpenAI's estimated local messages per 5 hours on Plus and Standard Business:</p>
+<table>
+  <thead><tr><th>Model</th><th>Plus, local messages per 5 hours</th><th>Credits per 1M tokens (input / cached / output)</th></tr></thead>
+  <tbody>
+    <tr><td>GPT-6 Astra</td><td>5–45</td><td>250 / 25 / 1,250</td></tr>
+    <tr><td>GPT-6.1 Sol</td><td>15–160</td><td>50 / 2.5 / 250</td></tr>
+    <tr><td><strong>GPT-6.1 Terra</strong></td><td><strong>35–285</strong></td><td><strong>25 / 1.25 / 125</strong></td></tr>
+    <tr><td>GPT-6 Luna</td><td>350–3,000</td><td>2.5 / 0.25 / 12.5</td></tr>
+  </tbody>
+</table>
+<p>OpenAI says these "are not fixed message limits," and that "overall Work and Codex plan limits are unchanged." Terra stretches the same allowance further. It doesn't make the allowance bigger. Fast mode uses included usage at 2.5x. Codex's 28-day run is now on its last week: Day 21 (Oct 26) was a limit reset, and Day 22 was the Terra launch.</p>
+
+<h2>Terra vs Claude and Kimi on a $20 plan</h2>
+<table>
+  <thead><tr><th></th><th>ChatGPT Plus</th><th>Claude Pro</th><th>Kimi Plus</th></tr></thead>
+  <tbody>
+    <tr><td>Price</td><td>$20/month</td><td>$20/month ($17 annually)</td><td>$19/month ($15 annually)</td></tr>
+    <tr><td>Coding agent</td><td>Codex, now with GPT-6.1 Terra as a cheaper option</td><td>Claude Code</td><td>Kimi Code (K3.1 Pro)</td></tr>
+    <tr><td>Limits</td><td>5-hour, plus possible weekly</td><td>5-hour plus weekly</td><td>5-hour plus monthly pool, no weekly limit</td></tr>
+    <tr><td>This week</td><td>Terra launch; Codex run ends around Nov 1–2</td><td>Auto mode default rolling out; Max limit reports still under investigation</td><td>Capacity after the Oct 25 apology; weights promised by Nov 4</td></tr>
+  </tbody>
+</table>
+<p>None of the three publishes exact token allowances. Prices are as published on Oct 27, 2026, before tax.</p>
+
+<h2>Which to pick</h2>
+<ul class="clean">
+  <li><strong>API builder on GPT-6.1 Sol for routine work:</strong> A/B Terra on your real traffic. If quality holds, your bill halves with a one-line model change</li>
+  <li><strong>API builder on Claude Sonnet 5.5:</strong> Terra is half the list price. Anthropic's cheaper option is Haiku 5.5 at $0.10/$0.50 for prompts up to 100K tokens</li>
+  <li><strong>Computer-use or document agents at volume:</strong> Terra is built for this. Also use Batch (50% off) for anything that can wait</li>
+  <li><strong>ChatGPT Plus user who keeps hitting Codex limits:</strong> make Terra your default for simple edits, browser tasks, and writing, and save Sol for hard problems</li>
+  <li><strong>Hard coding, big refactors:</strong> Sol, Astra, or Opus 5.5. Terra isn't OpenAI's coding pick</li>
+  <li><strong>Long single prompts over 272K tokens:</strong> Terra's price goes up (2x input, 1.5x output). Claude Sonnet 5.5 and Kimi K3.1 Pro stay flat across 1M, so price your actual mix</li>
+  <li>Related: <a href="kimi-k3-1-pro-kimi-code-plans-no-weekly-limit-vs-claude-max-chatgpt-pro-2026.html">Kimi K3.1 Pro plans vs Claude Max vs ChatGPT Pro</a> · <a href="openai-12-hour-prompt-caching-vs-claude-1-hour-cache-opus-5-5-fast-mode-2026.html">OpenAI 12-hour cache vs Claude 1-hour cache</a> · <a href="claude-max-usage-limits-ab-test-weekly-vs-5-hour-vs-chatgpt-pro-codex-2026.html">Is Anthropic A/B testing Claude Max limits?</a> · <a href="copilot-computer-use-vs-claude-cursor-2026.html">Copilot Computer Use vs Claude and Cursor</a></li>
+</ul>
+
+<h2>Affiliate-ready picks (what we can monetize today)</h2>
+<p>Readers here are choosing between <strong>ChatGPT Plus/Pro</strong>, <strong>Claude Pro/Max</strong>, and <strong>Kimi</strong>. Live URLs are wired via <code>affiliates.md</code> placeholders. Waitlist: <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a>.</p>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:chatgpt-plus" rel="sponsored noopener">ChatGPT →</a>
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro / Max →</a>
+  <a class="btn primary" href="#AFFILIATE:kimi" rel="sponsored noopener">Kimi →</a>
+  <a class="btn" href="https://developers.openai.com/api/docs/pricing" rel="noopener">OpenAI API pricing →</a>
+</div>
+
+<h2>Want Aff-intel drops when AI limits or prices change?</h2>
+<p>Join the waitlist (no checkout): email <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a>. We'll send a short note when OpenAI's Codex run ends, when Anthropic reports back on Max limits, and when the Kimi K3.1 Pro weights ship.</p>
+
+<p class="meta">Sources: <a href="https://openai.com/index/introducing-gpt-6-1-terra">OpenAI, Introducing GPT-6.1 Terra (Oct 26, 2026)</a>; <a href="https://developers.openai.com/api/docs/models/gpt-6.1-terra">OpenAI, GPT-6.1 Terra model page</a>; <a href="https://developers.openai.com/api/docs/pricing">OpenAI, API pricing</a>; <a href="https://developers.openai.com/api/docs/models/gpt-6-luna">OpenAI, GPT-6 Luna model page</a>; <a href="https://developers.openai.com/api/docs/changelog">OpenAI API changelog (Oct 26)</a>; <a href="https://learn.chatgpt.com/docs/pricing">ChatGPT Learn, pricing and usage limits</a>; <a href="https://learn.chatgpt.com/docs/changelog">ChatGPT &amp; Codex changelog (Oct 26)</a>; <a href="https://x.com/OpenAI/status/2114780711664398349">@OpenAI, launch post</a>; <a href="https://x.com/OpenAI/status/2114780720170164735">@OpenAI, availability</a>; <a href="https://x.com/thsottiaux/status/2114800277677092936">@thsottiaux, Day 22 (Oct 26)</a>; <a href="https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/gpt-6-1-terra-now-generally-available-in-microsoft-foundry-build-agents-that-see/4567769">Microsoft, GPT-6.1 Terra in Foundry (Oct 26)</a>; <a href="https://platform.claude.com/docs/en/about-claude/pricing">Anthropic, Claude API pricing</a>; <a href="https://claude.com/pricing">Claude, Pricing</a>; <a href="https://www.kimi.ai/resources/kimi-k3-1-pro-pricing">Kimi, K3.1 Pro pricing</a>; <a href="https://www.kimi.ai/help/membership/membership-pricing">Kimi Help Center, Pricing details</a>. Pages were read Oct 27, 2026. Benchmark figures are OpenAI's own and weren't independently verified by us. Worked costs are our arithmetic on list prices. Limits can change without notice, so check your own usage page before you buy.</p>
+    </article>
+    <footer class="site">
+      <p><a href="../">← All reviews</a> · <a href="../DISCLOSURE.md">Affiliate Disclosure</a> · Waitlist: <a href="mailto:toolsthathelp@agentmail.to">toolsthathelp@agentmail.to</a></p>
+    </footer>
+  </div>
+</body>
+</html>
