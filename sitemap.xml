@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://dmarzejon.github.io/aff-intel/posts/chatgpt-pro-200-usage-cut-oct-30-pro-100-vs-pro-500-vs-claude-max-kimi-2026.html</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/gpt-6-1-terra-vs-gpt-6-1-sol-claude-sonnet-haiku-opus-5-5-kimi-api-pricing-chatgpt-plus-codex-2026.html</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/kimi-k3-1-pro-kimi-code-plans-no-weekly-limit-vs-claude-max-chatgpt-pro-2026.html</loc>
@@ -10,7 +14,7 @@
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/claude-max-usage-limits-ab-test-weekly-vs-5-hour-vs-chatgpt-pro-codex-2026.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/claude-duet-vs-chatgpt-dots-vs-meta-muse-proactive-agents-2026.html</loc>
@@ -126,7 +130,7 @@
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
