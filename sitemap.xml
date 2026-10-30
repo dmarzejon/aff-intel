@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://dmarzejon.github.io/aff-intel/posts/chatgpt-pro-limits-doubled-pro-200-cut-canceled-pro-100-vs-pro-500-vs-claude-max-2026.html</loc>
+    <lastmod>2026-10-30</lastmod>
+  </url>
+  <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/chatgpt-pro-business-api-credits-100-200-500-vs-claude-max-team-api-credits-2026.html</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/chatgpt-pro-200-usage-cut-oct-30-pro-100-vs-pro-500-vs-claude-max-kimi-2026.html</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/gpt-6-1-terra-vs-gpt-6-1-sol-claude-sonnet-haiku-opus-5-5-kimi-api-pricing-chatgpt-plus-codex-2026.html</loc>
@@ -134,7 +138,7 @@
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
