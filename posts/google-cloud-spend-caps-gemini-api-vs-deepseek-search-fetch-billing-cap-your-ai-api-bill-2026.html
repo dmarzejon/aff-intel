@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Google Cloud Spend Caps Are GA for the Gemini API, and DeepSeek's Search and Fetch Calls Now Cost Money: How to Cap Your AI API Bill (Nov 2026) — Aff Intel</title>
+  <meta name="description" content="On Oct 30, 2026, Google made spend caps generally available for the Gemini API, Gemini Enterprise Agent Platform (formerly Vertex AI) and Cloud Run, with an API and automatic monthly resets. On Nov 1, DeepSeek started billing its Search and Fetch APIs at $0.75 per 1,000 successful calls, including calls made through Claude Code and Codex. What changed, what a cap does and doesn't stop, the per-task math, and a 10-minute checklist." />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <a class="brand" href="../">Aff <span>Intel</span></a>
+      <nav>
+        <a href="../">Reviews</a>
+        <a href="../affiliates.md">Affiliates</a>
+        <a href="../DISCLOSURE.md">Disclosure</a>
+      </nav>
+    </header>
+    <aside class="disclosure" role="note">
+      <strong>Affiliate disclosure:</strong> We may earn a commission if you buy through links on this site, at no extra cost to you.
+      See the full <a href="../DISCLOSURE.md">FTC disclosure</a>.
+    </aside>
+    <article class="post">
+<p class="meta">Guide · Nov 3, 2026 · Gemini API · Google Cloud · DeepSeek API · Claude Code · Codex · API costs</p>
+<h1>Google Cloud spend caps are GA for the Gemini API, and DeepSeek's Search and Fetch calls now cost money: how to cap your AI API bill (Nov 2026)</h1>
+<p>Two billing changes landed over the weekend, and both matter if you run agents on pay-as-you-go APIs. On <strong>Oct 30</strong>, Google announced that <strong>spend caps on Google Cloud Budgets are generally available</strong>, covering the Gemini API, Gemini Enterprise Agent Platform (formerly Vertex AI), Cloud Run and Cloud Run functions. A cap pauses new requests to one service in one project once estimated spend passes the amount you set, and it now resets on its own at the start of each month. On <strong>Nov 1</strong> (00:00 Beijing time, noon ET on Oct 31), DeepSeek's <strong>Search and Fetch APIs stopped being free</strong> for calls made through DeepSeek Harness, Claude Code and Codex. Each now bills <strong>$0.75 per 1,000 successful requests</strong>. We read Google's and DeepSeek's pages on Nov 3.</p>
+
+<h2>Quick verdict</h2>
+<div class="verdict"><strong>You call the Gemini API from a Google Cloud project:</strong> set a spend cap on your test and sandbox projects today. It's the first hard stop Google offers for Gemini, and it no longer needs a manual unlock every month.
+<strong>You run production traffic on Gemini:</strong> cap it too, but set the amount well above your normal month. When a cap triggers, new requests fail until you lift it or the month rolls over.
+<strong>You point Claude Code or Codex at a DeepSeek API key:</strong> your agent's web searches and page fetches now come out of your DeepSeek balance. Check usage this week. The price is low per call, but agents call these tools a lot.
+<strong>You're on a flat subscription (Claude Pro, Max, Ultra or ChatGPT Plus, Pro):</strong> neither change touches you. Subscriptions bill a fixed price and stop you with usage limits instead.</div>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:gemini-spark" rel="sponsored noopener">Google AI Pro</a>
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro / Max</a>
+  <a class="btn" href="https://docs.cloud.google.com/billing/docs/how-to/budgets-spend-caps" rel="noopener">Google: Manage spend cap budgets →</a>
+</div>
+
+<h2>What Google changed on Oct 30</h2>
+<ul class="clean">
+  <li><strong>Spend caps are GA.</strong> Google's billing release notes list GA "for a limited set of services" on Oct 13; the Oct 30 blog post announces general availability with three additions</li>
+  <li><strong>A spend caps API</strong> on the existing Cloud Billing Budgets API, so you can create, lift, update or delete caps from code, for example on every new sandbox project</li>
+  <li><strong>Live cost reports:</strong> Google says caps for AI services "trigger within minutes of usage using estimated, live costs," and Cost Reports now show those estimated costs</li>
+  <li><strong>Automatic monthly resets:</strong> an enforced cap lifts at the start of the next month and paused services resume. You can still lift a cap by hand mid-month</li>
+  <li><strong>Eligible services:</strong> Gemini API (<code>generativelanguage.googleapis.com</code>), Gemini Enterprise Agent Platform (<code>aiplatform.googleapis.com</code>), Cloud Run and Cloud Run functions</li>
+  <li><strong>Alerts:</strong> sent by default to billing administrators and project owners at 50%, 80% and 100% of the cap</li>
+</ul>
+
+<h2>What a spend cap doesn't do</h2>
+<ul class="clean">
+  <li><strong>It isn't instant.</strong> Google's docs say enforcement "isn't instant and any cost overages are billed as normal." Requests already running aren't stopped</li>
+  <li><strong>One project, one service, one month.</strong> Folders, organizations, labels, and multi-project or multi-service budgets are out of scope. The period is always a calendar month</li>
+  <li><strong>Gross costs.</strong> Caps count estimated gross spend, so free credits and savings don't stretch them</li>
+  <li><strong>Provisioned Throughput keeps running,</strong> and subscription costs (such as Gemini Enterprise) and fixed costs like storage are out of scope</li>
+  <li><strong>Resellers are excluded.</strong> Caps are for first-party Google Cloud billing accounts only</li>
+  <li><strong>Recovery can lag.</strong> A dev.to writeup of the GA notes says services might take up to an hour to return to normal after a cap is lifted</li>
+</ul>
+
+<h2>What DeepSeek changed on Nov 1</h2>
+<ul class="clean">
+  <li><strong>Price:</strong> Search and Fetch each cost $0.75 per 1,000 successful requests, billed separately from model tokens and from each other</li>
+  <li><strong>What counts:</strong> only an HTTP 200 response with a result, meaning a non-empty results array for Search or page content for Fetch. Failures, empty results and timeouts are free. Asking for more results per search (1 to 50) doesn't change the price</li>
+  <li><strong>Who it hits:</strong> anyone calling <code>/v1/tools/search</code> or <code>/v1/tools/fetch</code> directly, and anyone running Claude Code, Codex or DeepSeek Harness on a DeepSeek API key, because DeepSeek says those tools' server-side web calls "already hit the Search and Fetch APIs"</li>
+  <li><strong>Where it's charged:</strong> from your prepaid DeepSeek balance, with any granted (bonus) balance used first</li>
+  <li><strong>Rate limits:</strong> 100 requests a second for Search and 25 for Fetch, per account, with an extra per-domain limit on Fetch</li>
+</ul>
+
+<h2>The per-task math</h2>
+<p>At $0.75 per 1,000, one successful call costs $0.00075. A coding agent that runs 10 searches and 5 page fetches on a research-heavy task spends about <strong>$0.011</strong> on tools for that task. At 1,000 such tasks a day, that's about <strong>$11 a day, or roughly $340 a month</strong>, before any model tokens. At 50 tasks a day it's about $17 a month. These are our example numbers, not DeepSeek's; your agent's call counts are what matter, so log successful Search and Fetch calls separately from token usage.</p>
+
+<h2>A 10-minute checklist</h2>
+<ol>
+  <li>In Google Cloud, open Billing &gt; Budgets &amp; alerts and add a spend cap budget for the Gemini API on each sandbox or test project. Start low</li>
+  <li>For production, set the cap above a normal month and make sure the billing admin and project owner roles go to people who will see the 50% and 80% alerts</li>
+  <li>If you create projects from scripts, add a spend cap through the Budgets API at creation time</li>
+  <li>On DeepSeek, check your usage page for Search and Fetch lines since Nov 1, and top up based on what you see, not on last month's balance</li>
+  <li>If your agent searches before every answer, cap it per task in your own code, or switch it to a fixed-price plan for interactive work</li>
+</ol>
+
+<h2>When a flat plan beats pay-as-you-go</h2>
+<p>A spend cap stops a runaway bill, but it does it by stopping your app. If most of your use is one person working interactively in Claude Code, Codex or Gemini, a subscription caps the bill by design: you hit a usage limit, not an invoice. Claude Max is $100 a month and Ultra $200; ChatGPT Pro comes in $100, $200 and $500 tiers. See our <a href="claude-ultra-no-5-hour-limit-max-renamed-vs-chatgpt-pro-200-december-shared-limit-2026.html">Claude Ultra vs ChatGPT Pro 200 guide</a> and our <a href="chatgpt-pro-business-api-credits-100-200-500-vs-claude-max-team-api-credits-2026.html">post on the API credits those plans include</a>. Keep pay-as-you-go, with a cap, for automated jobs that run without you watching.</p>
+
+<p class="meta">Sources: <a href="https://cloud.google.com/blog/topics/cost-management/google-cloud-spend-caps-now-generally-available">Google Cloud Blog, spend caps now generally available (Oct 30, 2026)</a>; <a href="https://docs.cloud.google.com/billing/docs/how-to/budgets-spend-caps">Google Cloud docs, Manage spend cap budgets</a>; <a href="https://docs.cloud.google.com/billing/docs/how-to/budget-api-spend-cap">Google Cloud docs, Budget API for spend cap budgets</a>; <a href="https://docs.cloud.google.cn/billing/docs/release-notes">Cloud Billing release notes</a>; <a href="https://dev.to/neticslabs/google-cloud-spend-caps-reach-general-availability-with-an-api-and-live-costs-4lg3">NeticsLabs on dev.to (Nov 2)</a>; <a href="https://api-docs.deepseek.com/guides/search.md">DeepSeek API docs, Search &amp; Fetch</a>; <a href="https://api-docs.deepseek.com/quick_start/pricing.md">DeepSeek API docs, Models &amp; Pricing</a>; <a href="https://limitdigest.com/guides/deepseek-search-fetch-api-pricing/">LimitDigest, DeepSeek Search API pricing</a>. Pages were read Nov 3, 2026. Per-task figures are our arithmetic. Prices can change, so check each provider's billing page before you rely on them.</p>
+    </article>
+    <footer class="site">
+      <p><a href="../">← All reviews</a> · <a href="../DISCLOSURE.md">Affiliate Disclosure</a> · Waitlist: <a href="mailto:toolsthathelp@agentmail.to">toolsthathelp@agentmail.to</a></p>
+    </footer>
+  </div>
+</body>
+</html>
