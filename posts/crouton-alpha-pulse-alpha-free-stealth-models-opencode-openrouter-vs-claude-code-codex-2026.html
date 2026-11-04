@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Crouton Alpha and Pulse Alpha Are Free This Week: Two 1M-Context Stealth Coding Models on OpenCode and OpenRouter, What They Keep, and When a Paid Plan Still Wins (Nov 2026) — Aff Intel</title>
+  <meta name="description" content="Two anonymous 1M-context models went free on Nov 2–3, 2026: Crouton Alpha on OpenCode and OpenRouter (free 'for the next week'), and Pulse Alpha on OpenCode. Specs, data and region rules from the providers' own pages, how to try them in OpenCode or Claude Code, the zero-retention free alternatives, and when Claude, ChatGPT or a cheap paid model is the better pick." />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <a class="brand" href="../">Aff <span>Intel</span></a>
+      <nav>
+        <a href="../">Reviews</a>
+        <a href="../affiliates.md">Affiliates</a>
+        <a href="../DISCLOSURE.md">Disclosure</a>
+      </nav>
+    </header>
+    <aside class="disclosure" role="note">
+      <strong>Affiliate disclosure:</strong> We may earn a commission if you buy through links on this site, at no extra cost to you.
+      See the full <a href="../DISCLOSURE.md">FTC disclosure</a>.
+    </aside>
+    <article class="post">
+<p class="meta">Guide · Nov 4, 2026 · Crouton Alpha · Pulse Alpha · OpenCode · OpenRouter · Claude Code · Free AI models · API pricing</p>
+<h1>Crouton Alpha and Pulse Alpha are free this week: two 1M-context stealth coding models on OpenCode and OpenRouter, what they keep, and when a paid plan still wins (Nov 2026)</h1>
+<p>Two anonymous models showed up for free in the last 48 hours, and coders on X are already racing them against each other. <strong>Pulse Alpha</strong> appeared in OpenCode's model list on <strong>Nov 2</strong>. <strong>Crouton Alpha</strong> followed on <strong>Nov 3</strong>, on both OpenCode and OpenRouter. OpenCode's post announcing it ("free for the next week," 3:37 PM ET Nov 3) passed <strong>200,000 views</strong> overnight. Both take a <strong>1,048,576-token context</strong>, both reason, both call tools, and neither has a named lab behind it. We read OpenCode's model docs and live model list and OpenRouter's model page and API on Nov 4. Here's what's confirmed, what the free price costs you in data, and where each one fits next to Claude Code, Codex and cheap paid models.</p>
+
+<h2>Quick verdict</h2>
+<div class="verdict"><strong>You want a free model for side projects this week:</strong> try Crouton Alpha. It's free on two services, takes text, images, video and PDFs, and its data isn't used for training (it's kept up to 30 days on OpenCode).
+<strong>You want a second free opinion inside OpenCode:</strong> Pulse Alpha is there too, but OpenCode says its data "may be retained and used to improve the model." Keep work code out of it.
+<strong>You're in the EU:</strong> neither model's free tier on OpenCode is available to you, and OpenRouter says Crouton isn't on its EU in-region routing.
+<strong>You need something you can rely on next month:</strong> don't build on either. Stealth models are previews; they get renamed, priced or pulled without notice. For steady work, a flat plan (Claude Pro/Max, ChatGPT Plus/Pro) or a named cheap model is the safer bet.</div>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro / Max</a>
+  <a class="btn primary" href="#AFFILIATE:chatgpt-plus" rel="sponsored noopener">ChatGPT Plus / Pro</a>
+  <a class="btn" href="https://openrouter.ai/stealth/crouton-alpha" rel="noopener">OpenRouter: Crouton Alpha →</a>
+</div>
+
+<h2>The two models, side by side</h2>
+<ul class="clean">
+  <li><strong>Crouton Alpha:</strong> released Nov 3. 1,048,576-token context. Output up to 270,000 tokens on OpenCode (OpenRouter lists a higher max). Input: text, images, video and PDFs on OpenCode, plus audio on OpenRouter. Tool calling and structured outputs (JSON schema). Reasoning effort from minimal to max. Free on OpenCode (<code>crouton-alpha-free</code>) and OpenRouter (<code>stealth/crouton-alpha</code>)</li>
+  <li><strong>Pulse Alpha:</strong> released Nov 2. 1,048,576-token context, output up to 131,072 tokens. Input: text and images. Tool calling. Reasoning effort low, high or max. Free on OpenCode only (<code>pulse-alpha-free</code>); we found no OpenRouter listing</li>
+  <li><strong>How long they're free:</strong> OpenCode said Crouton is free "for the next week," which points to about Nov 10. OpenCode's docs only say "a limited time" for both, and OpenRouter shows no expiration date. Treat Nov 10 as the likely end for Crouton, not a promise</li>
+  <li><strong>Who made them:</strong> not disclosed. OpenRouter says Crouton is run by "a third-party provider who has chosen to remain anonymous during this preview." Guesses on X are just guesses, so we're not repeating them</li>
+</ul>
+
+<h2>What "free" costs you: data and regions</h2>
+<ul class="clean">
+  <li><strong>Crouton on OpenCode:</strong> "collected data is retained for 30 days and is not used for model training"</li>
+  <li><strong>Crouton on OpenRouter:</strong> "Prompts and completions may be retained by the provider but are not used for training," with other use governed by OpenRouter's Stealth Model Terms</li>
+  <li><strong>Pulse on OpenCode:</strong> "collected data may be retained and used to improve the model." This is the one to keep client code, keys and personal data away from</li>
+  <li><strong>Crouton region blocks (OpenCode):</strong> the EU, Afghanistan, Belarus, China (including Hong Kong and Macau), Cambodia, Cuba, Eritrea, Ethiopia, Haiti, Iran, Iraq, Libya, Myanmar, Nicaragua, North Korea, Pakistan, Russia, Somalia, Syria, Venezuela and Western Sahara, plus "some regions within otherwise supported countries"</li>
+  <li><strong>Pulse region blocks (OpenCode):</strong> the EU, Iceland, Liechtenstein, Norway, Cuba, Iran, North Korea, Russia, Ukraine and Venezuela</li>
+  <li><strong>Free on OpenCode means inside OpenCode:</strong> its docs say free-tier chat models "require OpenCode." To call them from another tool, use OpenRouter (Crouton only) or a paid model</li>
+</ul>
+
+<h2>How to try them in five minutes</h2>
+<ol>
+  <li><strong>OpenCode:</strong> update OpenCode, run <code>/models</code>, and pick Crouton Alpha Free or Pulse Alpha Free. In config, the IDs are <code>opencode/crouton-alpha-free</code> and <code>opencode/pulse-alpha-free</code></li>
+  <li><strong>OpenRouter:</strong> create an API key and call <code>stealth/crouton-alpha</code>. OpenRouter serves it on its OpenAI-style chat and Responses endpoints and on its Anthropic-style Messages endpoint, which is how tools like Claude Code can use it. OpenRouter's page lists Claude Code as the top app sending it traffic (6.69 billion tokens when we checked)</li>
+  <li><strong>Turn reasoning down for small jobs.</strong> On OpenRouter, Crouton's reasoning can't be switched off and defaults to <strong>max</strong> effort. Set <code>reasoning_effort</code> to low or minimal for quick edits, or you'll wait on long thinking for simple tasks</li>
+  <li><strong>Watch the caps.</strong> OpenRouter's free-model limits (20 requests a minute; 50 a day with under $10 of credits ever bought, 1,000 a day at $10 or more) are written for <code>:free</code> model IDs. Crouton's ID doesn't end in <code>:free</code>, and OpenRouter doesn't say whether those caps apply. Check <code>free_model_daily_requests</code> at <code>GET /api/v1/key</code>. On OpenCode, some users report a daily free-message cap that resets each day; OpenCode doesn't publish one</li>
+  <li><strong>Hide them if you don't want them.</strong> Set <code>OPENCODE_DISABLE_FREE_MODELS=1</code> to keep free models out of a team's OpenCode picker</li>
+</ol>
+
+<h2>How they're doing so far</h2>
+<p>OpenRouter showed Crouton at about <strong>78 tokens a second</strong> and <strong>2.2 seconds</strong> median latency, with <strong>about 94% availability</strong> (OpenRouter counts errors and empty responses against it) when we checked. That's fine for side projects and shaky for anything on a deadline. Early tests on X are mixed and small. One user's head-to-head in OpenCode had Crouton finish a task in 33 seconds and 7,700 tokens while Pulse took 21 minutes and 115,000. Another had Pulse pass the same 31 checks as DeepSeek V4.1 Flash on a game-building prompt, but take 15 minutes to DeepSeek's 5.5. Treat any single run as an anecdote.</p>
+
+<h2>Free with no training and zero retention: the quieter options</h2>
+<p>If the data terms matter more than novelty, OpenCode's docs list two free models whose providers follow a <strong>zero-retention policy</strong> and don't train on your data: <strong>GLM-5.3-Flash Free</strong> and <strong>DeepSeek V4.1 Flash Free</strong>. Both are also "limited time." They don't have Crouton's video input, but they're named models from known labs, which makes them easier to clear with a client or employer.</p>
+
+<h2>When a cheap paid model is the better deal</h2>
+<p>Free stops being free the day the preview ends, and the anonymous provider can change the model under you. If you need the same behavior next month, a named model costs less than you'd think. List prices per million input/output tokens on OpenCode's pay-as-you-go console (it says it sells at cost plus a payment fee):</p>
+<ul class="clean">
+  <li><strong>GLM 5.3 Flash:</strong> $0.15 / $0.50</li>
+  <li><strong>DeepSeek V4.1 Flash:</strong> $0.30 / $1.20</li>
+  <li><strong>Claude Haiku 5.5:</strong> $0.10 / $0.50 up to 100K tokens of context, $0.50 / $2.50 above</li>
+  <li><strong>GPT 6 Luna:</strong> $0.10 / $0.50 up to 272K tokens</li>
+  <li><strong>Claude Sonnet 5.5 and GPT 6.1 Sol:</strong> $2 / $10 (Sol's price applies up to 272K tokens)</li>
+</ul>
+<p>Worked example, our arithmetic at list price with no caching: a heavy day of agent work at 20 million input and 1 million output tokens costs about <strong>$3.50</strong> on GLM 5.3 Flash, <strong>$7.20</strong> on DeepSeek V4.1 Flash and <strong>$50</strong> on Sonnet 5.5 or GPT 6.1 Sol. Caching cuts all of those a lot. If you do that most days, a flat plan is simpler: Claude Max is $100 a month and Ultra $200, and ChatGPT Pro comes in $100, $200 and $500 tiers. See our <a href="claude-ultra-no-5-hour-limit-max-renamed-vs-chatgpt-pro-200-december-shared-limit-2026.html">Claude Ultra vs ChatGPT Pro 200 guide</a>, our <a href="gpt-6-1-terra-vs-gpt-6-1-sol-claude-sonnet-haiku-opus-5-5-kimi-api-pricing-chatgpt-plus-codex-2026.html">GPT-6.1 Terra price guide</a>, and, if you pay per call, our <a href="google-cloud-spend-caps-gemini-api-vs-deepseek-search-fetch-billing-cap-your-ai-api-bill-2026.html">guide to capping your API bill</a>.</p>
+
+<h2>Also due today: Kimi K3.1 Pro's open weights</h2>
+<p>Moonshot promised K3.1 Pro's full weights "by Nov 4, 2026." When we checked Hugging Face at 3:52 AM ET on Nov 4 (4:52 PM in Beijing), Moonshot's newest model was still <strong>Kimi-K3</strong> from June, with no K3.1 Pro repository. A third-party repo with "K3.1-pro-unrestricted" in its name exists, but it's gated and contains no weight files. Don't download look-alikes; wait for the official <code>moonshotai</code> repo. Our <a href="kimi-k3-1-pro-kimi-code-plans-no-weekly-limit-vs-claude-max-chatgpt-pro-2026.html">Kimi K3.1 Pro guide</a> covers the API price ($2/$10) and the Kimi Code plans in the meantime.</p>
+
+<h2>Bottom line</h2>
+<p>Use Crouton Alpha this week to see whether a free 1M-context model handles your side projects, and set its reasoning effort yourself. Use Pulse Alpha only on code you'd be happy to share. Don't move a team or a paid project onto either. When the free week ends, compare what you actually used against a cheap named model or a flat plan, and pick on that.</p>
+
+<p class="meta">Sources: <a href="https://x.com/opencode/status/2117717721458843711">@opencode on X (Nov 3, 2026, 3:37 PM ET)</a>; <a href="https://opencode.ai/docs/zen/">OpenCode docs, Models (free models, pricing, privacy)</a>; <a href="https://github.com/anomalyco/opencode/blob/dev/services/www/src/docs/content/console/models.mdx">OpenCode docs source on GitHub</a>; <a href="https://opencode.ai/inference/v1/models">OpenCode live model list</a>; <a href="https://openrouter.ai/stealth/crouton-alpha">OpenRouter, Crouton Alpha model page</a>; <a href="https://openrouter.ai/api/v1/models">OpenRouter models API</a>; <a href="https://openrouter.ai/docs/api/reference/limits">OpenRouter docs, Limits</a>; <a href="https://www.kimi.ai/blog/kimi-k3-1-pro">Moonshot AI, Kimi K3.1 Pro blog</a>; <a href="https://huggingface.co/moonshotai">Moonshot AI on Hugging Face</a>; user tests on X by <a href="https://x.com/harshvdev/status/2117891506497540578">@harshvdev</a> and <a href="https://x.com/krisolo7/status/2117834737402409210">@krisolo7</a> (anecdotal). Pages were read Nov 4, 2026. The worked example is our arithmetic at list prices. Free periods and prices can change at any time, so check each provider's page before you rely on them.</p>
+    </article>
+    <footer class="site">
+      <p><a href="../">← All reviews</a> · <a href="../DISCLOSURE.md">Affiliate Disclosure</a> · Waitlist: <a href="mailto:toolsthathelp@agentmail.to">toolsthathelp@agentmail.to</a></p>
+    </footer>
+  </div>
+</body>
+</html>

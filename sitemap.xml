@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://dmarzejon.github.io/aff-intel/posts/crouton-alpha-pulse-alpha-free-stealth-models-opencode-openrouter-vs-claude-code-codex-2026.html</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/google-cloud-spend-caps-gemini-api-vs-deepseek-search-fetch-billing-cap-your-ai-api-bill-2026.html</loc>
     <lastmod>2026-11-03</lastmod>
   </url>
@@ -26,7 +30,7 @@
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/kimi-k3-1-pro-kimi-code-plans-no-weekly-limit-vs-claude-max-chatgpt-pro-2026.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/claude-max-usage-limits-ab-test-weekly-vs-5-hour-vs-chatgpt-pro-codex-2026.html</loc>
@@ -146,7 +150,7 @@
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
