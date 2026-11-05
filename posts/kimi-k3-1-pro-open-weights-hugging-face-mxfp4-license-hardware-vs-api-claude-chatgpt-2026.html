@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kimi K3.1 Pro Open Weights Are Out: 1.56 TB MXFP4 on Hugging Face, License Guardrails, 8× GPU Hardware Reality, and When the $2/$10 API Still Wins vs Claude and ChatGPT (Nov 2026) — Aff Intel</title>
+  <meta name="description" content="Moonshot kept its Nov 4 promise: Kimi K3.1 Pro full weights are on Hugging Face (moonshotai/Kimi-K3.1-Pro), about 1.56 TB of MXFP4 MoE weights with a 1M-token context. License terms for Model-as-a-Service and big products, the practical 8× GPU floor from vLLM/AMD, day-0 engines, and when Kimi's $2/$10 API or a Claude/ChatGPT plan still beats self-hosting." />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <a class="brand" href="../">Aff <span>Intel</span></a>
+      <nav>
+        <a href="../">Reviews</a>
+        <a href="../affiliates.md">Affiliates</a>
+        <a href="../DISCLOSURE.md">Disclosure</a>
+      </nav>
+    </header>
+    <aside class="disclosure" role="note">
+      <strong>Affiliate disclosure:</strong> We may earn a commission if you buy through links on this site, at no extra cost to you.
+      See the full <a href="../DISCLOSURE.md">FTC disclosure</a>.
+    </aside>
+    <article class="post">
+<p class="meta">Guide · Nov 5, 2026 · Kimi K3.1 Pro · Open weights · Hugging Face · Self-host · API pricing · Claude Max · ChatGPT Pro</p>
+<h1>Kimi K3.1 Pro open weights are out: 1.56 TB MXFP4 on Hugging Face, the license's two guardrails, the 8× GPU reality, and when the $2/$10 API still beats self-hosting (Nov 2026)</h1>
+<p>Moonshot AI kept the date. On <strong>Nov 4, 2026 at 11:00 AM ET</strong>, <a href="https://x.com/Kimi_Moonshot/status/2118010528123773297">@Kimi_Moonshot</a> posted that the <strong>Kimi K3.1 Pro</strong> weights were out (about <strong>641,000 views</strong> by early Nov 5). The official repo is <a href="https://huggingface.co/moonshotai/Kimi-K3.1-Pro"><code>moonshotai/Kimi-K3.1-Pro</code></a> on Hugging Face: ungated, 96 safetensor shards, about <strong>1.56 TB</strong> on disk. We checked the HF API and model card again at about <strong>3:55 AM ET on Nov 5</strong>. Below: what shipped, what the license actually allows, what hardware self-hosting needs, and when the hosted API or a Claude/ChatGPT plan is still the cheaper move. For plans and the Oct 25 quota reset, see our earlier <a href="kimi-k3-1-pro-kimi-code-plans-no-weekly-limit-vs-claude-max-chatgpt-pro-2026.html">Kimi Code plans guide</a>.</p>
+
+<h2>Quick verdict</h2>
+<div class="verdict"><strong>You wanted the open weights for study, fine-tunes, or internal hosting:</strong> they're real. Download from <code>moonshotai/Kimi-K3.1-Pro</code> only. Skip look-alike repos.
+<strong>You're an individual or small team:</strong> self-hosting is a multi-GPU cluster job, not a workstation one. Use the Kimi API ($2/$10 per million tokens) or a Kimi Code plan, or stay on Claude / ChatGPT.
+<strong>You sell model access (Model as a Service) and clear $20M in trailing 12-month revenue:</strong> the license says you need a separate Moonshot agreement before commercial use of these weights or derivatives.
+<strong>You only need coding help this week:</strong> don't buy GPUs for this. The model has been on the API and in Kimi Code since Oct 23; weights don't change that product path.</div>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:kimi" rel="sponsored noopener">Kimi plans / API</a>
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro / Max / Ultra</a>
+  <a class="btn primary" href="#AFFILIATE:chatgpt-plus" rel="sponsored noopener">ChatGPT plans</a>
+  <a class="btn" href="https://huggingface.co/moonshotai/Kimi-K3.1-Pro" rel="noopener">Hugging Face weights →</a>
+</div>
+
+<h2>What landed on Hugging Face</h2>
+<ul class="clean">
+  <li><strong>Repo:</strong> <code>moonshotai/Kimi-K3.1-Pro</code> — public, not gated. HF API showed 96 <code>model-*-of-000096.safetensors</code> shards plus config/code; total files about <strong>1.56 TB</strong> (our sum of the tree listing)</li>
+  <li><strong>Architecture (from the model card):</strong> MoE, <strong>2.8T</strong> total / <strong>104B</strong> active parameters, 896 experts (16 selected per token + 2 shared), <strong>1,048,576</strong>-token context, text + image (MoonViT-V2, 401M). Attention mixes Kimi Delta Attention with Gated DeepSeek Sparse Attention on 24 layers</li>
+  <li><strong>Quantization:</strong> MXFP4 weights / MXFP8 activations via quantization-aware training. vLLM's recipe notes routed-expert weights are MXFP4 on disk (~1.56 TB); attention, shared experts, and the vision tower stay BF16, with an MXFP4 memory figure of about <strong>1,874 GB</strong> for the serving variant</li>
+  <li><strong>Engines with day-0 recipes:</strong> vLLM, SGLang, and TokenSpeed (named on the model card). AMD published day-0 support on <strong>8× Instinct MI355X</strong> with ATOM and vLLM; Nebius and others announced day-0 hosted inference</li>
+  <li><strong>Cyber note on the card:</strong> Moonshot says it removed cybersecurity-related training data for the open-weight release; its internal xdev-bench-hard score is listed at <strong>81.0%</strong> (vs <strong>90.5%</strong> without that change). Treat those as Moonshot's numbers, not ours</li>
+</ul>
+
+<h2>License: open with two commercial guardrails</h2>
+<p>The file is the <strong>Kimi K3.1-Pro License</strong> (Copyright 2026 Moonshot AI). In plain terms it is MIT-like for use, modification, redistribution, fine-tuning, and sale, with notice retained, plus:</p>
+<ul class="clean">
+  <li><strong>Model as a Service over $20M:</strong> if you (and affiliates) operate a business that gives third parties meaningful control over inference or fine-tuning inputs/parameters/training data, and your aggregate revenue exceeds <strong>$20 million</strong> over any consecutive 12 months, you must sign a separate agreement with Moonshot before commercial use of the Software or derivatives. Embedded product features and mere request-relaying are carved out of that definition</li>
+  <li><strong>Very large products:</strong> commercial products or services with more than <strong>100 million monthly active users</strong> or more than <strong>$20 million monthly revenue</strong> must prominently display <strong>"Kimi K3.1-Pro"</strong> in the UI</li>
+  <li><strong>Those two rules do not apply to:</strong> (a) true internal use that does not expose the model's capabilities to third parties, or (b) use through Moonshot's official products or certified inference partners</li>
+</ul>
+<p>So a company hosting K3.1 Pro for its own employees is in a different bucket from a startup reselling API access at scale. Read the LICENSE file yourself before you ship.</p>
+
+<h2>Hardware: not a laptop model</h2>
+<ul class="clean">
+  <li><strong>vLLM baseline:</strong> simplest working NVIDIA layout is <strong>tensor parallel 8</strong> — one B300 node or two GB300 trays (or the equivalent VR200 preview path). Same TP8 shape on one <strong>MI355X</strong> node for AMD</li>
+  <li><strong>Memory shape:</strong> you need on the order of <strong>2 TB-class</strong> aggregate high-bandwidth memory for the MXFP4 checkpoint plus BF16 leftovers, KV cache, and runtime. Single H100/H200/B200 cards are not enough; H100-class boxes need multi-node layouts</li>
+  <li><strong>Long context:</strong> decode-context parallelism (DCP) is how vLLM stretches KV capacity for 1M-token and multi-session agent work; expect extra host DRAM if you offload KV</li>
+  <li><strong>Practical takeaway:</strong> if you do not already rent or own an 8× 288 GB-class node (or a multi-node fabric), self-hosting is a CapEx/OpEx project. The weights being public does not make them free to run</li>
+</ul>
+
+<h2>API and plan pricing (unchanged by the drop)</h2>
+<table>
+  <thead><tr><th>Path</th><th>What you pay</th><th>When it wins</th></tr></thead>
+  <tbody>
+    <tr><td>Kimi API <code>kimi-k3.1-pro</code></td><td><strong>$2</strong> input / <strong>$10</strong> output per MTok; cache hit <strong>$0.20</strong>; cache writes $2 (5m) or $4 (1h)</td><td>Builders who want 1M flat context without owning GPUs. Same list input/output as GPT-6.1 Sol and Claude Sonnet 5.5; cache reads are 10% of input vs 5% on Sol/Sonnet</td></tr>
+    <tr><td>Kimi API Highspeed</td><td><strong>$4</strong> / <strong>$20</strong>; cache hit still $0.20</td><td>Interactive coding where latency matters more than token cost</td></tr>
+    <tr><td>Kimi Code plans</td><td>Plus <strong>$19</strong>, Pro <strong>$39</strong>, Max <strong>$99</strong>, Ultra <strong>$199</strong> (no weekly limit on new plans; 5-hour window + monthly credit pool)</td><td>Overflow for Claude Max weekly pain; see our plans guide</td></tr>
+    <tr><td>Self-host weights</td><td>Download free; GPUs, power, eng time, and license review are not</td><td>Internal fleets, air-gapped needs, or MaaS shops that already cleared Moonshot's commercial terms</td></tr>
+    <tr><td>Claude Ultra / Max · ChatGPT Pro</td><td>$100–$200 (and Pro 500) flat plans with their own limits and API credits</td><td>Teams that want a supported IDE/agent stack more than open weights</td></tr>
+  </tbody>
+</table>
+<p>Batch on the Kimi API is billed at <strong>60%</strong> of standard rates for <code>kimi-k3.1-pro</code>. Prices above are Moonshot's published USD list rates, before tax, as of our Nov 5 check of the platform homepage and pricing docs.</p>
+<p><strong>Worked example (our arithmetic, list prices, cache writes ignored):</strong> 20M cached input + 2M fresh input + 1M output ≈ <strong>$18</strong> on K3.1 Pro vs about <strong>$16</strong> on Sol or Sonnet 5.5 (if each Sol request stays under its 272K long-context threshold) vs <strong>$32</strong> on Opus 5.5. Self-hosting only undercuts that after you amortize an 8-GPU node across a lot of tokens.</p>
+
+<h2>Which to pick</h2>
+<ul class="clean">
+  <li><strong>Research / fine-tune / internal cluster already paid for:</strong> pull the official HF repo, run the vLLM or SGLang recipe, and keep the LICENSE with your deploy docs</li>
+  <li><strong>Ship a product that embeds the model for end users:</strong> usually fine under the license's embedded-feature carve-out — still not legal advice; confirm with counsel if you're close to the MaaS or 100M-MAU lines</li>
+  <li><strong>Resell inference at scale:</strong> budget for Moonshot's separate agreement once you approach $20M trailing revenue, or use Moonshot's API / a certified partner instead</li>
+  <li><strong>Just need a strong coding agent this month:</strong> Kimi Plus ($19) as overflow, Claude Ultra/Max, or ChatGPT Pro remain the low-friction paths. Weights are a hosting story, not a subscription replacement</li>
+  <li><strong>Still testing free 1M-context previews:</strong> Crouton Alpha remains free on OpenCode/OpenRouter for roughly through ~Nov 10 — see our <a href="crouton-alpha-pulse-alpha-free-stealth-models-opencode-openrouter-vs-claude-code-codex-2026.html">Crouton / Pulse guide</a></li>
+  <li>Related: <a href="kimi-k3-1-pro-kimi-code-plans-no-weekly-limit-vs-claude-max-chatgpt-pro-2026.html">Kimi Code plans vs Claude / ChatGPT</a> · <a href="gpt-6-1-terra-vs-gpt-6-1-sol-claude-sonnet-haiku-opus-5-5-kimi-api-pricing-chatgpt-plus-codex-2026.html">GPT-6.1 Terra vs Sol / Claude / Kimi API</a> · <a href="claude-ultra-no-5-hour-limit-max-renamed-vs-chatgpt-pro-200-december-shared-limit-2026.html">Claude Ultra vs ChatGPT Pro 200</a> · <a href="google-cloud-spend-caps-gemini-api-vs-deepseek-search-fetch-billing-cap-your-ai-api-bill-2026.html">Cap your AI API bill</a></li>
+</ul>
+
+<h2>Affiliate-ready picks (what we can monetize today)</h2>
+<p>Most readers will choose between <strong>Kimi's hosted API/plans</strong>, <strong>Claude</strong>, and <strong>ChatGPT</strong> rather than buying a GPU rack. Live URLs go through <code>affiliates.md</code> placeholders. Waitlist: <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a>.</p>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:kimi" rel="sponsored noopener">Kimi →</a>
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro / Max / Ultra →</a>
+  <a class="btn primary" href="#AFFILIATE:chatgpt-plus" rel="sponsored noopener">ChatGPT →</a>
+  <a class="btn" href="https://huggingface.co/moonshotai/Kimi-K3.1-Pro" rel="noopener">Official weights →</a>
+</div>
+
+<h2>Want Aff-intel drops when open weights or API prices move?</h2>
+<p>Join the waitlist (no checkout): email <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a>. We'll note major weight drops, license changes, and plan/limit shifts that change the buy decision.</p>
+
+<p class="meta">Sources: <a href="https://x.com/Kimi_Moonshot/status/2118010528123773297">@Kimi_Moonshot, Releasing the model weights of Kimi K3.1 Pro (Nov 4, 2026, 11:00 AM ET)</a>; <a href="https://huggingface.co/moonshotai/Kimi-K3.1-Pro">Hugging Face, moonshotai/Kimi-K3.1-Pro</a>; <a href="https://huggingface.co/moonshotai/Kimi-K3.1-Pro/blob/main/LICENSE">Kimi K3.1-Pro License</a>; <a href="https://www.kimi.ai/blog/kimi-k3-1-pro">Kimi, K3.1 Pro tech blog</a>; <a href="https://platform.kimi.ai/">Kimi API Platform (pricing)</a>; <a href="https://platform.kimi.ai/docs/pricing/chat">Kimi docs, Model Inference Pricing</a>; <a href="https://www.kimi.ai/resources/kimi-k3-1-pro-pricing">Kimi, K3.1 Pro pricing resource</a>; <a href="https://recipes.vllm.ai/moonshotai/Kimi-K3.1-Pro">vLLM Recipes, Kimi-K3.1-Pro</a>; <a href="https://vllm.ai/blog/2026-11-04-kimi-k31-pro">vLLM blog, Day-0 support (Nov 4, 2026)</a>; <a href="https://www.sglang.io/blog/kimi-k3.1-pro-day0-support">SGLang blog, Day-0 support</a>; <a href="https://www.amd.com/en/developer/resources/technical-articles/2026/kimi-k3-1-pro-on-amd-instinct-gpus.html">AMD, Kimi K3.1 Pro on Instinct GPUs</a>; <a href="https://x.com/AIatAMD/status/2118025552963493935">@AIatAMD day-0 post</a>; <a href="https://claude.com/pricing">Claude pricing</a>; <a href="https://developers.openai.com/api/docs/models/gpt-6.1-sol">OpenAI, GPT-6.1 Sol</a>. HF tree size and shard counts are from the public API on Nov 5, 2026 (~3:55 AM ET). Benchmark and cyber scores are Moonshot's. Worked costs are our arithmetic on list prices. Hardware and license terms can change; re-read the model card and LICENSE before you deploy.</p>
+    </article>
+    <footer class="site">
+      <p><a href="../">← All reviews</a> · <a href="../DISCLOSURE.md">Affiliate Disclosure</a> · Waitlist: <a href="mailto:toolsthathelp@agentmail.to">toolsthathelp@agentmail.to</a></p>
+    </footer>
+  </div>
+</body>
+</html>
