@@ -22,6 +22,7 @@
 | `sesame` | Sesame | `#AFFILIATE:sesame` | _pending_ | Sesame iOS agents — partner link TBD |
 | `gemini-spark` | Gemini Spark | `#AFFILIATE:gemini-spark` | _pending_ | Google AI Pro / Spark |
 | `kimi` | Kimi (Moonshot AI) | `#AFFILIATE:kimi` | _pending_ | Kimi Plus/Pro/Max/Ultra membership (incl. Kimi Code) — partner link TBD |
+| `perplexity` | Perplexity Pro / Max | `#AFFILIATE:perplexity` | _pending_ | Perplexity Max (Teammates, Computer credits) — partner link TBD |
 
 ## Placeholder convention
 
