@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Claude Fable 5.2 on Pro vs Max vs Ultra: $8/$40 API, the 50% Weekly Cap, and When Opus 5.5 or Muse Ember Is the Smarter Buy (Nov 2026) — Aff Intel</title>
+  <meta name="description" content="Anthropic released Claude Fable 5.2 on Nov 9, 2026 at $8/$40 per million tokens (down from $10/$50). Max and Ultra include it up to 50% of weekly limits; Pro needs usage credits. How it compares with Opus 5.5 ($4/$20) and Meta's new Muse Ember ($0.10/$0.50), the model behind Crouton Alpha." />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <a class="brand" href="../">Aff <span>Intel</span></a>
+      <nav>
+        <a href="../">Reviews</a>
+        <a href="../affiliates.md">Affiliates</a>
+        <a href="../DISCLOSURE.md">Disclosure</a>
+      </nav>
+    </header>
+    <aside class="disclosure" role="note">
+      <strong>Affiliate disclosure:</strong> We may earn a commission if you buy through links on this site, at no extra cost to you.
+      See the full <a href="../DISCLOSURE.md">FTC disclosure</a>.
+    </aside>
+    <article class="post">
+<p class="meta">Comparison · Nov 10, 2026 · Claude Fable 5.2 · Claude Mythos 5.2 · Claude Pro / Max / Ultra · Claude Opus 5.5 · Claude Code · Meta Muse Ember · API pricing</p>
+<h1>Claude Fable 5.2 on Pro vs Max vs Ultra: $8/$40 API, the 50% weekly cap, and when Opus 5.5 or Muse Ember is the smarter buy (Nov 2026)</h1>
+<p>On <strong>Nov 9, 2026</strong>, Anthropic released <strong>Claude Fable 5.2</strong> and <strong>Claude Mythos 5.2</strong>, its top models for hard, long-running technical work. It was the top story on Hacker News overnight, and Anthropic's demos (a laptop-bootable operating system built by more than 1,000 coordinated agents over eight days, three working electronics prototypes with Diode, a formal proof of Fermat's Last Theorem in 30 hours) are all over X. For buyers, the questions are simpler: <strong>which Claude plan actually lets you use it, what it costs on the API, and when the cheaper Opus 5.5 is the better call</strong>. The same day, Meta launched <strong>Muse Ember</strong> at $0.10/$0.50, and OpenRouter confirmed last week's free stealth model <strong>Crouton Alpha</strong> was an early Muse Ember. We read Anthropic's model page, API docs, Help Center and Claude Code changelog, plus Meta's and OpenRouter's pages, on the morning of Nov 10.</p>
+
+<h2>Quick verdict</h2>
+<div class="verdict"><strong>You're on Claude Max ($100) or Ultra ($200):</strong> Fable 5.2 is already included, up to <strong>50% of your weekly limit</strong>. It uses limits faster than other Claude models, so save it for the jobs Opus 5.5 can't finish.
+<strong>You're on Claude Pro ($20):</strong> Fable isn't in your plan's limits. You can use it, but only with pay-as-you-go <strong>usage credits</strong>, and there's no one-time promo credit for 5.2. If you'd use it more than occasionally, Max is the cheaper path.
+<strong>You build on the API:</strong> Fable 5.2 is <strong>$8 in / $40 out</strong> per million tokens, 20% less than Fable 5.1. That's still 2x Opus 5.5 ($4/$20). Batch halves it to $4/$20.
+<strong>You run high-volume agent sub-tasks (routing, extraction, tool calls):</strong> don't use Fable. Muse Ember ($0.10/$0.50) or Claude Haiku 5.5 (same headline price) are 80x cheaper per token.
+<strong>You do cyber or life-science research:</strong> Mythos 5.2 is the same model with fewer safeguards, open only to organizations admitted to Anthropic's verification programs.</div>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro / Max / Ultra</a>
+  <a class="btn" href="https://openrouter.ai/meta/muse-ember-20261109" rel="noopener">OpenRouter: Muse Ember →</a>
+</div>
+
+<h2>What Anthropic shipped on Nov 9</h2>
+<ul class="clean">
+  <li><strong>Two names, one model:</strong> Fable 5.2 is open to everyone, with safeguards that block risky cybersecurity and biology requests. Mythos 5.2 keeps those capabilities for organizations admitted through Anthropic's Cyber or Life Sciences verification programs</li>
+  <li><strong>Speed:</strong> outputs generate up to <strong>30% faster</strong> than the 5.1 generation, per Anthropic</li>
+  <li><strong>Context:</strong> 1M tokens in, up to 128K out. Model ID <code>claude-fable-5-2</code></li>
+  <li><strong>Where:</strong> Claude apps (web, desktop, mobile), Claude Code, Claude Cowork, the Claude API, Amazon Bedrock, Google Cloud, and Microsoft Foundry</li>
+  <li><strong>Claude Code:</strong> needs version <strong>2.1.321 or later</strong>, where Fable 5.2 becomes the default Fable model. Saved Fable 5.1 picks move to <code>fable</code> automatically on Pro and Max; <code>/model claude-fable-5-1</code> switches back</li>
+  <li><strong>Anthropic's own advice:</strong> keep using Opus 5.5 for everyday coding and save Fable for the most ambitious open-ended work</li>
+  <li><strong>Benchmarks people are quoting:</strong> Fable 5.2 scored <strong>65</strong> on the Artificial Analysis Intelligence Index v5, the highest so far, per Artificial Analysis as reported on Nov 9–10. Coverage also notes it's slow and expensive per task on that index, so cheaper tokens don't mean cheaper jobs</li>
+</ul>
+
+<h2>Fable 5.2 on each Claude plan</h2>
+<table>
+  <thead><tr><th>Plan</th><th>Is Fable 5.2 included?</th><th>How it's billed</th></tr></thead>
+  <tbody>
+    <tr><td>Claude Pro ($20)</td><td>Available, <strong>not included</strong></td><td>Usage credits only (pay as you go). No one-time credit for 5.2 or 5.1; the July 2026 credit applied only to Fable 5</td></tr>
+    <tr><td>Claude Max ($100)</td><td><strong>Included</strong></td><td>Up to <strong>50% of weekly limits</strong> at no extra cost; uses limits faster than other models; then usage credits or switch models</td></tr>
+    <tr><td>Claude Ultra ($200)</td><td><strong>Included</strong></td><td>Same 50%-of-weekly rule, on Ultra's bigger weekly allowance</td></tr>
+    <tr><td>Team, Enterprise seats</td><td>Premium seats: included (50% rule). Standard seats: usage credits</td><td>Usage-based Enterprise and the API pay standard API rates</td></tr>
+  </tbody>
+</table>
+<p class="meta">From Anthropic's Help Center article "Claude Fable models on your plan," read Nov 10, 2026. Anthropic doesn't publish how many messages 50% of a weekly limit buys, and we don't estimate it.</p>
+
+<h2>API prices: Fable 5.2 vs Fable 5.1 vs Opus 5.5 vs Muse Ember</h2>
+<table>
+  <thead><tr><th>Model (per million tokens)</th><th>Input</th><th>Output</th><th>Cache read</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Claude Fable 5.2</strong></td><td>$8</td><td>$40</td><td>$0.20</td><td>5-min cache write $10, 1-hour $16; Batch $4/$20; fast mode (up to 2.5x faster) $16/$80</td></tr>
+    <tr><td>Claude Fable 5.1</td><td>$10</td><td>$50</td><td></td><td>Previous generation</td></tr>
+    <tr><td>Claude Opus 5.5</td><td>$4</td><td>$20</td><td>$0.20</td><td>Anthropic's pick for everyday coding; fast mode $8/$40</td></tr>
+    <tr><td>Meta Muse Ember</td><td>$0.10</td><td>$0.50</td><td>$0.004</td><td>Up to 200K input; above that $0.30/$1.50. 1M context, 512K output</td></tr>
+    <tr><td>Claude Haiku 5.5</td><td>$0.10</td><td>$0.50</td><td></td><td>Up to 100K prompt tokens; above that $0.50/$2.50</td></tr>
+  </tbody>
+</table>
+<p>Fable 5.2's regular price now equals Opus 5.5's <em>fast mode</em> price. If you were paying for Opus fast mode to get hard jobs done quicker, try Fable 5.2 at normal speed on the same budget first.</p>
+
+<h2>Muse Ember, and what happened to Crouton Alpha</h2>
+<p>Meta released Muse Ember on Nov 9 as its smallest, most efficient model, built for the work agents repeat all day: tool calls, coding sub-tasks, routing, extraction and long-document parsing. It's on Meta's Model API as <code>muse-ember-1.0</code>, in Muse Code, and on OpenRouter. OpenRouter's page now says the free stealth model <strong>Crouton Alpha</strong> (Nov 3) was an early version of Muse Ember and that the stealth period has ended, so the free run is over. The obvious pairing is a big model that plans and a small one that executes: Fable or Opus for the plan, Ember or Haiku for the hundreds of small steps.</p>
+
+<h2>Which to pick</h2>
+<ul class="clean">
+  <li><strong>Solo developer on Claude Pro who hits a wall a few times a month:</strong> use usage credits for Fable on those jobs and stay on Pro. If it's weekly, move to Max ($100)</li>
+  <li><strong>Heavy Claude Code user:</strong> Max or Ultra. Default to Opus 5.5, switch to Fable with <code>/model</code> for migrations, gnarly debugging and long agent runs, and watch the weekly meter</li>
+  <li><strong>Building an agent product:</strong> Fable 5.2 via Batch ($4/$20) for planning, Muse Ember or Haiku 5.5 for execution steps. Cost out a real task; per-token price isn't per-task price</li>
+  <li><strong>Was using Crouton Alpha for free:</strong> it's gone. Muse Ember is the paid version at $0.10/$0.50</li>
+</ul>
+<p>Related: <a href="claude-ultra-no-5-hour-limit-max-renamed-vs-chatgpt-pro-200-december-shared-limit-2026.html">Claude Ultra vs ChatGPT Pro 200</a> · <a href="crouton-alpha-pulse-alpha-free-stealth-models-opencode-openrouter-vs-claude-code-codex-2026.html">Crouton Alpha and Pulse Alpha</a> · <a href="openai-12-hour-prompt-caching-vs-claude-1-hour-cache-opus-5-5-fast-mode-2026.html">Prompt caching and Opus 5.5 fast mode</a> · <a href="meta-muse-code-wonder-full-plans-vs-claude-code-cursor-copilot-codex-2026.html">Meta Muse Code plans</a></p>
+
+<h2>Affiliate-ready picks (what we can monetize today)</h2>
+<p>Readers who want Fable without metering buy <strong>Claude Max or Ultra</strong>; builders buy API usage. Live URLs go through <code>affiliates.md</code> placeholders. Waitlist: <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a>.</p>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Max / Ultra →</a>
+  <a class="btn primary" href="#AFFILIATE:meta-muse" rel="sponsored noopener">Meta Muse →</a>
+</div>
+
+<h2>Want Aff-intel drops when model prices or plan limits change?</h2>
+<p>Join the waitlist (no checkout): email <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a>.</p>
+
+<p class="meta">Sources: <a href="https://www.anthropic.com/claude/fable">Anthropic, Claude Fable</a>; <a href="https://platform.claude.com/docs/en/models/fable-5-2/overview">Claude docs, Fable 5.2 overview</a>; <a href="https://platform.claude.com/docs/en/models/fable-5-2/whats-new-fable-5-2">What's new in Claude Fable 5.2</a>; <a href="https://support.claude.com/en/articles/15424964-claude-fable-models-on-your-plan">Claude Help Center, Claude Fable models on your plan</a>; <a href="https://code.claude.com/docs/en/changelog">Claude Code changelog (2.1.321)</a>; <a href="https://www.anthropic.com/research/claude-electronics-design">Anthropic, Claude electronics design (Nov 9)</a>; <a href="https://research.meta.ai/blog/muse-ember">Meta, Introducing Muse Ember (Nov 9)</a>; <a href="https://openrouter.ai/stealth/crouton-alpha">OpenRouter, Crouton Alpha</a>; <a href="https://openrouter.ai/meta/muse-ember-20261109">OpenRouter, Muse Ember</a>; <a href="https://openrouter.ai/anthropic/claude-opus-5.5">OpenRouter, Claude Opus 5.5</a>; VentureBeat's Muse Ember pricing table and The Neuron / The Context daily briefings (Nov 10) used as corroboration only. Pages read Nov 10, 2026 (~4 AM ET). No prices, limits or benchmark numbers were invented for this post.</p>
+    </article>
+    <footer class="site">
+      <p><a href="../">← All reviews</a> · <a href="../DISCLOSURE.md">Affiliate Disclosure</a> · Waitlist: <a href="mailto:toolsthathelp@agentmail.to">toolsthathelp@agentmail.to</a></p>
+    </footer>
+  </div>
+</body>
+</html>
