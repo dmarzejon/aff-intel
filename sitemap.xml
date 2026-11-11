@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/claude-fable-5-2-pro-vs-max-ultra-50-percent-weekly-vs-opus-5-5-vs-muse-ember-api-pricing-2026.html</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-11</lastmod>
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/perplexity-teammates-max-200-vs-claude-duet-ultra-vs-chatgpt-dots-pro-200-always-on-agents-2026.html</loc>
@@ -78,7 +78,7 @@
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/gemini-4-argon-google-ai-pro-vs-ultra-vs-cursor-copilot-claude-2026.html</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-11</lastmod>
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/cursor-x-subscription-vs-cursor-pro-claude-code-copilot-2026.html</loc>
@@ -86,7 +86,7 @@
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/claude-google-workspace-vs-gemini-docs-sheets-slides-2026.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-11-11</lastmod>
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/chatgpt-gpt-6-intelligent-ui-free-vs-plus-vs-claude-gemini-2026.html</loc>
@@ -245,6 +245,12 @@
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/personal-ai-agents-2026.html</loc>
     <lastmod>2026-10-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://dmarzejon.github.io/aff-intel/posts/gemini-4-carbon-ai-ultra-vs-api-intro-price-nov-30-vs-claude-fable-5-2-opus-5-5-copilot-cursor-2026.html</loc>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gemini 4 Carbon: Google AI Ultra vs the $2/$10 API (Price Doubles Dec 1) vs Claude Fable 5.2 and Opus 5.5, Copilot and Cursor (Nov 2026) — Aff Intel</title>
+  <meta name="description" content="Google made Gemini 4 Carbon available on Nov 10, 2026. In Google's apps it's Ultra-only ($99.99 or $199.99); on the paid Gemini API it's $2/$10 per million tokens through Nov 30, then $4/$20. How it compares on price and cost per task with Claude Fable 5.2 ($8/$40) and Opus 5.5 ($4/$20), plus GitHub Copilot and Cursor access." />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <a class="brand" href="../">Aff <span>Intel</span></a>
+      <nav>
+        <a href="../">Reviews</a>
+        <a href="../affiliates.md">Affiliates</a>
+        <a href="../DISCLOSURE.md">Disclosure</a>
+      </nav>
+    </header>
+    <aside class="disclosure" role="note">
+      <strong>Affiliate disclosure:</strong> We may earn a commission if you buy through links on this site, at no extra cost to you.
+      See the full <a href="../DISCLOSURE.md">FTC disclosure</a>.
+    </aside>
+    <article class="post">
+<p class="meta">Comparison · Nov 11, 2026 · Gemini 4 Carbon · Gemini 4 Argon · Google AI Pro / Ultra · Gemini API · Antigravity /swarm · GitHub Copilot · Cursor · Claude Fable 5.2 · Claude Opus 5.5</p>
+<h1>Gemini 4 Carbon is out: Google AI Ultra or the $2/$10 API (until Nov 30), and is it a better buy than Claude Fable 5.2 or Opus 5.5? (Nov 2026)</h1>
+<p>On <strong>Nov 10, 2026</strong>, Google made <strong>Gemini 4 Carbon</strong> available to everyone who pays, two weeks after giving it to a small group of cyber defenders. Google calls it its strongest model, for long, multi-step coding, research and agent work. Argon stays as the everyday model. It landed one day after Anthropic's Claude Fable 5.2, so the question on X is the same one we answered for Fable: <strong>which plan gets you Carbon, what it costs on the API before the price doubles on Dec 1, and whether it beats Claude for the money</strong>. We read Google's launch blog, the Gemini API pricing and "what's new" docs, the Antigravity blog, 9to5Google, GitHub's changelog, Cursor's model docs and Artificial Analysis on the morning of Nov 11.</p>
+
+<h2>Quick verdict</h2>
+<div class="verdict"><strong>You're on Google AI Pro ($19.99):</strong> you don't get Carbon. You keep Gemini 4 Argon, which Google says is still "the ideal choice for the majority of software engineering and knowledge work." Don't upgrade just for Carbon until you've hit Argon's ceiling.
+<strong>You're on Google AI Ultra ($99.99 5x or $199.99 20x):</strong> Carbon is rolling out to you in the Gemini app ("Most complex work" in the picker), AI Mode in Search, Antigravity and AI Studio. Google hasn't published Carbon message limits, and some Ultra 5x users on X say the app limits run out fast.
+<strong>You build on the API:</strong> <code>gemini-4-carbon</code> costs <strong>$2 in / $10 out</strong> per million tokens <strong>through Nov 30</strong>, then <strong>$4 / $20</strong>. Paid tier only, no free tier. Thinking tokens bill as output.
+<strong>You're choosing between Carbon and Claude:</strong> at list price, Carbon is a quarter of Fable 5.2's price ($8/$40) until Nov 30 and half of it after. On Artificial Analysis's index it costs about $7.76 per task against $26.54 for Fable 5.2, but Fable still scores higher (65 vs 60). After Dec 1, Carbon costs the same per token as Opus 5.5.
+<strong>You live in GitHub Copilot or Cursor:</strong> Carbon is in Copilot Pro+, Max, Business and Enterprise (not Free or Pro) and in Cursor as a third-party model. Both bill it at Google's per-token rates, not from included usage.</div>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:gemini-spark" rel="sponsored noopener">Google AI Pro / Ultra</a>
+  <a class="btn primary" href="#AFFILIATE:github-copilot" rel="sponsored noopener">GitHub Copilot</a>
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Max / Ultra</a>
+</div>
+
+<h2>What Google shipped on Nov 10</h2>
+<ul class="clean">
+  <li><strong>Who it's for:</strong> Google says Carbon is for "tasks that test the limits of a model's intelligence," like complex multi-step coding and debugging and open-ended research. It uses <strong>more tokens than Argon</strong> to explore, reason and verify. Argon stays the default pick for most work</li>
+  <li><strong>Specs:</strong> 1M-token context, long output up to 1M tokens, thinking levels <code>low</code>, <code>medium</code> (default) and <code>high</code> at the same per-token price. Google recommends <code>max_output_tokens</code> of at least 32,768 and client timeouts of at least 15 minutes</li>
+  <li><strong>API gotchas:</strong> explicit context caching isn't supported (implicit caching only, 95% off cached input on prompts of 4,096+ tokens). <code>temperature</code>, <code>top_p</code> and <code>top_k</code> are ignored. Every token is billed, including thinking tokens and grounding tool instructions</li>
+  <li><strong>/swarm in Antigravity (preview):</strong> one prompt becomes a team of agents: a coordinator, parallel workers in separate git worktrees, and verifiers that run tests and challenge diffs. Rolling out in the Antigravity app and CLI for Ultra subscribers</li>
+  <li><strong>Gemini app:</strong> 9to5Google reports the picker now shows 4 Argon ("Code &amp; analysis") and 4 Carbon ("Most complex work"), and <strong>Gemini 3.1 Pro has been removed</strong></li>
+  <li><strong>Free for some scientists:</strong> researchers can apply for six months of free access to Argon and Carbon on Antigravity's highest usage tier, subject to eligibility and capacity</li>
+  <li><strong>Read the cyber numbers carefully:</strong> Google's top security benchmark results are for <em>Carbon for cyber</em> through its Fairwind Program, not the public model</li>
+</ul>
+
+<h2>Where you can use Carbon, and what it costs</h2>
+<table>
+  <thead><tr><th>Where</th><th>Who gets Carbon</th><th>How it's billed</th></tr></thead>
+  <tbody>
+    <tr><td>Gemini app, AI Mode in Search</td><td><strong>Google AI Ultra only</strong> ($99.99/month 5x, $199.99/month 20x)</td><td>Included in the plan; Google hasn't published Carbon-specific limits</td></tr>
+    <tr><td>Google AI Pro ($19.99)</td><td>Not included (Argon only)</td><td></td></tr>
+    <tr><td>Antigravity (app, CLI, IDE extensions)</td><td>Google AI Ultra; enterprises via Gemini for business</td><td>Plan limits; /swarm in preview</td></tr>
+    <tr><td>Gemini API (AI Studio, Android Studio)</td><td>Paid tier only (not the Free tier)</td><td>$2 / $10 per M tokens through Nov 30, then $4 / $20</td></tr>
+    <tr><td>GitHub Copilot</td><td>Pro+, Max, Business, Enterprise (gradual rollout)</td><td>Provider list price under usage-based billing</td></tr>
+    <tr><td>Cursor</td><td>Third-party model, not part of included plan usage</td><td>Google's rates (prepaid credit, or the Other Models pool on legacy plans); from Dec 1: $4 in, $0.20 cache read, $20 out</td></tr>
+  </tbody>
+</table>
+<p class="meta">Ultra prices from Google's plans as reported by Dataconomy and our Oct 14 Argon post. Copilot from GitHub's Nov 10 changelog and its supported-models table. Cursor from its Gemini 4 Carbon model doc. All read Nov 11, 2026.</p>
+
+<h2>API prices: Carbon vs Argon vs Claude Fable 5.2 vs Opus 5.5</h2>
+<table>
+  <thead><tr><th>Model (per million tokens)</th><th>Input</th><th>Output</th><th>Cached input</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Gemini 4 Carbon, through Nov 30</strong></td><td>$2</td><td>$10</td><td>$0.10</td><td>Introductory price; output includes thinking tokens</td></tr>
+    <tr><td><strong>Gemini 4 Carbon, from Dec 1</strong></td><td>$4</td><td>$20</td><td>$0.20</td><td>Same as Argon's post-intro price</td></tr>
+    <tr><td>Gemini 4 Argon</td><td>$2 → $4</td><td>$10 → $20</td><td>$0.10 → $0.20</td><td>Same intro price and same Nov 30 end date</td></tr>
+    <tr><td>Claude Fable 5.2</td><td>$8</td><td>$40</td><td>$0.20</td><td>Batch $4/$20</td></tr>
+    <tr><td>Claude Opus 5.5</td><td>$4</td><td>$20</td><td>$0.20</td><td>Anthropic's pick for everyday coding</td></tr>
+  </tbody>
+</table>
+<p>Per-token price isn't per-job price. Carbon spends more tokens than Argon by design. Artificial Analysis, which uses Google's standard $4/$20 price in its charts, has these numbers for its Intelligence Index (read Nov 11):</p>
+<table>
+  <thead><tr><th>Model (Artificial Analysis setting)</th><th>Intelligence Index</th><th>Cost per task</th><th>Output tokens per task</th><th>Time per task</th></tr></thead>
+  <tbody>
+    <tr><td>Claude Fable 5.2 (Max)</td><td>65</td><td>$26.54</td><td>274k</td><td>45.2 min</td></tr>
+    <tr><td><strong>Gemini 4 Carbon (High)</strong></td><td><strong>60</strong></td><td><strong>$7.76</strong></td><td>123k</td><td>25.6 min</td></tr>
+    <tr><td>GPT-6 Astra (Max)</td><td>57</td><td>$6.24</td><td>52k</td><td>22.9 min</td></tr>
+  </tbody>
+</table>
+<p>Artificial Analysis's Carbon write-up also puts Claude Opus 5.5 (max) at <strong>$10.04 per task</strong>, about 23% more than Carbon, and has Carbon second only to Opus 5.5 on its Coding Agent Index. Its launch article scored Carbon 59; the live model page showed 60 when we checked. During the intro period, Carbon's real API cost is roughly half of these figures.</p>
+
+<h2>Which to pick</h2>
+<ul class="clean">
+  <li><strong>Solo developer on the API:</strong> try Carbon on your hardest jobs <strong>before Nov 30</strong>, while it's $2/$10. Cost out real tasks, then re-run the numbers at $4/$20 before you switch your default</li>
+  <li><strong>Google AI Pro user who's happy with Argon:</strong> stay put. Upgrade to Ultra only if you need Carbon or /swarm every week</li>
+  <li><strong>Claude Max/Ultra user:</strong> no reason to cancel. Fable 5.2 still leads Artificial Analysis's index, and it's included up to 50% of your weekly limit. Carbon via the API is a cheap second opinion for long agent runs</li>
+  <li><strong>Copilot Pro user:</strong> Carbon and Fable 5.2 both need Pro+ or higher. Pro+ is the minimum tier for either</li>
+  <li><strong>Security teams:</strong> the headline cyber scores come from Fairwind's Carbon for cyber. Apply there rather than judging the public model on those numbers</li>
+</ul>
+<p>Related: <a href="gemini-4-argon-google-ai-pro-vs-ultra-vs-cursor-copilot-claude-2026.html">Gemini 4 Argon: AI Pro vs Ultra vs Cursor/Copilot</a> · <a href="claude-fable-5-2-pro-vs-max-ultra-50-percent-weekly-vs-opus-5-5-vs-muse-ember-api-pricing-2026.html">Claude Fable 5.2 on Pro vs Max vs Ultra</a> · <a href="google-cloud-spend-caps-gemini-api-vs-deepseek-search-fetch-billing-cap-your-ai-api-bill-2026.html">Google Cloud spend caps for the Gemini API</a></p>
+
+<h2>Affiliate-ready picks (what we can monetize today)</h2>
+<p>Readers who want Carbon in an app buy <strong>Google AI Ultra</strong>; developers in an editor buy <strong>Copilot Pro+</strong> or Cursor; Claude-first readers stay on <strong>Max or Ultra</strong>. Live URLs go through <code>affiliates.md</code> placeholders. Waitlist: <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a>.</p>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:gemini-spark" rel="sponsored noopener">Google AI Ultra →</a>
+  <a class="btn primary" href="#AFFILIATE:github-copilot" rel="sponsored noopener">GitHub Copilot Pro+ →</a>
+  <a class="btn primary" href="#AFFILIATE:cursor" rel="sponsored noopener">Cursor →</a>
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Max / Ultra →</a>
+</div>
+
+<h2>Want a heads-up before intro prices end?</h2>
+<p>Carbon and Argon both double on Dec 1. Join the waitlist (no checkout) for price-change drops: email <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a>.</p>
+
+<p class="meta">Sources: <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/">Google, Gemini 4 Carbon is now available (Nov 10)</a>; <a href="https://blog.google/innovation-and-ai/technology/developers-tools/gemini-4-carbon-developers/">Google, Gemini 4 Carbon for developers</a>; <a href="https://aistudio.google.com/docs/whats-new-gemini-4-carbon">Gemini API, What's new in Gemini 4 Carbon</a>; <a href="https://aistudio.google.com/docs/pricing">Gemini API pricing</a>; <a href="https://antigravity.google/blog/gemini-4-carbon-in-google-antigravity/">Antigravity blog, Gemini 4 Carbon and /swarm</a>; <a href="https://9to5google.com/2026/11/10/gemini-app-4-carbon/">9to5Google (Nov 10)</a>; <a href="https://dataconomy.com/2026/11/11/google-opens-gemini-4-carbon-to-the-public-with-lower-api/">Dataconomy (Nov 11)</a>; <a href="https://github.blog/changelog/2026-11-10-gemini-4-carbon-in-github-copilot/">GitHub Changelog, Gemini 4 Carbon in Copilot</a>; <a href="https://cursor.com/docs/models/gemini-4-carbon">Cursor docs, Gemini 4 Carbon</a>; <a href="https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1">Artificial Analysis, Carbon write-up</a>; <a href="https://artificialanalysis.ai/models/comparisons">Artificial Analysis comparison tool</a>; <a href="https://platform.claude.com/docs/en/models/fable-5-2/overview">Claude docs, Fable 5.2</a>; <a href="https://x.com/NewsFromGoogle/status/2120187863157404130">@NewsFromGoogle on X</a>; user limit reports on X (e.g. <a href="https://x.com/tinkerersanky/status/2120254263435919805">@tinkerersanky</a>) are anecdotal. Pages read Nov 11, 2026 (~4 AM ET). No prices, limits or benchmark numbers were invented for this post.</p>
+    </article>
+    <footer class="site">
+      <p><a href="../">← All reviews</a> · <a href="../DISCLOSURE.md">Affiliate Disclosure</a> · Waitlist: <a href="mailto:toolsthathelp@agentmail.to">toolsthathelp@agentmail.to</a></p>
+    </footer>
+  </div>
+</body>
+</html>
