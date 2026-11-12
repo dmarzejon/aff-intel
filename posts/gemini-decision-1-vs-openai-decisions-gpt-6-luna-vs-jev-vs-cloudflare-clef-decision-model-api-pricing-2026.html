@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gemini Decision 1 vs OpenAI Decisions API (GPT-6 Luna) vs Jev vs Cloudflare Clef: Decision Model API Pricing, Limits and Which to Use (Nov 2026) — Aff Intel</title>
+  <meta name="description" content="Google launched the Gemini Decisions API on Nov 11, 2026: gemini-decision-1 scores up to 1,000 yes/no, choice and rubric questions per request across text, images, audio, video and PDFs for $0.10 per million input tokens, with no output billing. How it compares with OpenAI's Decisions API on gpt-6-luna ($0.10, cached $0.01), TypeSafe Jev ($0.042) and Cloudflare Clef ($0.24) on price, inputs, question limits, caching and free tiers." />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <a class="brand" href="../">Aff <span>Intel</span></a>
+      <nav>
+        <a href="../">Reviews</a>
+        <a href="../affiliates.md">Affiliates</a>
+        <a href="../DISCLOSURE.md">Disclosure</a>
+      </nav>
+    </header>
+    <aside class="disclosure" role="note">
+      <strong>Affiliate disclosure:</strong> We may earn a commission if you buy through links on this site, at no extra cost to you.
+      See the full <a href="../DISCLOSURE.md">FTC disclosure</a>.
+    </aside>
+    <article class="post">
+<p class="meta">Comparison · Nov 12, 2026 · Gemini Decisions API · Gemini Decision 1 · OpenAI Decisions API · GPT-6 Luna · TypeSafe Jev · Cloudflare Clef · OpenRouter · Classification / routing</p>
+<h1>Gemini Decision 1 vs OpenAI's Decisions API (GPT-6 Luna) vs Jev vs Cloudflare Clef: which decision-model API to use for routing and classification (Nov 2026)</h1>
+<p>On <strong>Nov 11, 2026</strong>, Google launched the <strong>Gemini Decisions API</strong> and a new model, <strong>Gemini Decision 1</strong> (<code>gemini-decision-1</code>). It doesn't write text. You send one input and a list of questions, and it returns a probability for each answer: yes/no, pick-one-of-N, or a score on a rubric. That makes Google the latest company with a "decision model", after TypeSafe's <strong>Jev</strong>, OpenAI's <strong>Decisions API on GPT-6 Luna</strong> and Cloudflare's <strong>Clef</strong>. Google AI Studio's launch post was one of the most-shared developer posts on X yesterday (about 36k views and 430 likes by early Nov 12). The question for builders: <strong>which one is cheapest for your routing, moderation or triage calls, and what does each one accept?</strong> We read Google's launch blog, the Gemini Decisions API docs and pricing page, OpenAI's Decisions guide and GA announcement, TypeSafe's model docs, Cloudflare's Clef docs, OpenRouter and Simon Willison's hands-on notes on the morning of Nov 12.</p>
+
+<h2>Quick verdict</h2>
+<div class="verdict"><strong>You need audio, video or PDFs:</strong> use <strong>Gemini Decision 1</strong>. It's the only one of the four that reads all five input types (text, images, audio, video, PDFs) in one call, and it doesn't charge separately for transcription or OCR. $0.10 per million input tokens, nothing for output, and there's a free tier in AI Studio for prototyping.
+<strong>You send the same long prompt prefix on every call:</strong> look at <strong>OpenAI's Decisions API</strong>. Same $0.10 list price, but cached input is <strong>$0.01</strong> per million. Gemini's Decisions API has no context caching, so a repeated prefix is billed in full each time.
+<strong>Your inputs are text (or text plus images) and you want the lowest bill:</strong> <strong>Jev</strong> is <strong>$0.042</strong> per million input tokens, under half the price of Google or OpenAI. Its default context is smaller (64k per request).
+<strong>You already run on Cloudflare Workers:</strong> <strong>Clef</strong> runs inside Workers AI with zero data retention, but at <strong>$0.24</strong> per million input tokens it's the priciest of the four, and it takes at most 64 questions per request.
+<strong>You need text out, extracted fields or multi-step reasoning:</strong> none of these. Google's own docs say to use a normal generative call with structured output for that.</div>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:openrouter" rel="sponsored noopener">OpenRouter (GPT-6 Luna Decisions)</a>
+  <a class="btn primary" href="#AFFILIATE:cursor" rel="sponsored noopener">Cursor</a>
+  <a class="btn primary" href="#AFFILIATE:github-copilot" rel="sponsored noopener">GitHub Copilot</a>
+</div>
+
+<h2>What Google shipped on Nov 11</h2>
+<ul class="clean">
+  <li><strong>Three question types:</strong> <code>noul</code> (yes/no probability, always between 0.01 and 0.99), <code>choice</code> (2 to 255 options, with a probability for each) and <code>score</code> (an ordered rubric, returning a weighted score). Every answer also comes with a 0–1 confidence value, so your code can send unclear cases to a person or a bigger model</li>
+  <li><strong>Up to 1,000 questions per request</strong> against one shared input, within a 262,144-token context window. Questions run in parallel and can't see each other</li>
+  <li><strong>Speed:</strong> Google says 150–250 ms end to end, staying nearly flat from 1 to 100 questions (measured on inputs up to 16K tokens)</li>
+  <li><strong>Billing:</strong> $0.10 per million input tokens on the paid tier, $0 for output. The shared input is billed once per request, however many questions you ask, and each question adds only its own instruction tokens</li>
+  <li><strong>Gaps:</strong> no context caching, no Batch API, no Flex or Priority tiers. No YouTube or <code>gs://</code> URIs. Question text must be plain text. It's only on the Gemini Developer API (<code>v1beta</code>, SDK 3.2+) for now; Google says Gemini in Google Cloud support is "coming soon"</li>
+  <li><strong>Google's cost claim:</strong> across its shared benchmark suite, Google says Decision 1 is "nearly 5x cheaper" than running the same checks through Gemini 3.5 Flash-Lite. Google also says it leads its benchmark suite with the lowest calibration error. Both are Google's own numbers</li>
+  <li><strong>Integrations rolling out:</strong> OpenRouter, LangChain, Vercel, LiteLLM, Pydantic AI, Pipecat, LiveKit and OpenCode</li>
+</ul>
+
+<h2>The four decision-model APIs side by side</h2>
+<table>
+  <thead><tr><th></th><th>Gemini Decision 1</th><th>OpenAI Decisions (gpt-6-luna)</th><th>TypeSafe Jev 1.14</th><th>Cloudflare Clef</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Input price / M tokens</strong></td><td>$0.10</td><td>$0.10 uncached, <strong>$0.01 cached</strong> (cache writes charged extra)</td><td><strong>$0.042</strong></td><td>$0.24</td></tr>
+    <tr><td><strong>Output price</strong></td><td>$0</td><td>$0</td><td>$0</td><td>$0</td></tr>
+    <tr><td><strong>Inputs</strong></td><td>Text, images, audio, video, PDFs</td><td>Text, images, JSON</td><td>Text, JSON, PNG/JPEG images (no audio/video yet)</td><td>Text, JSON, images, video</td></tr>
+    <tr><td><strong>Questions per request</strong></td><td>1 to 1,000</td><td>Up to 400</td><td>No fixed cap (must fit context)</td><td>1 to 64</td></tr>
+    <tr><td><strong>Context</strong></td><td>262,144 tokens</td><td>~1.05M (per OpenRouter); long-context pricing multipliers apply</td><td>64k per request / 32k per question; 262k with a long-context header</td><td>65,536 tokens</td></tr>
+    <tr><td><strong>Caching</strong></td><td>None</td><td>Yes (prompt caching)</td><td>Not listed</td><td>Not listed</td></tr>
+    <tr><td><strong>Free option</strong></td><td>Free tier in AI Studio (data used to improve Google's products)</td><td>None listed</td><td>None listed</td><td>Workers AI daily free allocation (10,000 Neurons/day, shared across models)</td></tr>
+    <tr><td><strong>Data controls</strong></td><td>Paid tier not used for training</td><td>ZDR and HIPAA for eligible customers; US/EU regional processing</td><td>Not trained on customer data; ZDR for enterprise</td><td>Zero data retention</td></tr>
+    <tr><td><strong>Also via</strong></td><td>OpenRouter, LiteLLM and others (rolling out)</td><td>OpenRouter, Azure (BYOK)</td><td>TypeSafe API and SDKs</td><td>Workers AI binding or REST</td></tr>
+  </tbody>
+</table>
+<p class="meta">From Google's Gemini API pricing page and Decisions API docs, OpenAI's Decisions guide and Oct GA forum post, TypeSafe's Models doc, Cloudflare's Clef model page and Workers AI pricing, and OpenRouter's GPT-6 Luna Decisions page. All read Nov 12, 2026. OpenRouter's page lists 200 questions per request on its own endpoint; OpenAI's GA notes say 400 direct.</p>
+
+<h2>What a real workload costs</h2>
+<p>Every one of these bills only on input, so the math is simple: (tokens per call) × (calls) × (price per million). Take a support-ticket router where each call is about <strong>1,000 input tokens</strong> (ticket plus a few questions) and you make <strong>1 million calls a month</strong>, or 1 billion input tokens:</p>
+<table>
+  <thead><tr><th>API</th><th>1B input tokens / month</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>TypeSafe Jev</td><td><strong>$42</strong></td><td>Text and images only</td></tr>
+    <tr><td>Gemini Decision 1</td><td>$100</td><td>No caching, so no discount for a repeated prefix</td></tr>
+    <tr><td>OpenAI Decisions (gpt-6-luna)</td><td>$100 uncached; less if most of each call is a cached prefix</td><td>Cached input $0.01/M, plus cache-write charges</td></tr>
+    <tr><td>Cloudflare Clef</td><td>$240</td><td>Before any Workers AI free allocation</td></tr>
+  </tbody>
+</table>
+<p>For comparison, the same 1B tokens sent to OpenAI's <code>gpt-6-luna</code> as a normal text call is $100 in plus $0.50 per million for any output tokens, and you then have to parse the reply. The savings from a decision model come from no output tokens, many questions per call, and not having to parse text. The input price is the same.</p>
+
+<h2>Which to pick</h2>
+<ul class="clean">
+  <li><strong>Voice, call-center or video apps:</strong> Gemini Decision 1. You can pair a call recording with account data, or a scanned PDF claim with damage photos, in one request. Simon Willison's video test returned sensible probabilities (0.92 "robot", 0.05 "dragon"), though Gemini gives less extreme numbers than Jev or OpenAI, which both returned 1.0 or 0.0 on his yes/no tests</li>
+  <li><strong>Agent tool selection or routing with a big, fixed system prompt:</strong> OpenAI, because cached input is a tenth of the list price. OpenAI's API also plugs straight into GPT-Live for voice apps</li>
+  <li><strong>High-volume text classification on a budget:</strong> Jev. Read TypeSafe's own "jaggedness" notes first: it struggles with arithmetic, counting, dates and long, noisy inputs</li>
+  <li><strong>Moderation at the edge on Cloudflare:</strong> Clef keeps data in your Cloudflare stack, but price it against Jev or Gemini before you go to production</li>
+  <li><strong>Everyone:</strong> threshold on the confidence value, send low-confidence cases to a bigger model or a person, and test latency with your real input sizes. All speed claims here come from the vendors</li>
+</ul>
+<p>Related: <a href="gemini-4-carbon-ai-ultra-vs-api-intro-price-nov-30-vs-claude-fable-5-2-opus-5-5-copilot-cursor-2026.html">Gemini 4 Carbon vs Claude Fable 5.2 and Opus 5.5</a> · <a href="google-cloud-spend-caps-gemini-api-vs-deepseek-search-fetch-billing-cap-your-ai-api-bill-2026.html">Google Cloud spend caps for the Gemini API</a> · <a href="copilot-opus-55-gpt6-sol-luna-vs-cursor-2026.html">Copilot: Opus 5.5, GPT-6 Sol and Luna vs Cursor</a></p>
+
+<h2>Affiliate-ready picks (what we can monetize today)</h2>
+<p>Decision APIs are pay-as-you-go developer products with no consumer plan to sell. Readers who build routers and agents usually do it in an AI editor, and OpenRouter gives you one key for GPT-6 Luna Decisions (with Gemini Decision 1 rolling out there). Live URLs go through <code>affiliates.md</code> placeholders. Waitlist: <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a>.</p>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:openrouter" rel="sponsored noopener">OpenRouter →</a>
+  <a class="btn primary" href="#AFFILIATE:cursor" rel="sponsored noopener">Cursor →</a>
+  <a class="btn primary" href="#AFFILIATE:github-copilot" rel="sponsored noopener">GitHub Copilot →</a>
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Max / Ultra →</a>
+</div>
+
+<h2>Want a cheat sheet for decision-model prompts?</h2>
+<p>We're putting together a template pack of routing, moderation and triage question sets that work across Gemini, OpenAI, Jev and Clef. Join the waitlist (no checkout): email <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist%20-%20decision%20models">toolsthathelp@agentmail.to</a>.</p>
+
+<p class="meta">Sources: <a href="https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/">Google, Gemini Decisions API (Nov 11, 2026)</a>; <a href="https://aistudio.google.com/docs/decisions-api">Gemini API docs, Decisions API</a>; <a href="https://aistudio.google.com/docs/pricing">Gemini Developer API pricing</a>; <a href="https://developers.openai.com/api/docs/guides/decisions">OpenAI, Decisions guide</a>; <a href="https://community.openai.com/t/decisions-api-is-now-generally-available-with-new-updates/1408934">OpenAI Developer Community, Decisions API GA</a>; <a href="https://developers.openai.com/api/docs/pricing">OpenAI API pricing</a>; <a href="https://openrouter.ai/openai/gpt-6-luna-decisions">OpenRouter, GPT-6 Luna Decisions</a>; <a href="https://docs.typesafe.ai/models">TypeSafe docs, Models (Jev 1.14)</a>; <a href="https://systemonemodels.org/guides/jev-speed-and-pricing/">System One Models, Jev speed and pricing</a>; <a href="https://developers.cloudflare.com/workers-ai/models/clef/">Cloudflare Workers AI, Clef</a>; <a href="https://developers.cloudflare.com/workers-ai/platform/pricing/">Workers AI pricing</a>; <a href="https://simonwillison.net/2026/Nov/11/gemini-decisions-api/">Simon Willison, Gemini Decisions API (Nov 11)</a>; <a href="https://x.com/GoogleAIStudio/status/2120589299037147177">@GoogleAIStudio on X</a>. Pages read Nov 12, 2026 (~4 AM ET). Latency and accuracy figures are vendor claims. No prices, limits or benchmark numbers were invented for this post.</p>
+    </article>
+    <footer class="site">
+      <p><a href="../">← All reviews</a> · <a href="../DISCLOSURE.md">Affiliate Disclosure</a> · Waitlist: <a href="mailto:toolsthathelp@agentmail.to">toolsthathelp@agentmail.to</a></p>
+    </footer>
+  </div>
+</body>
+</html>

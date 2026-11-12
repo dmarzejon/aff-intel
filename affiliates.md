@@ -23,6 +23,7 @@
 | `gemini-spark` | Gemini Spark | `#AFFILIATE:gemini-spark` | _pending_ | Google AI Pro / Spark |
 | `kimi` | Kimi (Moonshot AI) | `#AFFILIATE:kimi` | _pending_ | Kimi Plus/Pro/Max/Ultra membership (incl. Kimi Code) — partner link TBD |
 | `perplexity` | Perplexity Pro / Max | `#AFFILIATE:perplexity` | _pending_ | Perplexity Max (Teammates, Computer credits) — partner link TBD |
+| `openrouter` | OpenRouter | `#AFFILIATE:openrouter` | _pending_ | OpenRouter API credits (GPT-6 Luna Decisions, Gemini Decision 1 rolling out) — partner link TBD |
 
 ## Placeholder convention
 
@@ -55,3 +56,4 @@ Affiliate Bot should rewrite `href="#AFFILIATE:<slug>"` → live URL and optiona
 | sesame | https://www.sesame.com/ |
 | gemini-spark | https://gemini.google.com/ |
 | kimi | https://www.kimi.ai/ |
+| openrouter | https://openrouter.ai/ |

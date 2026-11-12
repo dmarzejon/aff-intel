@@ -6,7 +6,7 @@
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/perplexity-teammates-max-200-vs-claude-duet-ultra-vs-chatgpt-dots-pro-200-always-on-agents-2026.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-12</lastmod>
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/claude-personal-finance-plaid-vs-chatgpt-finances-pro-max-ultra-privacy-2026.html</loc>
@@ -251,6 +251,12 @@
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/gemini-4-carbon-ai-ultra-vs-api-intro-price-nov-30-vs-claude-fable-5-2-opus-5-5-copilot-cursor-2026.html</loc>
     <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://dmarzejon.github.io/aff-intel/posts/gemini-decision-1-vs-openai-decisions-gpt-6-luna-vs-jev-vs-cloudflare-clef-decision-model-api-pricing-2026.html</loc>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
