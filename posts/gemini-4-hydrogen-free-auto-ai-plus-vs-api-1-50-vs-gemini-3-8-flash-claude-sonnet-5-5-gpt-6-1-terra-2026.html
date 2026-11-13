@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gemini 4 Hydrogen: Free in the Gemini App (Auto Only), AI Plus, or the $1.50/$7.50 API? vs Gemini 3.8 Flash, Claude Sonnet 5.5 and GPT-6.1 Terra (Nov 2026) — Aff Intel</title>
+  <meta name="description" content="Google released Gemini 4 Hydrogen on Nov 12, 2026, replacing Gemini 3.8 Flash. Free Gemini users only get it through Auto, AI Plus ($4.99) now leads with it, and the API costs $1.50/$7.50 per million tokens flat across 1M context, twice 3.8 Flash's price through Dec 31. How it compares with Claude Sonnet 5.5 ($2/$10) and GPT-6.1 Terra ($1/$5) on price, cost per task, Cursor and Copilot access." />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <a class="brand" href="../">Aff <span>Intel</span></a>
+      <nav>
+        <a href="../">Reviews</a>
+        <a href="../affiliates.md">Affiliates</a>
+        <a href="../DISCLOSURE.md">Disclosure</a>
+      </nav>
+    </header>
+    <aside class="disclosure" role="note">
+      <strong>Affiliate disclosure:</strong> We may earn a commission if you buy through links on this site, at no extra cost to you.
+      See the full <a href="../DISCLOSURE.md">FTC disclosure</a>.
+    </aside>
+    <article class="post">
+<p class="meta">Comparison · Nov 13, 2026 · Gemini 4 Hydrogen · Gemini 3.8 Flash · Google AI Plus / Pro / Ultra · Gemini API · Antigravity Orchestrator · Cursor · GitHub Copilot · Claude Sonnet 5.5 · GPT-6.1 Terra · OpenRouter</p>
+<h1>Gemini 4 Hydrogen is out: free in the Gemini app (only through Auto), AI Plus, or the $1.50/$7.50 API, and is it a better buy than Claude Sonnet 5.5 or GPT-6.1 Terra? (Nov 2026)</h1>
+<p>On <strong>Nov 12, 2026</strong>, Google released <strong>Gemini 4 Hydrogen</strong> (<code>gemini-4-hydrogen</code>), the fast, cheaper model in the Gemini 4 family and the replacement for <strong>Gemini 3.8 Flash</strong>. It's Google's third new model in six weeks, after Argon and Carbon, and the first to drop the "Flash" name. Google AI Studio's launch post passed <strong>95,000 views and 3,100 likes</strong> on X in its first day, and Artificial Analysis's benchmark post passed <strong>280,000 views</strong>. The questions in the replies: <strong>can free users get it, what does it cost on the API now that it's no longer a "Flash" price, and does it beat Claude Sonnet 5.5 or OpenAI's GPT-6.1 Terra for the money?</strong> We read Google's launch blog, the Gemini API "what's new" and pricing pages, 9to5Google, Notebookcheck, Artificial Analysis, Cursor's and GitHub's model docs, OpenRouter, and Anthropic's and OpenAI's pricing pages on the morning of Nov 13.</p>
+
+<h2>Quick verdict</h2>
+<div class="verdict"><strong>You use free Gemini:</strong> you can't pick Hydrogen. Google says free users get it through <strong>Auto</strong> model selection "when it's the appropriate model for the prompt"; most prompts still go to Flash-Lite, and with Auto off every reply is Flash-Lite. Keep Auto on.
+<strong>You're on Google AI Plus ($4.99/month):</strong> Hydrogen is now the headline model on Google's plans page, with 2x the free tier's limits. Plus subscribers were told they lose the Pro models on <strong>Nov 13</strong> (today), so Hydrogen is what you get. AI Pro ($19.99) adds Argon and Hydrogen in Antigravity and Google Sheets.
+<strong>You build on the API:</strong> Hydrogen is <strong>$1.50 in / $7.50 out</strong> per million tokens, flat across the full 1M context, with a free tier. That's <strong>twice</strong> what Gemini 3.8 Flash costs until Dec 31 ($0.75/$3.75). From Jan 1, 2027, 3.8 Flash rises to the same $1.50/$7.50, so Hydrogen is the default for new work and 3.8 Flash only saves money for the next seven weeks.
+<strong>You're choosing between Hydrogen and Claude or OpenAI:</strong> per token, Hydrogen is 25% cheaper than <strong>Claude Sonnet 5.5</strong> ($2/$10) and 1.5x <strong>GPT-6.1 Terra</strong> ($1/$5). Artificial Analysis scores Hydrogen 54 at xhigh, one point under Sonnet 5.5 and GPT-6.1 Sol (55), at about a third of Sonnet's cost per task but about 2.5x Sol's.
+<strong>You code in Cursor or Copilot:</strong> Hydrogen is in <strong>Cursor</strong> as a third-party model billed at Google's rates, not from included usage. <strong>GitHub Copilot doesn't list it yet</strong> (3.8 Flash, Argon and Carbon only, as of this morning).</div>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:gemini-spark" rel="sponsored noopener">Google AI Plus / Pro</a>
+  <a class="btn primary" href="#AFFILIATE:cursor" rel="sponsored noopener">Cursor</a>
+  <a class="btn primary" href="#AFFILIATE:openrouter" rel="sponsored noopener">OpenRouter</a>
+</div>
+
+<h2>What Google shipped on Nov 12</h2>
+<ul class="clean">
+  <li><strong>Who it's for:</strong> Google calls Hydrogen its model for "rapid execution across diverse agentic workflows": everyday coding, tool-using agents, web apps and document work. Carbon and Argon stay the picks for "deep, long-horizon reasoning"</li>
+  <li><strong>Specs:</strong> 1,048,576-token window shared by input, thinking and output; up to 65,536 output tokens per request, and up to 1M with background execution. Four thinking levels: <code>low</code>, <code>medium</code>, <code>high</code> (default) and a new <code>xhigh</code>. Carbon and Argon default to <code>medium</code> and stop at <code>high</code></li>
+  <li><strong>Google's claims vs 3.8 Flash:</strong> finishes tasks 2.5x faster at the default setting, more than triples Terminal-Bench 4.1 (57% vs 18.2%), and cuts fabricated claims by more than 5x. Partners saw it run 2x to 2.8x faster with 12% to 23% fewer tokens. These are Google's numbers</li>
+  <li><strong>Antigravity Orchestrator:</strong> a new mode that switches between Carbon and Hydrogen in one session. Google says it reached near-Carbon success on Terminal-Bench 4.0 while using <strong>24% less quota</strong> and finishing 19% faster on average</li>
+  <li><strong>Search:</strong> 9to5Google reports Hydrogen is now the default model for AI Mode and handles "your hardest questions" in AI Overviews, for all users</li>
+  <li><strong>API gotchas when migrating from 3.8 Flash:</strong> no explicit context caching (implicit only, 95% off cached input on prompts of 4,096+ tokens); <code>temperature</code>, <code>top_p</code> and <code>top_k</code> are ignored; <code>minimal</code> thinking returns an error; every token is billed, including thinking tokens</li>
+</ul>
+
+<h2>Where you can use Hydrogen, and what it costs</h2>
+<table>
+  <thead><tr><th>Where</th><th>Who gets Hydrogen</th><th>How it's billed</th></tr></thead>
+  <tbody>
+    <tr><td>Gemini app, free</td><td>Only through Auto model selection, when Google routes a prompt to it</td><td>Free, standard limits. Flash-Lite is the only model you can pick</td></tr>
+    <tr><td>Gemini app, Google AI Plus</td><td>Yes, Hydrogen is the plan's headline model</td><td>$4.99/month, 2x free limits, 128k context. No Pro models from Nov 13</td></tr>
+    <tr><td>Gemini app, AI Pro / Ultra</td><td>Yes ("Everyday help" in the picker), plus Argon; Carbon on Ultra</td><td>$19.99 Pro; Ultra $99.99 (5x) or $199.99 (20x)</td></tr>
+    <tr><td>Google Search (AI Mode)</td><td>All users</td><td>Free</td></tr>
+    <tr><td>Antigravity</td><td>Google AI Pro and Ultra; business via Gemini for business</td><td>Plan limits; Orchestrator mixes Carbon and Hydrogen</td></tr>
+    <tr><td>Gemini in Google Sheets</td><td>Starting with AI Pro and Ultra; eligible business plans</td><td>Included in the plan</td></tr>
+    <tr><td>Gemini API (AI Studio)</td><td>Free tier and paid tier</td><td>Free tier rate-limited (Google may use free-tier data to improve its products); paid $1.50 / $7.50 per M</td></tr>
+    <tr><td>Google Cloud (Gemini Enterprise Agent Platform)</td><td>Global endpoint, US and EU multi-regions</td><td>Cloud billing</td></tr>
+    <tr><td>Cursor</td><td>Third-party model with all agent tools</td><td>Not part of included usage: prepaid credit, or the Other Models pool on legacy plans</td></tr>
+    <tr><td>GitHub Copilot</td><td>Not listed yet</td><td>n/a (Carbon arrived in Copilot the same day it launched, so watch the changelog)</td></tr>
+    <tr><td>OpenRouter</td><td><code>google/gemini-4-hydrogen</code> via Google Vertex and AI Studio</td><td>$1.50 / $7.50; EU in-region routing (Vertex) $1.65 / $8.25</td></tr>
+  </tbody>
+</table>
+<p class="meta">App plans from Google's launch blog, Notebookcheck (Nov 13) and Gemini Apps Help; Ultra prices from our Nov 11 Carbon post. Notebookcheck notes Google's plans page and its help page currently disagree on whether Plus still lists Pro. All read Nov 13, 2026.</p>
+
+<h2>API prices: Hydrogen vs 3.8 Flash vs Sonnet 5.5 vs GPT-6.1 Terra and Sol</h2>
+<table>
+  <thead><tr><th>Model (per million tokens)</th><th>Input</th><th>Output</th><th>Cached input</th><th>Batch in / out</th><th>Long prompts</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Gemini 4 Hydrogen</strong></td><td>$1.50</td><td>$7.50</td><td>$0.075 (implicit only)</td><td>$0.75 / $3.75</td><td>Same rate to 1M</td></tr>
+    <tr><td>Gemini 3.8 Flash, through Dec 31</td><td>$0.75</td><td>$3.75</td><td>$0.075</td><td>$0.375 / $1.875</td><td>1M in, 64K out</td></tr>
+    <tr><td>Gemini 3.8 Flash, from Jan 1, 2027</td><td>$1.50</td><td>$7.50</td><td>$0.15</td><td>$0.75 / $3.75</td><td>Same as Hydrogen</td></tr>
+    <tr><td>Claude Sonnet 5.5</td><td>$2</td><td>$10</td><td>$0.10</td><td>$1 / $5</td><td>Same rate to 1M</td></tr>
+    <tr><td>GPT-6.1 Terra</td><td>$1</td><td>$5</td><td>$0.05</td><td>$0.50 / $2.50</td><td>Over 272K: $2 / $7.50</td></tr>
+    <tr><td>GPT-6.1 Sol</td><td>$2</td><td>$10</td><td>$0.10</td><td>$1 / $5</td><td>Over 272K: $4 / $15</td></tr>
+  </tbody>
+</table>
+<p class="meta">From Google's Gemini API pricing page and Hydrogen "what's new" doc, Anthropic's pricing page and OpenAI's API pricing page, read Nov 13, 2026. Thinking/reasoning tokens bill as output on all of them. Claude and OpenAI also charge for cache writes; Google lists no cache-write fee for Hydrogen.</p>
+<p><strong>Long documents flip the order.</strong> Because OpenAI raises Terra's rates above 272K input tokens, one request with a <strong>600,000-token input and an 8,000-token answer</strong> costs about <strong>$0.96 on Hydrogen</strong>, $1.26 on Terra and $1.28 on Sonnet 5.5 (and $0.48 on 3.8 Flash until Dec 31). Under 272K, Terra is the cheapest of the three per token.</p>
+
+<h2>Per-token price isn't per-task price</h2>
+<p>Artificial Analysis (AA) runs every model through the same Intelligence Index tasks at list price. Its numbers, read Nov 13:</p>
+<table>
+  <thead><tr><th>Hydrogen thinking level</th><th>AA Intelligence Index</th><th>Cost per index task</th></tr></thead>
+  <tbody>
+    <tr><td><code>xhigh</code></td><td>54</td><td>$3.16</td></tr>
+    <tr><td><code>high</code> (default)</td><td>51</td><td>$1.87</td></tr>
+    <tr><td><code>medium</code></td><td>41</td><td>$0.80</td></tr>
+    <tr><td><code>low</code></td><td>27</td><td>$0.29</td></tr>
+  </tbody>
+</table>
+<ul class="clean">
+  <li><strong>Against Claude Sonnet 5.5 (55):</strong> AA says Hydrogen at xhigh is one point lower at about <strong>a third of Sonnet's cost per task</strong> (about 32%, per OfficeChai's write-up of AA's data)</li>
+  <li><strong>Against GPT-6.1 Sol (55):</strong> Hydrogen at xhigh costs about <strong>2.5x</strong> as much per task. Sol is the per-task value pick if you're OK on OpenAI</li>
+  <li><strong>Against GPT-6.1 Terra (51) and Gemini 4 Argon (50):</strong> Hydrogen at its default <code>high</code> ties Terra and edges Argon. OfficeChai reports AA puts it at about 19% of Argon's cost per task at <code>high</code></li>
+  <li><strong>Where it's weaker:</strong> terminal work. AA has Hydrogen at 54% on Terminal-Bench 4.0, against 64% for Sonnet 5.5 and 56% for Sol (all at max settings)</li>
+  <li><strong>xhigh is a tax:</strong> it nearly doubles output tokens for three points. Start on <code>high</code>, as both Google and Cursor recommend, and use xhigh only for hard debugging</li>
+</ul>
+
+<h2>Which to pick</h2>
+<ul class="clean">
+  <li><strong>Free Gemini user:</strong> keep Auto on and check which model answered (on gemini.google.com: the menu under a reply → Show thinking steps → scroll to the bottom). If you need Hydrogen every time, AI Plus at $4.99 is the cheapest way to pick it</li>
+  <li><strong>AI Plus user who lost Pro today:</strong> try Hydrogen for a week before you upgrade. Upgrade to AI Pro ($19.99) only if you need Argon, Antigravity or Sheets</li>
+  <li><strong>Developer on 3.8 Flash:</strong> stay on 3.8 Flash for cost-sensitive jobs until Dec 31 while it's half price, test Hydrogen on <code>high</code> now, and move before Jan 1, when the prices match</li>
+  <li><strong>Claude Sonnet 5.5 user:</strong> Hydrogen is a cheaper second model for long documents and parallel subagents, but Sonnet still leads on terminal and agent coding benchmarks</li>
+  <li><strong>OpenAI user:</strong> Terra is cheaper per token under 272K and Sol is cheaper per task. Hydrogen wins on very long prompts, where Terra's rates go up above 272K tokens</li>
+  <li><strong>Copilot user:</strong> wait for GitHub to add it, or use it now through Cursor or OpenRouter at Google's rates</li>
+</ul>
+<p>Related: <a href="gemini-4-carbon-ai-ultra-vs-api-intro-price-nov-30-vs-claude-fable-5-2-opus-5-5-copilot-cursor-2026.html">Gemini 4 Carbon: Ultra vs API vs Claude</a> · <a href="gemini-4-argon-google-ai-pro-vs-ultra-vs-cursor-copilot-claude-2026.html">Gemini 4 Argon: AI Pro vs Ultra</a> · <a href="gemini-free-tier-flash-lite-oct-9-vs-chatgpt-claude-2026.html">Gemini free tier goes Flash-Lite only</a> · <a href="gpt-6-1-terra-vs-gpt-6-1-sol-claude-sonnet-haiku-opus-5-5-kimi-api-pricing-chatgpt-plus-codex-2026.html">GPT-6.1 Terra vs Sol vs Claude Sonnet</a> · <a href="google-cloud-spend-caps-gemini-api-vs-deepseek-search-fetch-billing-cap-your-ai-api-bill-2026.html">Google Cloud spend caps for the Gemini API</a></p>
+
+<h2>Affiliate-ready picks (what we can monetize today)</h2>
+<p>Consumers who want Hydrogen every time buy Google AI Plus or Pro; developers in an editor use Cursor; anyone comparing Gemini, Claude and OpenAI on one key uses OpenRouter; Claude-first readers stay on Claude. Live URLs go through <code>affiliates.md</code> placeholders. Waitlist: <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a>.</p>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:gemini-spark" rel="sponsored noopener">Google AI Plus / Pro →</a>
+  <a class="btn primary" href="#AFFILIATE:cursor" rel="sponsored noopener">Cursor →</a>
+  <a class="btn primary" href="#AFFILIATE:openrouter" rel="sponsored noopener">OpenRouter →</a>
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro / Max →</a>
+</div>
+
+<h2>Want a heads-up before the next price change?</h2>
+<p>Carbon and Argon double on Dec 1 and 3.8 Flash doubles on Jan 1. Join the waitlist (no checkout) for price-change drops: email <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist%20-%20Gemini%20price%20changes">toolsthathelp@agentmail.to</a>.</p>
+
+<p class="meta">Sources: <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/">Google, Introducing Gemini 4 Hydrogen (Nov 12, 2026)</a>; <a href="https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-4-hydrogen/">Google, Gemini 4 Hydrogen for developers</a>; <a href="https://aistudio.google.com/docs/whats-new-gemini-4-hydrogen">Gemini API, What's new in Gemini 4 Hydrogen</a>; <a href="https://aistudio.google.com/docs/pricing">Gemini Developer API pricing</a>; <a href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/guides/gemini-4-hydrogen">Google Cloud, Developer's guide to Gemini 4 Hydrogen</a>; <a href="https://9to5google.com/2026/11/12/gemini-4-hydrogen-launch/">9to5Google (Nov 12)</a>; <a href="https://www.notebookcheck.net/Gemini-4-Hydrogen-What-free-users-and-Google-AI-Plus-get.1449493.0.html">Notebookcheck (Nov 13)</a>; <a href="https://support.google.com/gemini/answer/16275805?hl=en">Gemini Apps Help, limits &amp; feature availability</a>; <a href="https://artificialanalysis.ai/models/releases/gemini-4-hydrogen">Artificial Analysis, Gemini 4 Hydrogen</a>; <a href="https://officechai.com/ai/gemini-4-hydrogen-artificial-analysis-intelligence-index/">OfficeChai on AA's index (Nov 12)</a>; <a href="https://www.datastudios.org/post/gemini-4-hydrogen-vs-gpt-6-1-terra-claude-sonnet-5-5-api-prices-task-costs">DataStudios, Hydrogen vs Terra vs Sonnet 5.5</a>; <a href="https://cursor.com/docs/models/gemini-4-hydrogen">Cursor docs, Gemini 4 Hydrogen</a>; <a href="https://docs.github.com/en/copilot/reference/ai-models/supported-models">GitHub Docs, Copilot supported models</a>; <a href="https://openrouter.ai/google/gemini-4-hydrogen">OpenRouter, Gemini 4 Hydrogen</a>; <a href="https://platform.claude.com/docs/en/about-claude/pricing">Anthropic API pricing</a>; <a href="https://developers.openai.com/api/docs/pricing">OpenAI API pricing</a>; <a href="https://x.com/GoogleAIStudio/status/2120940825240797641">@GoogleAIStudio on X</a>; <a href="https://x.com/GeminiApp/status/2120941398971318410">@GeminiApp on X</a>; <a href="https://x.com/ArtificialAnlys/status/2120941511223185722">@ArtificialAnlys on X</a>. Pages read Nov 13, 2026 (~4 AM ET). Speed and benchmark claims from Google are vendor numbers. No prices, limits or benchmark numbers were invented for this post.</p>
+    </article>
+    <footer class="site">
+      <p><a href="../">← All reviews</a> · <a href="../DISCLOSURE.md">Affiliate Disclosure</a> · Waitlist: <a href="mailto:toolsthathelp@agentmail.to">toolsthathelp@agentmail.to</a></p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -78,7 +78,7 @@
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/gemini-4-argon-google-ai-pro-vs-ultra-vs-cursor-copilot-claude-2026.html</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/cursor-x-subscription-vs-cursor-pro-claude-code-copilot-2026.html</loc>
@@ -98,7 +98,7 @@
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/gemini-free-tier-flash-lite-oct-9-vs-chatgpt-claude-2026.html</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/jetbrains-air-ides-vs-cursor-copilot-claude-code-2026.html</loc>
@@ -256,7 +256,13 @@
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/gemini-decision-1-vs-openai-decisions-gpt-6-luna-vs-jev-vs-cloudflare-clef-decision-model-api-pricing-2026.html</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://dmarzejon.github.io/aff-intel/posts/gemini-4-hydrogen-free-auto-ai-plus-vs-api-1-50-vs-gemini-3-8-flash-claude-sonnet-5-5-gpt-6-1-terra-2026.html</loc>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
