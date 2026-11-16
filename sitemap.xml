@@ -6,11 +6,11 @@
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/perplexity-teammates-max-200-vs-claude-duet-ultra-vs-chatgpt-dots-pro-200-always-on-agents-2026.html</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-16</lastmod>
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/claude-personal-finance-plaid-vs-chatgpt-finances-pro-max-ultra-privacy-2026.html</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-16</lastmod>
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/kimi-k3-1-pro-open-weights-hugging-face-mxfp4-license-hardware-vs-api-claude-chatgpt-2026.html</loc>
@@ -262,7 +262,13 @@
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/gemini-4-hydrogen-free-auto-ai-plus-vs-api-1-50-vs-gemini-3-8-flash-claude-sonnet-5-5-gpt-6-1-terra-2026.html</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://dmarzejon.github.io/aff-intel/posts/chatgpt-wallet-pro-dots-vs-gemini-google-pay-checkout-google-wallet-vs-meta-muse-link-ai-agent-payments-2026.html</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
