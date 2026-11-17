@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Qwen4-Max Is Out: $1.50/$4.50 API, Token Plan, No Open Weights, and Is It a Better Buy Than Kimi K3.1 Pro, Gemini 4 Hydrogen, Claude Sonnet 5.5 or Tencent Hy4 flash? (Nov 2026) — Aff Intel</title>
+  <meta name="description" content="Alibaba released Qwen4-Max on Nov 16, 2026: API $1.50/$4.50 per million tokens ($0.075 cached), 1M context, closed weights, on QwenCloud, Token Plan and OpenRouter. Artificial Analysis scores it 43 at $3.27 per task, behind Kimi K3.1 Pro (46) and Gemini 4 Hydrogen (51 at $1.87). How it compares with Claude Sonnet 5.5, Opus 5.5 and Tencent's $0.07/$0.281 Hy4 flash, and which to use." />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <a class="brand" href="../">Aff <span>Intel</span></a>
+      <nav>
+        <a href="../">Reviews</a>
+        <a href="../affiliates.md">Affiliates</a>
+        <a href="../DISCLOSURE.md">Disclosure</a>
+      </nav>
+    </header>
+    <aside class="disclosure" role="note">
+      <strong>Affiliate disclosure:</strong> We may earn a commission if you buy through links on this site, at no extra cost to you.
+      See the full <a href="../DISCLOSURE.md">FTC disclosure</a>.
+    </aside>
+    <article class="post">
+<p class="meta">Comparison · Nov 17, 2026 · Qwen4-Max · QwenCloud API · Qwen Token Plan · OpenRouter · Kimi K3.1 Pro · Gemini 4 Hydrogen · Claude Sonnet 5.5 · Claude Opus 5.5 · Tencent Hy4 flash · Artificial Analysis</p>
+<h1>Qwen4-Max is out: $1.50/$4.50 API, Token Plan, no open weights. Is it a better buy than Kimi K3.1 Pro, Gemini 4 Hydrogen, Claude Sonnet 5.5 or Tencent's Hy4 flash? (Nov 2026)</h1>
+<p>On the evening of <strong>Sunday, Nov 15, 2026</strong> (US time; Nov 16 in China), Alibaba's Qwen team released <strong>Qwen4-Max</strong> (<code>qwen4-max</code>), the first model in the Qwen4 series: a 2.4-trillion-parameter mixture-of-experts model with 71 billion active parameters, native image and video input, and a 1M-token context window. <a href="https://x.com/Alibaba_Qwen/status/2122148127520289151">@Alibaba_Qwen's launch post</a> passed <strong>2.2 million views and 14,000 likes</strong> by early Nov 17. Unlike most earlier Qwen releases, <strong>the weights are closed</strong>: it's API and app only. The same day Tencent launched <strong>Hy4 flash</strong> at a tiny fraction of the price. The questions in the replies: <strong>what does Qwen4-Max cost, can you still self-host it, and is it actually a better deal than Kimi K3.1 Pro, Gemini 4 Hydrogen or Claude?</strong> We read Alibaba's announcement, the QwenCloud model page, pricing docs and Token Plan docs, OpenRouter's listing, Artificial Analysis's model and comparison pages, Anthropic's pricing page, Tencent's Hy4 flash announcement, and coverage from DataCamp, The New Stack and The Next Web on the morning of Nov 17.</p>
+
+<h2>Quick verdict</h2>
+<div class="verdict"><strong>You want the cheapest per-token frontier-ish model with a 1M context:</strong> Qwen4-Max's list price ($1.50 in / $4.50 out per million tokens, $0.075 cached) undercuts Claude Sonnet 5.5 ($2/$10), Kimi K3.1 Pro ($2/$10) and Gemini 4 Hydrogen on output ($7.50). It's a reasonable pick for long-document and office-style agent work, which is where Alibaba's own benchmarks look best.
+<strong>You care about cost per finished task, not per token:</strong> Qwen4-Max is very verbose and slow. Artificial Analysis measured <strong>$3.27 and 32 minutes per Intelligence Index task</strong> for a score of 43. Gemini 4 Hydrogen at its default (high) setting scored <strong>51 for $1.87 and about 8 minutes</strong>. Kimi K3.1 Pro scored 46 for $3.68. On that benchmark, Hydrogen is the better buy.
+<strong>You code in a terminal agent:</strong> skip it for now. Qwen4-Max scores 48.5% on Terminal-Bench 4.0 against 67.2% for Kimi K3.1 Pro (Artificial Analysis runs both); Alibaba's own chart has Claude Opus 5.5 at 59.6%.
+<strong>You wanted open weights:</strong> Qwen4-Max has none, and Alibaba hasn't promised any. It says smaller Qwen4 models will be open-weight "soon", with no size or date. Kimi K3.1 Pro is the big open model today.
+<strong>You just need cheap, fast bulk work:</strong> Tencent's Hy4 flash lists at $0.07/$0.281, about 1/20th of Qwen4-Max's input price, and is half price on TokenHub through Nov 30.</div>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:qwen" rel="sponsored noopener">Qwen (QwenCloud)</a>
+  <a class="btn primary" href="#AFFILIATE:openrouter" rel="sponsored noopener">OpenRouter</a>
+  <a class="btn primary" href="#AFFILIATE:kimi" rel="sponsored noopener">Kimi</a>
+  <a class="btn primary" href="#AFFILIATE:gemini-spark" rel="sponsored noopener">Gemini</a>
+</div>
+
+<h2>What launched</h2>
+<ul class="clean">
+  <li><strong>Qwen4-Max (Alibaba, Nov 16 China time):</strong> 2.4T total / 71B active parameters, "25% fewer activated parameters" than Qwen3.8-Max at the same scale. Text, image and video in, text out. QwenCloud lists a 1M context, up to 131K output (262K with thinking), tool calling, structured outputs, batches, context cache, built-in web search, and OpenAI- and Anthropic-compatible APIs</li>
+  <li><strong>Where:</strong> the QwenCloud API and Token Plan, plus Alibaba's QwenWork and Qwen Studio apps. Third parties had it on day one, including <strong>OpenRouter</strong> (<code>qwen/qwen4-max</code>), Vercel's AI Gateway and Novita, per their posts</li>
+  <li><strong>Weights:</strong> closed. Alibaba: "Open-weight, smaller-scale models from the Qwen4 series will soon be released." No sizes or dates. As of Nov 16, third-party "Qwen4-27B" repos on Hugging Face are empty shells, per Ask This Guy; download nothing that isn't from the official Qwen org</li>
+  <li><strong>Alibaba's efficiency claim:</strong> on its in-house Work360 benchmark, Qwen4-Max beats Qwen3.8-Max using about 24% (xhigh) to 35% (high) fewer tokens, and average cost per task drops from $4.43 to $1.67. That's a vendor benchmark</li>
+  <li><strong>Hy4 flash (Tencent, Nov 16):</strong> 224B total / 12B active, multimodal input, 1M context, about $0.070 in / $0.281 out / $0.003 cached per million tokens. In Tencent's WorkBuddy, Yuanbao and TokenHub; OpenRouter "coming soon"; Tencent says it plans to open-source it</li>
+</ul>
+
+<h2>Price and benchmarks side by side</h2>
+<table>
+  <thead><tr><th></th><th>Qwen4-Max</th><th>Kimi K3.1 Pro</th><th>Gemini 4 Hydrogen</th><th>Claude Sonnet 5.5</th><th>Hy4 flash</th></tr></thead>
+  <tbody>
+    <tr><td>API price per 1M tokens (in / out)</td><td>$1.50 / $4.50 (OpenRouter lists $1.425 / $4.275)</td><td>$2 / $10</td><td>$1.50 / $7.50</td><td>$2 / $10</td><td>~$0.070 / $0.281 (50% off on TokenHub to Nov 30)</td></tr>
+    <tr><td>Cached input</td><td>$0.075</td><td>$0.20</td><td>$0.075</td><td>See Anthropic's cache pricing</td><td>$0.003</td></tr>
+    <tr><td>Context</td><td>1M</td><td>1M</td><td>1M</td><td>See Anthropic docs</td><td>1M</td></tr>
+    <tr><td>Open weights</td><td>No</td><td>Yes (license guardrails)</td><td>No</td><td>No</td><td>Not yet; Tencent plans to</td></tr>
+    <tr><td>Artificial Analysis Intelligence Index</td><td>43</td><td>46</td><td>51 (high, default) · 54 (xhigh)</td><td>Not in today's comparison</td><td>Not listed when we checked</td></tr>
+    <tr><td>AA cost per index task</td><td>$3.27</td><td>$3.68</td><td>$1.87 (high) · $3.16 (xhigh)</td><td>–</td><td>–</td></tr>
+    <tr><td>AA time per index task</td><td>32.1 min</td><td>38.8 min</td><td>7.8 min (high)</td><td>–</td><td>–</td></tr>
+    <tr><td>Terminal-Bench 4.0 (AA)</td><td>48.5%</td><td>67.2%</td><td>54.0% (high)</td><td>–</td><td>–</td></tr>
+  </tbody>
+</table>
+<p class="meta">Prices from QwenCloud, OpenRouter, Artificial Analysis (Kimi, Hydrogen), Anthropic and Tencent, read Nov 17. Benchmarks from Artificial Analysis's Qwen4-Max vs Kimi K3.1 Pro and Qwen4-Max vs Gemini 4 Hydrogen pages. Claude Opus 5.5 is $4/$20 on Anthropic's pricing page.</p>
+
+<h2>What a request costs (list prices)</h2>
+<p>One call with <strong>100K input tokens and 10K output tokens</strong>, no caching: Qwen4-Max <strong>$0.195</strong> · Gemini 4 Hydrogen $0.225 · Claude Sonnet 5.5 $0.30 · Kimi K3.1 Pro $0.30 · Claude Opus 5.5 $0.60 · Hy4 flash about $0.01. The catch is the 10K: Artificial Analysis says Qwen4-Max produced <strong>127 million output tokens</strong> to finish its index, against a median of 78.6 million for models in its class. Reasoning tokens count as output, so a cheaper rate doesn't guarantee a cheaper task. Test on your own prompts before switching.</p>
+
+<h2>Benchmarks: where it's strong and where it isn't</h2>
+<ul class="clean">
+  <li><strong>Strong (third-party):</strong> #6 on Arena's Code Arena WebDev leaderboard (1,750, preliminary) and #6 in Image-to-WebDev; top Chinese model on the Vals Index (#11 overall). On Artificial Analysis it edges Kimi K3.1 Pro on finance and legal, clearly beats it on HLE-Diamond (44.9% vs 37.3%), and outputs faster (54 vs 31 tokens/second)</li>
+  <li><strong>Strong (Alibaba's own):</strong> 75.7 on DeepSWE v1.1 vs 74.2 for Opus 5.5; 46.7 on Agents' Last Exam vs 43.4 for Opus 5.5, per DataCamp's read of the launch chart</li>
+  <li><strong>Weak:</strong> terminal coding (48.5% Terminal-Bench 4.0, confirmed by Artificial Analysis and Vals), science tasks (23.3% Terminal-Bench-Science vs 34.3% for Kimi), speed (Artificial Analysis ranks it 74th of 79 on performance, with a 148-second wait for the first answer token), and verbosity</li>
+  <li><strong>Overall:</strong> Artificial Analysis puts it at 43, #38 of 81 models, "above average" for its price class (median 41) but well behind the top US models</li>
+</ul>
+
+<h2>Token Plan: the subscription route</h2>
+<ul class="clean">
+  <li>QwenCloud's <strong>Token Plan Individual</strong> includes <code>qwen4-max</code>. Plans: <strong>Lite $6/month</strong> (20,000 credits; $3 limited-time new-user price), <strong>Essential $10</strong> (45,000; $5 new-user), <strong>Standard $18</strong> (80,000), <strong>Pro $43</strong> (200,000). Credit packs are $15 for 20,000 and need an active plan</li>
+  <li>When credits run out and you have no pack, service pauses until the next subscription month. We didn't find a published credits-per-token rate for <code>qwen4-max</code> on the overview page, so we can't say how far 20,000 credits go</li>
+  <li><strong><code>qwen4-max-preview</code> retires Nov 25</strong> (midnight UTC+8, which is 11 AM ET). If you built against the preview ID during the Nov 11–25 promo, switch to <code>qwen4-max</code></li>
+  <li>QwenCloud's pricing docs list a <strong>1 million-token free quota</strong> for <code>qwen4-max</code>, Singapore region only</li>
+</ul>
+
+<h2>Which to pick</h2>
+<ul class="clean">
+  <li><strong>Long documents, slides, spreadsheets, office agents on a budget:</strong> try Qwen4-Max through OpenRouter first (no new account; one provider, Alibaba Cloud International, and no EU in-region routing yet)</li>
+  <li><strong>Best intelligence per dollar in this price band:</strong> Gemini 4 Hydrogen at its default setting. Same $1.50 input, higher output price, but fewer tokens and much faster on Artificial Analysis's runs. See our <a href="gemini-4-hydrogen-free-auto-ai-plus-vs-api-1-50-vs-gemini-3-8-flash-claude-sonnet-5-5-gpt-6-1-terra-2026.html">Hydrogen guide</a></li>
+  <li><strong>Agentic coding:</strong> Kimi K3.1 Pro or Claude. Kimi leads Qwen4-Max by almost 19 points on Terminal-Bench 4.0 and has open weights. See our <a href="kimi-k3-1-pro-open-weights-hugging-face-mxfp4-license-hardware-vs-api-claude-chatgpt-2026.html">Kimi K3.1 Pro open-weights guide</a></li>
+  <li><strong>Self-hosting:</strong> not an option with Qwen4-Max. Wait for the smaller Qwen4 open models, or use Kimi K3.1 Pro</li>
+  <li><strong>High-volume, simple tasks:</strong> Hy4 flash is the price outlier, but it's on Tencent's platforms until it reaches OpenRouter, and its quality numbers are Tencent's own</li>
+  <li><strong>Data residency:</strong> check QwenCloud's region list before sending sensitive data. Models and prices differ by region and deployment scope</li>
+</ul>
+<p>Related: <a href="gemini-4-hydrogen-free-auto-ai-plus-vs-api-1-50-vs-gemini-3-8-flash-claude-sonnet-5-5-gpt-6-1-terra-2026.html">Gemini 4 Hydrogen vs Sonnet 5.5 vs GPT-6.1 Terra</a> · <a href="kimi-k3-1-pro-kimi-code-plans-no-weekly-limit-vs-claude-max-chatgpt-pro-2026.html">Kimi K3.1 Pro plans vs Claude Max vs ChatGPT Pro</a> · <a href="claude-fable-5-2-pro-vs-max-ultra-50-percent-weekly-vs-opus-5-5-vs-muse-ember-api-pricing-2026.html">Claude Fable 5.2 vs Opus 5.5 API pricing</a></p>
+
+<h2>Affiliate-ready picks (what we can monetize today)</h2>
+<p>Budget API buyers go to QwenCloud or OpenRouter; price-per-task buyers go to Gemini; coders and self-hosters go to Kimi or Claude. Live URLs go through <code>affiliates.md</code> placeholders. Waitlist: <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a>.</p>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:qwen" rel="sponsored noopener">Qwen Token Plan →</a>
+  <a class="btn primary" href="#AFFILIATE:openrouter" rel="sponsored noopener">OpenRouter →</a>
+  <a class="btn primary" href="#AFFILIATE:kimi" rel="sponsored noopener">Kimi →</a>
+  <a class="btn primary" href="#AFFILIATE:gemini-spark" rel="sponsored noopener">Gemini →</a>
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro / Max →</a>
+</div>
+
+<h2>Want a heads-up when the open Qwen4 models drop?</h2>
+<p>Alibaba says smaller open-weight Qwen4 models are coming, and Tencent says Hy4 flash weights and an OpenRouter listing are on the way. Join the waitlist (no checkout) for a short note when they land, with license and hardware details: email <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist%20-%20Qwen4%20open%20weights">toolsthathelp@agentmail.to</a>.</p>
+
+<p class="meta">Sources: <a href="https://www.alibabacloud.com/blog/alibaba-unveils-qwen4-max-new-ai-teammate-for-work-creativity-and-discovery_603783">Alibaba Cloud, Alibaba Unveils Qwen4-Max (Nov 16, 2026)</a>; <a href="https://x.com/Alibaba_Qwen/status/2122148127520289151">@Alibaba_Qwen launch thread</a>; <a href="https://www.qwencloud.com/models/qwen4-max">QwenCloud, Qwen4-Max model page</a>; <a href="https://docs.qwencloud.com/developer-guides/getting-started/model-prices">QwenCloud, Model pricing</a>; <a href="https://docs.qwencloud.com/token-plan/personal/token-plan-personal-overview">QwenCloud, Token Plan Individual</a>; <a href="https://openrouter.ai/qwen/qwen4-max">OpenRouter, qwen/qwen4-max</a>; <a href="https://artificialanalysis.ai/models/qwen4-max">Artificial Analysis, Qwen4 Max</a>; <a href="https://artificialanalysis.ai/models/comparisons/qwen4-max-vs-kimi-k3-1-pro">AA, Qwen4 Max vs Kimi K3.1 Pro</a>; <a href="https://artificialanalysis.ai/models/comparisons/qwen4-max-vs-gemini-4-hydrogen">AA, Qwen4 Max vs Gemini 4 Hydrogen</a>; <a href="https://x.com/arena/status/2122153582384583156">Arena on X (Code Arena WebDev)</a>; <a href="https://x.com/ValsAI/status/2122152965293457822">Vals AI on X</a>; <a href="https://platform.claude.com/docs/en/about-claude/pricing">Anthropic, Pricing</a>; <a href="https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/">Tencent, Hy4 flash (Nov 16, 2026)</a>; <a href="https://www.datacamp.com/blog/qwen4-max">DataCamp, Qwen4-Max</a>; <a href="https://thenewstack.io/qwen4-max-alibaba-open-weights/">The New Stack</a>; <a href="https://thenextweb.com/news/alibaba-launches-qwen4-max-flagship-ai-model-without-open-weights">The Next Web</a>; <a href="https://www.askthisguy.com/en/blog/qwen-4-vs-qwen-3-8-27b/">Ask This Guy, Qwen 4 27B</a>. Pages read Nov 17, 2026 (~4 AM ET). Vendor benchmarks are labeled as such. No prices, dates, or quotes were invented for this post.</p>
+    </article>
+    <footer class="site">
+      <p><a href="../">← All reviews</a> · <a href="../DISCLOSURE.md">Affiliate Disclosure</a> · Waitlist: <a href="mailto:toolsthathelp@agentmail.to">toolsthathelp@agentmail.to</a></p>
+    </footer>
+  </div>
+</body>
+</html>
