@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/claude-fable-5-2-pro-vs-max-ultra-50-percent-weekly-vs-opus-5-5-vs-muse-ember-api-pricing-2026.html</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-18</lastmod>
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/perplexity-teammates-max-200-vs-claude-duet-ultra-vs-chatgpt-dots-pro-200-always-on-agents-2026.html</loc>
@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/gpt-6-1-terra-vs-gpt-6-1-sol-claude-sonnet-haiku-opus-5-5-kimi-api-pricing-chatgpt-plus-codex-2026.html</loc>
-    <lastmod>2026-10-28</lastmod>
+    <lastmod>2026-11-18</lastmod>
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/kimi-k3-1-pro-kimi-code-plans-no-weekly-limit-vs-claude-max-chatgpt-pro-2026.html</loc>
@@ -274,7 +274,13 @@
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/qwen4-max-api-1-50-4-50-token-plan-vs-kimi-k3-1-pro-gemini-4-hydrogen-claude-sonnet-5-5-hy4-flash-2026.html</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://dmarzejon.github.io/aff-intel/posts/gpt-6-2-astra-sol-api-8-40-chatgpt-plus-pro-codex-copilot-vs-claude-fable-5-2-opus-5-5-gemini-4-carbon-2026.html</loc>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
