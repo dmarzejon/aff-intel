@@ -78,7 +78,7 @@
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/gemini-4-argon-google-ai-pro-vs-ultra-vs-cursor-copilot-claude-2026.html</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-19</lastmod>
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/cursor-x-subscription-vs-cursor-pro-claude-code-copilot-2026.html</loc>
@@ -166,7 +166,7 @@
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -250,7 +250,7 @@
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/gemini-4-carbon-ai-ultra-vs-api-intro-price-nov-30-vs-claude-fable-5-2-opus-5-5-copilot-cursor-2026.html</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
@@ -280,7 +280,13 @@
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/gpt-6-2-astra-sol-api-8-40-chatgpt-plus-pro-codex-copilot-vs-claude-fable-5-2-opus-5-5-gemini-4-carbon-2026.html</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://dmarzejon.github.io/aff-intel/posts/gemini-4-neon-ai-pro-vs-ultra-api-3-15-no-free-tier-vs-carbon-dec-1-gpt-6-2-sol-astra-claude-opus-5-5-copilot-cursor-2026.html</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
