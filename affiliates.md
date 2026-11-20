@@ -25,6 +25,7 @@
 | `perplexity` | Perplexity Pro / Max | `#AFFILIATE:perplexity` | _pending_ | Perplexity Max (Teammates, Computer credits) — partner link TBD |
 | `openrouter` | OpenRouter | `#AFFILIATE:openrouter` | _pending_ | OpenRouter API credits (GPT-6 Luna Decisions, Gemini Decision 1 rolling out) — partner link TBD |
 | `qwen` | Qwen (Alibaba QwenCloud) | `#AFFILIATE:qwen` | _pending_ | QwenCloud API / Token Plan (Qwen4-Max) — partner link TBD |
+| `elevenlabs` | ElevenLabs | `#AFFILIATE:elevenlabs` | _pending_ | ElevenLabs Agents / voice plans — ElevenLabs runs an affiliate program; partner link TBD |
 
 ## Placeholder convention
 
@@ -59,3 +60,4 @@ Affiliate Bot should rewrite `href="#AFFILIATE:<slug>"` → live URL and optiona
 | kimi | https://www.kimi.ai/ |
 | openrouter | https://openrouter.ai/ |
 | qwen | https://www.qwencloud.com/ |
+| elevenlabs | https://elevenlabs.io/ |

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GPT-Live-1.1 Is in the API: $0.05 a Minute Active, $0.02 on Standby, and Is It a Better Voice-Agent Buy Than Gemini 3.8 Live, GPT-Realtime-2 or ElevenLabs Agents? Plus What ChatGPT Plus Gets (Nov 2026) — Aff Intel</title>
+  <meta name="description" content="OpenAI put GPT-Live-1.1, the voice model behind ChatGPT Plus and Pro since Oct 15, into the API on Nov 19, 2026. It costs $0.05 per active minute and a new standby rate of $0.02 per minute, billed per second, with your backend model billed separately. Compared with Gemini 3.8 Live ($0.005/min audio in, $0.018/min out, free tier), GPT-Realtime-2 ($32/$64 per million audio tokens) and ElevenLabs Agents ($0.08/min plus LLM). On Vercel AI Gateway, not OpenRouter. Which to pick." />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <a class="brand" href="../">Aff <span>Intel</span></a>
+      <nav>
+        <a href="../">Reviews</a>
+        <a href="../affiliates.md">Affiliates</a>
+        <a href="../DISCLOSURE.md">Disclosure</a>
+      </nav>
+    </header>
+    <aside class="disclosure" role="note">
+      <strong>Affiliate disclosure:</strong> We may earn a commission if you buy through links on this site, at no extra cost to you.
+      See the full <a href="../DISCLOSURE.md">FTC disclosure</a>.
+    </aside>
+    <article class="post">
+<p class="meta">Comparison · Nov 20, 2026 · GPT-Live-1.1 · GPT-Live-1 · OpenAI Live API · Standby · ChatGPT Voice · ChatGPT Plus / Pro · GPT-Realtime-2 · Gemini 3.8 Live · ElevenLabs Agents · Vercel AI Gateway</p>
+<h1>GPT-Live-1.1 is in the API: $0.05 a minute active, $0.02 on standby, and is it a better voice-agent buy than Gemini 3.8 Live, GPT-Realtime-2 or ElevenLabs Agents? Plus what ChatGPT Plus gets (Nov 2026)</h1>
+<p>At <strong>3:00 PM ET on Thursday, Nov 19, 2026</strong>, OpenAI made <strong>GPT-Live-1.1</strong> (<code>gpt-live-1.1</code>) available in its API. It's the full-duplex voice model that has run <strong>ChatGPT Voice for Plus and Pro since Oct 15</strong>, so many people have already talked to it. <a href="https://x.com/OpenAIDevs/status/2123506733524136446">OpenAI Developers' launch post</a> passed <strong>425,000 views and 4,200 likes</strong> by Friday morning. The same day OpenAI added <strong>standby</strong>, a cheaper rate for quiet stretches of a call. The questions in the replies are about cost: <strong>what a voice minute really costs, whether it's cheaper than Google's Live API or ElevenLabs, and what changes for ChatGPT subscribers</strong>. We read OpenAI's model page, pricing page, changelog, cost guide and system card, Google's Gemini API pricing page, ElevenLabs' Agents pricing page and Vercel's AI Gateway model list on the morning of Nov 20.</p>
+
+<h2>Quick verdict</h2>
+<div class="verdict"><strong>You're building a voice agent on OpenAI:</strong> move from GPT-Live-1 to GPT-Live-1.1 now. Same price ($0.05 per active minute), better transcription of letters and numbers and steadier accents across languages. It's a one-line model change.
+<strong>Your calls have long silences</strong> (hold music, a user reading, a kiosk waiting): turn on <strong>standby</strong>. Idle minutes drop from $0.05 to <strong>$0.02</strong>, 60% less, and the WebRTC call and conversation history stay open. It works on GPT-Live-1 too.
+<strong>You want the lowest voice bill:</strong> Google's <strong>Gemini 3.8 Live</strong> is priced per audio minute at <strong>$0.005 in and $0.018 out</strong> and has a free tier. It's likely cheaper per call, but it bills tokens, not wall-clock time, so meter a test call before comparing.
+<strong>You want a no-code agent platform:</strong> <strong>ElevenLabs Agents</strong> is <strong>$0.08 a minute</strong> plus the LLM, with telephony through your own provider and a 95% discount on silences over 10 seconds. You pay more per minute for the builder, voices and phone tooling.
+<strong>You just use ChatGPT Voice:</strong> nothing to buy. GPT-Live-1.1 is already the default voice for <strong>Plus and up</strong>, including Codex and dots; free users get the smaller GPT-Live-1.1 Quip. Advanced and Standard voice retire <strong>Dec 11</strong>.</div>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:chatgpt-plus" rel="sponsored noopener">ChatGPT Plus / Pro</a>
+  <a class="btn primary" href="#AFFILIATE:elevenlabs" rel="sponsored noopener">ElevenLabs Agents</a>
+  <a class="btn primary" href="#AFFILIATE:gemini-spark" rel="sponsored noopener">Google AI / Gemini</a>
+</div>
+
+<h2>What launched</h2>
+<ul class="clean">
+  <li><strong>The model:</strong> GPT-Live-1.1 "can listen while it speaks". OpenAI says that compared with GPT-Live-1 it transcribes speech more accurately and keeps a more consistent accent and voice across languages, and handles "precise details like letters and numbers". Audio and text in, audio and text out; streaming and function calling</li>
+  <li><strong>How it works:</strong> GPT-Live handles the conversation and hands harder requests to a <strong>backend model you choose</strong> (Responses delegation to an OpenAI model, or client delegation to your own). You describe in plain language when it should delegate</li>
+  <li><strong>Where:</strong> the Live API only (<code>v1/live/sessions</code>). It doesn't work on the older Realtime API, Chat Completions or Responses. GPT-Live-1.1 and GPT-Live-1 have <strong>separate concurrent-session limits</strong></li>
+  <li><strong>Standby (new, both GPT-Live models):</strong> set <code>session.wake_policy.type</code> to <code>speech</code> and an idle timeout of <strong>5 to 60 seconds</strong>. After that much silence the model pauses, the WebRTC connection and session ID stay the same, and it resumes with history when someone speaks. WebRTC only. The first reply after standby can take longer</li>
+  <li><strong>Also available:</strong> Vercel's AI Gateway listed <code>openai/gpt-live-1.1</code> on launch day at the same per-second rate. It isn't on OpenRouter, which doesn't list any GPT-Live model. Copilot and Cursor don't apply: this is a voice API, not a coding model</li>
+</ul>
+
+<h2>Voice API prices side by side</h2>
+<table>
+  <thead><tr><th></th><th>GPT-Live-1.1</th><th>GPT-Live-1</th><th>GPT-Realtime-2</th><th>Gemini 3.8 Live</th><th>ElevenLabs Agents</th></tr></thead>
+  <tbody>
+    <tr><td>How it bills</td><td>Session time, per second</td><td>Session time, per second</td><td>Tokens</td><td>Tokens (Google also gives per-minute audio rates)</td><td>Call minutes</td></tr>
+    <tr><td>Voice price</td><td><strong>$0.05/min</strong> active</td><td>$0.05/min active</td><td>$32 in / $64 out per 1M audio tokens ($0.40 cached)</td><td>Audio $3 in / $12 out per 1M tokens = <strong>$0.005/min in, $0.018/min out</strong></td><td><strong>$0.08/min</strong> ($0.16 above your concurrency limit)</td></tr>
+    <tr><td>Idle / silence</td><td><strong>$0.02/min</strong> on standby</td><td>$0.02/min on standby</td><td>–</td><td>–</td><td>95% off silences longer than 10 seconds</td></tr>
+    <tr><td>Text tokens</td><td>Backend model billed separately</td><td>Backend model billed separately</td><td>$4 in / $24 out</td><td>$0.75 in / $4.50 out</td><td>LLM billed separately</td></tr>
+    <tr><td>Free tier</td><td>No</td><td>No</td><td>No</td><td><strong>Yes</strong> (free tier data may be used to improve Google's products)</td><td>15 minutes a month</td></tr>
+    <tr><td>Built-in reasoning</td><td>Delegates to your backend</td><td>Delegates to your backend</td><td>Configurable reasoning effort</td><td>Interleaved reasoning; Extended Thinking variant at the same price</td><td>Your chosen LLM</td></tr>
+  </tbody>
+</table>
+<p class="meta">Prices from OpenAI's pricing and model pages, Google's Gemini API pricing page and ElevenLabs' Agents pricing page, read Nov 20, 2026. Google bills Live audio as tokens; the per-minute figures are the ones Google prints next to the token prices. ElevenLabs paid plans range from Starter ($6/month, 75 minutes) to Business ($990/month, 12,375 minutes), all working out to $0.08 a minute.</p>
+
+<h2>What a call costs</h2>
+<p>Take a <strong>10-minute support call</strong> with 3 minutes of hold or silence, before backend model costs:</p>
+<ul class="clean">
+  <li><strong>GPT-Live-1.1 without standby:</strong> 10 × $0.05 = <strong>$0.50</strong></li>
+  <li><strong>GPT-Live-1.1 with standby</strong> (assuming all 3 quiet minutes land on standby after the timeout): 7 × $0.05 + 3 × $0.02 = <strong>$0.41</strong>. Short pauses under your timeout still bill as active</li>
+  <li><strong>ElevenLabs Agents:</strong> 10 × $0.08 = $0.80 before the silence discount; with 3 minutes of long silences at 95% off, about <strong>$0.57</strong>, plus the LLM. Telephony is billed by your carrier</li>
+  <li><strong>Gemini 3.8 Live:</strong> depends on how many audio minutes Google counts in and out. If the model speaks for 4 minutes, output audio alone is 4 × $0.018 = $0.072; input audio is $0.005 per counted minute. We don't publish a total because Google bills tokens, and context carried between turns may count. Run a metered test call</li>
+</ul>
+<p>Two OpenAI billing details from its cost guide: <strong>creating a WebRTC session bills 15 seconds</strong> up front, which is credited against the call once it runs (it matters if you create sessions before users speak), and <strong>muting the mic doesn't trigger standby</strong>; only the idle timeout does. Backend calls, for example to GPT-6.2 Sol at $2/$10 per million tokens, are extra on every OpenAI option.</p>
+
+<h2>ChatGPT Voice: Free vs Plus vs Pro</h2>
+<ul class="clean">
+  <li><strong>Plus ($20/month) and up:</strong> GPT-Live-1.1 has been the default voice model since Oct 15, including in Codex and dots, per OpenAI's system card. The API launch doesn't change your plan</li>
+  <li><strong>Free and other users:</strong> get <strong>GPT-Live-1.1 Quip</strong>, a smaller version, as the default</li>
+  <li><strong>Dec 11:</strong> OpenAI retires Advanced and Standard voice. Live video and screen sharing stay on Advanced voice until GPT-Live supports them</li>
+</ul>
+
+<h2>Caveats before you switch</h2>
+<ul class="clean">
+  <li><strong>Different API:</strong> if you're on the Realtime API with GPT-Realtime-2, GPT-Live is a migration, not a model swap. OpenAI has a migration guide</li>
+  <li><strong>Standby is documented for WebRTC only.</strong> OpenAI's pricing and docs describe the $0.02 rate for WebRTC sessions; if you connect over WebSocket or SIP, check before counting on it</li>
+  <li><strong>Quality claims are OpenAI's.</strong> Its system card says the API model scores higher than GPT-Live-1 on mental-health, emotional-reliance and self-harm safety evaluations and at parity elsewhere; there's no independent voice benchmark yet. Early user posts on X compare its naturalness favorably with ElevenLabs, but that's opinion</li>
+  <li><strong>Per-minute isn't per-call.</strong> The voice line is often the smaller part of the bill once a backend model does tool calls. Price both</li>
+</ul>
+
+<h2>Which to pick</h2>
+<ul class="clean">
+  <li><strong>Already on GPT-Live-1:</strong> switch the model ID to <code>gpt-live-1.1</code> and add standby with a 15 to 30 second timeout. No price change</li>
+  <li><strong>Phone or kiosk agent with long waits:</strong> GPT-Live with standby, or ElevenLabs if you need its no-code builder and telephony integrations</li>
+  <li><strong>Cost-first, high volume:</strong> start with Gemini 3.8 Live's free tier, then compare a metered paid call with GPT-Live at $0.05/min</li>
+  <li><strong>Need reasoning inside the voice model itself:</strong> GPT-Realtime-2 (configurable reasoning) or Gemini 3.8 Live Extended Thinking</li>
+  <li><strong>Consumer:</strong> ChatGPT Plus already includes GPT-Live-1.1. See our <a href="gpt-6-2-astra-sol-api-8-40-chatgpt-plus-pro-codex-copilot-vs-claude-fable-5-2-opus-5-5-gemini-4-carbon-2026.html">GPT-6.2 guide</a> for what else Plus gets</li>
+</ul>
+<p>Related: <a href="gemini-decision-1-vs-openai-decisions-gpt-6-luna-vs-jev-vs-cloudflare-clef-decision-model-api-pricing-2026.html">Decision models (OpenAI Decisions works inside GPT-Live)</a> · <a href="perplexity-teammates-max-200-vs-claude-duet-ultra-vs-chatgpt-dots-pro-200-always-on-agents-2026.html">ChatGPT dots vs Claude Duet vs Perplexity Teammates</a> · <a href="openai-12-hour-prompt-caching-vs-claude-1-hour-cache-opus-5-5-fast-mode-2026.html">OpenAI prompt caching</a></p>
+
+<h2>Affiliate-ready picks (what we can monetize today)</h2>
+<p>Consumers go to ChatGPT Plus; builders who want a hosted agent platform go to ElevenLabs Agents; cost-first builders try Google's Gemini API. Live URLs go through <code>affiliates.md</code> placeholders. Waitlist: <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a>.</p>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:chatgpt-plus" rel="sponsored noopener">ChatGPT Plus / Pro →</a>
+  <a class="btn primary" href="#AFFILIATE:elevenlabs" rel="sponsored noopener">ElevenLabs Agents →</a>
+  <a class="btn primary" href="#AFFILIATE:gemini-spark" rel="sponsored noopener">Google AI / Gemini →</a>
+</div>
+
+<h2>Want a heads-up when voice prices or plans change?</h2>
+<p>Advanced voice retires Dec 11, Cursor's OpenAI access is set to end Nov 25, and Gemini 4 Carbon and Argon's API price doubles Dec 1. Join the waitlist (no checkout) for a short note when each one lands: email <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist%20-%20GPT-Live%20and%20voice%20APIs">toolsthathelp@agentmail.to</a>.</p>
+
+<p class="meta">Sources: <a href="https://developers.openai.com/api/docs/models/gpt-live-1.1">OpenAI, GPT-Live-1.1 model page</a>; <a href="https://developers.openai.com/api/docs/models/gpt-live-1">GPT-Live-1 model page</a>; <a href="https://developers.openai.com/api/docs/pricing">OpenAI API pricing</a>; <a href="https://developers.openai.com/api/docs/changelog">OpenAI API changelog (Nov 19)</a>; <a href="https://developers.openai.com/api/docs/guides/live-conversations">Managing GPT-Live sessions (standby)</a>; <a href="https://developers.openai.com/api/docs/guides/voice-latency-cost">OpenAI voice cost optimization guide</a>; <a href="https://developers.openai.com/api/docs/models/gpt-realtime-2">GPT-Realtime-2 model page</a>; <a href="https://deploymentsafety.openai.com/gpt-live-1-1/change-log">GPT-Live-1.1 system card (updated Nov 19)</a>; <a href="https://community.openai.com/t/gpt-live-1-1-has-arrived-in-the-api/1418537">OpenAI Developer Community announcement</a>; <a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes">ChatGPT release notes (Oct 15, Nov 10)</a>; <a href="https://x.com/OpenAIDevs/status/2123506733524136446">@OpenAIDevs launch post</a> and <a href="https://x.com/OpenAIDevs/status/2123506763144245744">standby post</a>; <a href="https://x.com/vercel_dev/status/2123584051156287952">@vercel_dev</a> and Vercel AI Gateway model list; <a href="https://ai.google.dev/gemini-api/docs/pricing">Gemini API pricing (Gemini 3.8 Live)</a>; <a href="https://ai.google.dev/gemini-api/docs/models/gemini-3.8-live">Gemini 3.8 Live model page</a>; <a href="https://elevenlabs.io/pricing/agents">ElevenLabs Agents pricing</a>; <a href="https://elevenlabs.io/docs/help-center/product/eleven-agents/how-much-does-eleven-agents-cost">ElevenLabs Help, Agents cost</a>; OpenRouter model list (no GPT-Live listing). Pages read Nov 20, 2026 (~4 AM ET). Vendor claims are labeled as such. No prices, dates, or quotes were invented for this post.</p>
+    </article>
+    <footer class="site">
+      <p><a href="../">← All reviews</a> · <a href="../DISCLOSURE.md">Affiliate Disclosure</a> · Waitlist: <a href="mailto:toolsthathelp@agentmail.to">toolsthathelp@agentmail.to</a></p>
+    </footer>
+  </div>
+</body>
+</html>
