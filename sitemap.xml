@@ -302,4 +302,10 @@
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
   </url>
+  <url>
+    <loc>https://dmarzejon.github.io/aff-intel/posts/claude-ship-code-review-pr-steward-approvals-team-enterprise-vs-copilot-code-review-cursor-bugbot-coderabbit-codex-2026.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+  </url>
 </urlset>

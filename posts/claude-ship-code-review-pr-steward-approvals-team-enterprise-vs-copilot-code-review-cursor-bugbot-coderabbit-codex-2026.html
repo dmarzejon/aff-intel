@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Claude Ship Is Out: Code Review ($15–25 a Review), PR Steward and Claude Approvals for Team and Enterprise, /ship for Everyone. Is It Worth It vs Copilot Code Review ($0.25–$10), Cursor Bugbot ($1–1.50), CodeRabbit ($24/dev) or Codex Review? — Aff Intel</title>
+  <meta name="description" content="Anthropic launched Claude Ship on Nov 23, 2026: Code Review (GA) plus two beta agents, PR Steward (fixes failing CI, conflicts and review comments) and Claude Approvals (approves what a policy file in your repo allows). Org agents are Team and Enterprise only and bill on tokens through usage credits, on top of seats; Anthropic's published Code Review average is $15–25 per review. /ship in Claude Code works for anyone and counts as normal Claude Code usage. How it compares on price and features with GitHub Copilot code review (Lite ~$0.25, Balanced ~$1.50, Max ~$10, approvals GA), Cursor Bugbot (~$1.00–1.50 a run), CodeRabbit ($24–72 per developer) and Codex code review (in ChatGPT Plus and up)." />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <a class="brand" href="../">Aff <span>Intel</span></a>
+      <nav>
+        <a href="../">Reviews</a>
+        <a href="../affiliates.md">Affiliates</a>
+        <a href="../DISCLOSURE.md">Disclosure</a>
+      </nav>
+    </header>
+    <aside class="disclosure" role="note">
+      <strong>Affiliate disclosure:</strong> We may earn a commission if you buy through links on this site, at no extra cost to you.
+      See the full <a href="../DISCLOSURE.md">FTC disclosure</a>.
+    </aside>
+    <article class="post">
+<p class="meta">Comparison · Nov 24, 2026 · Claude Ship · Claude Code Review · PR Steward · Claude Approvals · /ship · Claude Team / Enterprise · GitHub Copilot code review · Cursor Bugbot · CodeRabbit · Codex code review</p>
+<h1>Claude Ship is out: Code Review ($15–25 a review), PR Steward and Claude Approvals for Team and Enterprise, /ship for everyone. Is it worth it vs Copilot code review ($0.25–$10), Cursor Bugbot ($1–1.50), CodeRabbit ($24/dev) or Codex review? (Nov 2026)</h1>
+<p>On <strong>Monday, Nov 23, 2026</strong> (about 3 PM ET), Anthropic launched <strong>Claude Ship</strong> in beta. <a href="https://x.com/ClaudeDevs/status/2124959436640858475">@ClaudeDevs' launch post</a> passed <strong>2.3 million impressions</strong> by early Nov 24. The pitch: <em>"Claude can review your pull requests, work on fixes, and approve the ones your team's policy allows."</em> Claude Code lead Boris Cherny <a href="https://x.com/bcherny/status/2124961488691740941">added</a> that <strong>"anyone can use /ship"</strong>, while the repo-wide agents need a Team or Enterprise plan. The replies ask what you'd expect: <strong>what does it cost, do I need Team, and is it better than the Copilot, Cursor or CodeRabbit reviewer I already pay for?</strong> We read Anthropic's announcement, the Claude Ship, PR Steward, Approvals, /ship and Code Review cost docs, Claude's pricing page, GitHub's Copilot code review docs and changelog, Cursor's Bugbot pricing pages, CodeRabbit's plans docs and OpenAI's Codex pricing page on the morning of Nov 24.</p>
+
+<h2>Quick verdict</h2>
+<div class="verdict"><strong>Solo dev on Claude Pro, Max or Ultra:</strong> update Claude Code (v2.1.330+) and try <code>/ship</code> on your next branch. It opens the PR, reviews it, then keeps fixing failing checks and comments. It runs in your session and <strong>counts against your normal Claude Code usage</strong>, with no separate bill.
+<strong>Team or Enterprise admin:</strong> Claude Ship's real advantage is the loop. PR Steward fixes red CI, merge conflicts and review comments, and Approvals signs off by a policy file. Rivals have pieces of this: Copilot does review and approvals, Cursor has Bugbot Autofix plus a PR Routing &amp; Approval automation, and CodeRabbit's Team plan has a CI fixer and conflict resolution. But Claude's review is the <strong>expensive</strong> one: Anthropic's published average is <strong>$15–25 per review</strong>, billed on top of seats. Turn it on for one critical repo, set <strong>Once after PR creation</strong> (new repos default to <em>After every push</em>), and set spend limits first. PR Steward has <strong>no spend limit until you set one</strong>.
+<strong>Cost-sensitive team that just wants a reviewer:</strong> Copilot code review Balanced (~$1.50 a review, approvals GA), Cursor Bugbot (~$1.00–1.50 a run) or CodeRabbit Essentials ($24 per PR author per month, annual) cost a fraction of the price per PR.
+<strong>Already pay for ChatGPT Plus or Pro:</strong> Codex GitHub review is included. Turn it on before you buy anything else.</div>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro / Team (Claude Code)</a>
+  <a class="btn primary" href="#AFFILIATE:github-copilot" rel="sponsored noopener">GitHub Copilot</a>
+  <a class="btn primary" href="#AFFILIATE:coderabbit" rel="sponsored noopener">CodeRabbit</a>
+</div>
+
+<h2>What Claude Ship actually is</h2>
+<ul class="clean">
+  <li><strong>Code Review</strong> (generally available since Oct 15): reviews each PR against the codebase, verifies its findings adversarially and posts inline comments ranked by severity. Admins pick <strong>Quick, Standard (default) or Deep</strong> per repository. Anthropic says most reviews take 6–10 minutes</li>
+  <li><strong>PR Steward</strong> (public beta): works on <strong>failing CI checks, merge conflicts and review comments</strong>, whether they come from Code Review, other review bots or people. It pushes commits and comments with what it changed and how to undo it. It's designed <strong>never to approve or merge</strong>. Steer it with <code>@claude</code>, start it with <code>@claude steward</code>, stop it with <code>@claude stop</code></li>
+  <li><strong>Claude Approvals</strong> (public beta): a check driven by a policy file, <code>.claude/approvals.yml</code>, that says how many people each path needs and where Claude may approve. Anthropic calls it "a smarter CODEOWNERS file." It can use Code Review's findings or your own natural-language classifiers. Anthropic recommends starting in <strong>observe mode</strong>, which is still billed</li>
+  <li><strong>/ship</strong> (rolling out in the Claude Code CLI and desktop app): commits your change if needed, opens the PR, reviews it with <code>/code-review</code>, then "watches" the PR and pushes fixes until it's ready. You merge it. <code>/steward</code> skips the review on an already-open PR. It needs Claude Code v2.1.330+, GitHub CLI 2.63+ signed in, and git 2.38+. It doesn't run in cloud sessions</li>
+  <li><strong>Where it works:</strong> GitHub repositories only. The org agents aren't available to organizations with Zero Data Retention, the HIPAA configuration or customer-managed encryption keys</li>
+</ul>
+
+<h2>What it costs</h2>
+<table>
+  <thead><tr><th>Piece</th><th>Plan needed</th><th>How it's billed</th></tr></thead>
+  <tbody>
+    <tr><td><strong>/ship, /steward</strong></td><td>Any Claude Code plan ("anyone can use /ship")</td><td>Your normal Claude Code usage (Pro $20, or $17 a month annual; Max $100; Ultra $200)</td></tr>
+    <tr><td><strong>Code Review</strong></td><td>Team or Enterprise</td><td>Tokens, through org usage credits, <strong>separate from the plan's included usage</strong>. No flat price; Anthropic's published average is <strong>$15–25 per review</strong>, scaling with PR size and complexity</td></tr>
+    <tr><td><strong>PR Steward</strong></td><td>Team or Enterprise (beta)</td><td>Tokens through usage credits. Per-repo spend cap and monthly limit available, but <strong>none by default</strong></td></tr>
+    <tr><td><strong>Claude Approvals</strong></td><td>Team or Enterprise (beta)</td><td>No base charge. Classifier runs are billed, and a rule that asks for <code>claude/code_review</code> triggers a billed Code Review on open and on each push, even in observe mode</td></tr>
+    <tr><td>Seats</td><td>Team: $20 standard / $100 premium per seat per month annual ($25 / $125 monthly), 2–150 people. Enterprise: $20 per seat per month annual plus usage at API rates, 20-seat minimum</td><td>Claude Ship usage is on top of seats</td></tr>
+  </tbody>
+</table>
+<p class="meta">Anthropic: "Claude Ship usage is billed on tokens, so turning it on can add to an organization's costs." The $15–25 average comes from Anthropic's Code Review launch post (Mar 9, research preview). The Quick, Standard and Deep levels came with GA on Oct 15, and Anthropic hasn't published newer averages, so Quick should come in below that range. Each repo's admin page shows its own average cost per review after a pilot. Eligible Enterprise organizations can claim at least <strong>$10,000 in Code Review credits by Jan 15, 2027</strong> (credits expire 30 days after you claim them; terms apply).</p>
+
+<h2>Claude Ship vs the reviewers you can already buy</h2>
+<table>
+  <thead><tr><th>Tool</th><th>Review cost</th><th>Fixes the PR itself?</th><th>Can approve?</th><th>Plans</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Claude Ship</strong></td><td>~$15–25 per Code Review (published average); Steward and Approvals billed on tokens</td><td><strong>Yes:</strong> PR Steward pushes fixes for CI, conflicts and comments</td><td><strong>Yes</strong>, by a repo policy file (beta)</td><td>Team / Enterprise; /ship on any Claude Code plan</td></tr>
+    <tr><td><strong>GitHub Copilot code review</strong></td><td>AI credits: Lite ~$0.25 (range $0.05–1), <strong>Balanced ~$1.50</strong> ($0.25–5, default), Max ~$10 ($1.50–25, preview), plus Actions minutes</td><td>One-click suggested fixes; can hand suggestions to Copilot cloud agent (preview)</td><td><strong>Yes</strong>, approvals GA since Oct 28; off by default, optional limit of up to 15 path globs, dismissed on new pushes</td><td>Pro $10 ($15 credits), Pro+ $39 ($70), Max $100 ($200), Business, Enterprise</td></tr>
+    <tr><td><strong>Cursor Bugbot</strong></td><td>Usage-based; average run <strong>$1.00–1.50</strong>; Low / Default / High / Smart effort</td><td><strong>Yes:</strong> Bugbot Autofix (opens a new branch or commits to the PR branch)</td><td><strong>Yes</strong>, via the separate PR Routing &amp; Approval automation (risk score, <code>APPROVAL_POLICY</code> files, Bugbot findings)</td><td>Premium $30 and up, Teams $30+/user (from on-demand usage)</td></tr>
+    <tr><td><strong>CodeRabbit</strong></td><td>Per PR author: Essentials <strong>$24</strong> ($30 monthly), Team $48 ($60), Advanced $72 ($90); usage-based reviews past rate limits</td><td>Team plan: CI fixer, merge-conflict resolution</td><td>–</td><td>Free for public OSS repos; 14-day Advanced trial</td></tr>
+    <tr><td><strong>Codex code review</strong></td><td>Included Code Review allowance (size not published), then credits</td><td>Ask <code>@codex</code> for follow-ups</td><td>No OpenAI page says it approves</td><td>ChatGPT Plus $20, Pro $100 / $200 / $500, Business, Enterprise, Edu (not Free, Go or API key)</td></tr>
+  </tbody>
+</table>
+<p class="meta">Per-review figures are each vendor's own published averages or estimates, measured differently; treat them as orders of magnitude. "–" means we found no such feature on the vendor's pricing or docs pages on Nov 24. Copilot figures exclude GitHub Actions minutes. CodeRabbit's overage rate ($0.25 per reviewed file) is from Devshot's Nov 22 read of CodeRabbit's pricing page.</p>
+
+<h2>What 200 PRs a month costs (10-person team, one review per PR)</h2>
+<table>
+  <thead><tr><th>Setup</th><th>Review spend</th><th>Plus seats</th></tr></thead>
+  <tbody>
+    <tr><td>Claude Code Review, once per PR, at the $15–25 average</td><td><strong>$3,000–5,000</strong></td><td>Team standard: $200 (10 × $20 annual)</td></tr>
+    <tr><td>Claude Code Review on the default <em>After every push</em>, 3 pushes per PR</td><td><strong>$9,000–15,000</strong></td><td>$200</td></tr>
+    <tr><td>Copilot code review, Balanced (~$1.50)</td><td>~$300 in AI credits</td><td>Your Copilot plan (credits come from it first)</td></tr>
+    <tr><td>Copilot code review, Max (~$10)</td><td>~$2,000</td><td>Your Copilot plan</td></tr>
+    <tr><td>Cursor Bugbot ($1.00–1.50)</td><td>$200–300</td><td>Teams $30+/user = $300+</td></tr>
+    <tr><td>CodeRabbit Essentials (annual)</td><td>$0 extra within rate limits</td><td>$240 (10 PR authors × $24)</td></tr>
+  </tbody>
+</table>
+<p class="meta">Our arithmetic from the published averages above, not vendor quotes. Your PR sizes and review level move these numbers a lot. Run Anthropic's suggested pilot (one repo, <em>Once after PR creation</em> or <em>Manual</em>) and read the per-repo average before a wide rollout.</p>
+
+<h2>Setup checklist if you turn it on</h2>
+<ul class="clean">
+  <li><strong>Change the review trigger.</strong> A repo you add starts at <em>After every push</em>, which multiplies the cost by your pushes per PR. Start with <em>Once after PR creation</em> or <em>Manual (@claude review)</em>. Drafts and fork PRs are skipped automatically</li>
+  <li><strong>Set three limits:</strong> Code Review's monthly spend limit, PR Steward's monthly limit and per-repo cap (start Steward on <em>Manual</em>), and the Approvals classifier limit. All live in Organization settings &gt; Usage</li>
+  <li><strong>Billing keeps going with usage credits switched off,</strong> per Anthropic's docs. To stop it, turn the agents off, and turn Approvals off before Code Review, because a policy file can start billed reviews</li>
+  <li><strong>Already on Code Review?</strong> Adding <code>.claude/approvals.yml</code> changes which PRs get reviewed automatically. Add <code>claude/code_review</code> to a rule to keep reviews you want</li>
+  <li><strong>Auto-merge warning:</strong> with GitHub auto-merge or a merge queue and a policy that doesn't require a person, a change can merge with nobody acting. Keep branch protection requiring a human on sensitive paths</li>
+</ul>
+
+<h2>Which to pick</h2>
+<ul class="clean">
+  <li><strong>You live in Claude Code already (Pro, Max, Ultra):</strong> use <code>/ship</code>. It costs nothing extra, and it's the easiest way to test the fix-until-green loop</li>
+  <li><strong>Claude Team or Enterprise with agent-written code piling up:</strong> Claude Ship is the most complete review, fix and approve loop right now. Budget for it like API usage, not like a seat</li>
+  <li><strong>GitHub-first team watching cost:</strong> Copilot code review on Balanced with approvals on routine paths. Use Max (~$10) only on risky PRs. Compare models in our <a href="copilot-opus-55-gpt6-sol-luna-vs-cursor-2026.html">Copilot guide</a></li>
+  <li><strong>Cursor team:</strong> you already have the same three pieces: Bugbot (usage billing on Premium and Teams), Bugbot Autofix, and PR Routing &amp; Approval. See <a href="cursor-rollouts-security-review-vs-copilot-claude-2026.html">Cursor's security review vs Copilot and Claude</a></li>
+  <li><strong>Mixed tools, predictable bill:</strong> CodeRabbit charges per PR author, not per review, and only people who open PRs count as seats</li>
+  <li><strong>ChatGPT Plus or Pro subscriber:</strong> switch on Codex review first. It only posts P0/P1 findings, which keeps it quiet</li>
+</ul>
+<p>Related: <a href="claude-max-usage-limits-ab-test-weekly-vs-5-hour-vs-chatgpt-pro-codex-2026.html">Claude Max limits vs ChatGPT Pro</a> · <a href="claude-fable-5-2-pro-vs-max-ultra-50-percent-weekly-vs-opus-5-5-vs-muse-ember-api-pricing-2026.html">Claude Fable 5.2 on Pro vs Max vs Ultra</a> · <a href="openai-codex-cloud-vs-claude-cursor-copilot-2026.html">Codex cloud vs Claude, Cursor and Copilot</a></p>
+
+<h2>Affiliate-ready picks (what we can monetize today)</h2>
+<p>Claude (Pro for /ship, Team for Claude Ship), GitHub Copilot and CodeRabbit are the three buyer paths here. Live URLs go through <code>affiliates.md</code> placeholders. Waitlist: <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a>.</p>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro / Team →</a>
+  <a class="btn primary" href="#AFFILIATE:github-copilot" rel="sponsored noopener">GitHub Copilot →</a>
+  <a class="btn primary" href="#AFFILIATE:coderabbit" rel="sponsored noopener">CodeRabbit →</a>
+  <a class="btn primary" href="#AFFILIATE:cursor" rel="sponsored noopener">Cursor (Bugbot) →</a>
+  <a class="btn primary" href="#AFFILIATE:chatgpt-plus" rel="sponsored noopener">ChatGPT Plus (Codex review) →</a>
+</div>
+
+<h2>Want the follow-up?</h2>
+<p>PR Steward and Approvals are beta, and Anthropic hasn't published per-level review prices yet. Join the waitlist (no checkout) for one short note when real per-review costs or GA pricing show up: email <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist%20-%20Claude%20Ship">toolsthathelp@agentmail.to</a>.</p>
+
+<p class="meta">Sources: <a href="https://claude.com/resources/articles/introducing-claude-ship">Anthropic, Introducing Claude Ship (Nov 23, 2026)</a>; <a href="https://x.com/ClaudeDevs/status/2124959436640858475">@ClaudeDevs launch thread</a>; <a href="https://x.com/bcherny/status/2124961488691740941">Boris Cherny ("Anyone can use /ship")</a>; <a href="https://code.claude.com/docs/en/claude-ship">Claude Ship docs</a>; <a href="https://code.claude.com/docs/en/ship-command">/ship and /steward docs</a>; <a href="https://code.claude.com/docs/en/pr-steward-setup">Set up PR Steward</a>; <a href="https://code.claude.com/docs/en/approvals-setup">Set up Claude Approvals</a>; <a href="https://code.claude.com/docs/en/code-review-costs">Code Review costs and usage</a>; <a href="https://claude.com/resources/articles/code-review">Anthropic, Code Review for Claude Code (Mar 9, 2026; "$15–25" average)</a>; <a href="https://claude.com/resources/articles/code-review-is-now-generally-available">Code Review is now generally available (Oct 15, 2026)</a>; <a href="https://claude.com/pricing">Claude pricing</a>; <a href="https://www.theverge.com/ai-artificial-intelligence/1040134/anthropic-claude-ship-ai-pull-requests">The Verge (Nov 23)</a>; <a href="https://techcrunch.com/2026/11/23/anthropic-launches-claude-ship-letting-ai-agents-review-fix-and-approve-code-changes/">TechCrunch (Nov 23)</a>; <a href="https://docs.github.com/en/copilot/concepts/agent-capabilities/agent-powered-workflows-and-operations/code-review">GitHub Copilot code review docs (effort levels and estimated cost)</a>; <a href="https://github.blog/changelog/2026-10-28-copilot-code-review-merge-with-confidence-with-max-and-approvals/">GitHub changelog, Max and approvals (Oct 28, 2026)</a>; <a href="https://github.com/features/copilot/plans">GitHub Copilot plans</a>; <a href="https://cursor.com/bugbot">Cursor Bugbot</a>; <a href="https://cursor.com/help/account-and-billing/bugbot-usage-based-billing">Bugbot usage-based billing</a>; <a href="https://cursor.com/pricing">Cursor pricing</a>; <a href="https://cursor.com/docs/bugbot">Bugbot docs (Autofix)</a>; <a href="https://cursor.com/docs/approval-agents">Cursor PR Routing &amp; Approval</a>; <a href="https://docs.coderabbit.ai/management/plans">CodeRabbit plans and pricing</a>; <a href="https://devshot.co/blog/coderabbit-pricing">Devshot, CodeRabbit pricing (Nov 22)</a>; <a href="https://learn.chatgpt.com/docs/pricing">ChatGPT Work and Codex pricing</a>; <a href="https://chatgpt.com/codex/code-review">Codex code review</a>; <a href="https://www.cubic.dev/blog/codex-code-review">cubic, Codex code review (Oct 10; a competing vendor)</a>. Pages read ~3–5 AM ET Nov 24, 2026. The 200-PR table is our arithmetic. No prices, dates, or quotes were invented for this post.</p>
+    </article>
+    <footer class="site">
+      <p><a href="../">← All reviews</a> · <a href="../DISCLOSURE.md">Affiliate Disclosure</a> · Waitlist: <a href="mailto:toolsthathelp@agentmail.to">toolsthathelp@agentmail.to</a></p>
+    </footer>
+  </div>
+</body>
+</html>
