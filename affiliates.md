@@ -27,6 +27,7 @@
 | `qwen` | Qwen (Alibaba QwenCloud) | `#AFFILIATE:qwen` | _pending_ | QwenCloud API / Token Plan (Qwen4-Max) — partner link TBD |
 | `elevenlabs` | ElevenLabs | `#AFFILIATE:elevenlabs` | _pending_ | ElevenLabs Agents / voice plans — ElevenLabs runs an affiliate program; partner link TBD |
 | `coderabbit` | CodeRabbit | `#AFFILIATE:coderabbit` | _pending_ | CodeRabbit Essentials / Team (AI PR review) — affiliate program on Dub (partners.dub.co/coderabbit, $30 per lead); partner link TBD |
+| `devin` | Devin (Cognition) | `#AFFILIATE:devin` | _pending_ | Devin Pro / Max / Teams (Devin Desktop, ex-Windsurf; SWE-2.1) — partner link TBD |
 
 ## Placeholder convention
 
@@ -63,3 +64,4 @@ Affiliate Bot should rewrite `href="#AFFILIATE:<slug>"` → live URL and optiona
 | qwen | https://www.qwencloud.com/ |
 | elevenlabs | https://elevenlabs.io/ |
 | coderabbit | https://www.coderabbit.ai/ |
+| devin | https://devin.ai/ |

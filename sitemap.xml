@@ -308,4 +308,10 @@
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
   </url>
+  <url>
+    <loc>https://dmarzejon.github.io/aff-intel/posts/swe-2-1-free-in-devin-until-dec-8-vs-claude-opus-5-5-gpt-6-2-sol-gemini-4-neon-kimi-k3-1-cursor-copilot-mai-code-2-2026.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+  </url>
 </urlset>
