@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Google Workspace MCP Servers Are GA: AI Agents Must Use MCP (Not REST) for Gmail and Drive From Feb 1, 2027. 5,000 Free Requests a Day, Scaled Tier Billed From the First Request April 1. What It Costs vs REST, and What It Means for Claude, Antigravity, n8n and Make (Nov 2026) — Aff Intel</title>
+  <meta name="description" content="On Nov 24, 2026 Google made its Workspace MCP servers (Gmail, Drive, Docs, Sheets, Slides, Calendar, Chat, Tasks) and Workspace CLI generally available. From Feb 1, 2027, AI agents must reach Workspace data through MCP; agents calling REST APIs directly are held to Standard Tier quotas. Standard is free at 5,000 requests per day per project per product; from Apr 1, 2027 the Scaled Tier bills Gmail, Calendar and Drive MCP calls from the first request at $0.10 to $0.50 per 1,000. Prices, a Gmail cost example and who needs to act." />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <a class="brand" href="../">Aff <span>Intel</span></a>
+      <nav>
+        <a href="../">Reviews</a>
+        <a href="../affiliates.md">Affiliates</a>
+        <a href="../DISCLOSURE.md">Disclosure</a>
+      </nav>
+    </header>
+    <aside class="disclosure" role="note">
+      <strong>Affiliate disclosure:</strong> We may earn a commission if you buy through links on this site, at no extra cost to you.
+      See the full <a href="../DISCLOSURE.md">FTC disclosure</a>.
+    </aside>
+    <article class="post">
+<p class="meta">Explainer · Nov 26, 2026 · Google Workspace MCP servers · Workspace CLI · Workspace AI Tools Addendum · Standard / Scaled Tier · Gmail · Drive · Calendar · Gemini API CLI · Claude · Google Antigravity · n8n · Make</p>
+<h1>Google Workspace MCP servers are GA, and from Feb 1, 2027 AI agents must use them instead of the Gmail and Drive REST APIs: what's free (5,000 requests a day), what the Scaled Tier costs from Apr 1, and what it means for Claude, Antigravity, n8n and Make (Nov 2026)</h1>
+<p>On <strong>Tuesday, Nov 24, 2026</strong>, Google made its <strong>Workspace MCP servers</strong> and the official <strong>Workspace CLI</strong> generally available, and attached two rules to them. First, a new <strong>Workspace AI Tools Addendum</strong>: <em>"AI agents or similar access tools must use MCP to access Workspace data, rather than calling Workspace REST APIs directly. Technical enforcement begins on February 1, 2027."</em> Second, a two-tier usage model for the Workspace APIs and MCP servers, with paid <strong>Scaled Tier</strong> billing starting <strong>April 1, 2027</strong>. We read Google's announcement, the Workspace developer docs on usage tiers, pricing, Gmail quotas and MCP setup, and the Addendum on the morning of Nov 26. If you only use Gemini inside Gmail, nothing changes for you. If you've wired an AI agent into Gmail, Drive or Calendar, or you sell one, this is your new deadline.</p>
+
+<h2>Quick verdict</h2>
+<div class="verdict"><strong>You connect Claude, Antigravity or another agent to your own Gmail/Drive:</strong> the official route is now Google's hosted MCP servers, set up with Google's "Quick setup for personal use" (a Google Cloud project plus an AI-agent OAuth client). On the free Standard Tier you get <strong>5,000 requests per day per product</strong>, and no billing account is needed. That's plenty for one person.
+<strong>You build or sell an agent that reads customers' Gmail, Drive or Calendar:</strong> plan the move from REST to MCP <strong>before Feb 1, 2027</strong>, mark your OAuth client as agentic, and price in Scaled Tier MCP usage, which is <strong>billed from the first request</strong> from Apr 1, 2027 (REST keeps large daily free allowances; MCP on Scaled has none).
+<strong>You run deterministic automations (no AI agent choosing the calls):</strong> Google says REST APIs remain the route for "deterministic app calls," and over 99% of active developers sit inside the free Standard Tier today.
+<strong>You just want AI in your inbox and docs:</strong> Google AI Pro (Gemini built into Gmail, Docs and Sheets) or Claude Pro (Claude in Docs, Sheets and Slides) are the no-setup options. See our <a href="claude-google-workspace-vs-gemini-docs-sheets-slides-2026.html">Claude vs Gemini in Workspace guide</a>.</div>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro (connects to Workspace MCP)</a>
+  <a class="btn primary" href="#AFFILIATE:gemini-spark" rel="sponsored noopener">Google AI Pro (Gemini in Gmail and Docs)</a>
+  <a class="btn primary" href="#AFFILIATE:n8n-cloud" rel="sponsored noopener">n8n Cloud (workflow automation)</a>
+</div>
+
+<h2>What launched on Nov 24</h2>
+<table>
+  <thead><tr><th>Piece</th><th>What it is</th><th>Status</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Workspace MCP servers</strong></td><td>Google-hosted MCP servers, one per product: Gmail, Drive, Docs, Sheets, Slides, Calendar, Chat and Tasks (Keep "coming soon"). Endpoints like <code>gmailmcp.googleapis.com/mcp/v1</code>. Tools include <code>search_threads</code>, <code>get_thread</code>, <code>create_draft</code>, <code>search_files</code>, <code>create_file</code></td><td>GA; rolling out to all domains over 2 weeks</td></tr>
+    <tr><td><strong>Workspace CLI</strong></td><td>A command-line tool for terminal agents (dev machines, VMs, sandboxes) with packaged agent skills, command discovery and scoped sign-in</td><td>GA</td></tr>
+    <tr><td><strong>Standard / Scaled tiers</strong></td><td>One usage model across Workspace APIs, MCP servers and the CLI, starting with Gmail, Drive and Calendar</td><td>Live Nov 24; Scaled billing from Apr 1, 2027</td></tr>
+    <tr><td><strong>Workspace AI Tools Addendum</strong></td><td>Terms for AI agents: must use Google MCP, no scraping, limits on storing derived data (for example, "Google Technical Information" no longer than 30 days)</td><td>Takes effect Feb 1, 2027</td></tr>
+    <tr><td><strong>Admin controls</strong></td><td>Admin console → Security → API Controls: manage agent access, require a person to confirm sensitive actions (reading external files, sharing), agent audit logs; DLP rules apply to agent actions</td><td>Rolling out over 2 weeks</td></tr>
+  </tbody>
+</table>
+<p class="meta">From Google's <a href="https://workspaceupdates.googleblog.com/2026/11/mcp-servers-cli-standardized-usage-tiers-now-available.html">Workspace Updates post</a> (Nov 24) and the <a href="https://developers.google.com/workspace/guides/configure-mcp-servers">MCP setup guide</a>, which names Google Antigravity and Claude as example MCP hosts.</p>
+
+<h2>The key dates</h2>
+<table>
+  <thead><tr><th>Date</th><th>What happens</th></tr></thead>
+  <tbody>
+    <tr><td>Nov 24, 2026</td><td>Standard and Scaled tiers launch; API usage dashboard in Google Cloud console shows each project's usage and estimated cost</td></tr>
+    <tr><td><strong>Feb 1, 2027</strong></td><td>Addendum takes effect. <strong>AI agents calling Workspace REST APIs directly are limited to Standard Tier quotas regardless of tier</strong>. Agents must use MCP to get more</td></tr>
+    <tr><td><strong>Apr 1, 2027</strong></td><td>Scaled Tier billing starts for Gmail, Calendar and Drive APIs and MCP servers. Projects with older, higher limits that haven't opted into Scaled (or been marked internal) drop to Standard limits, at no charge</td></tr>
+    <tr><td>Until at least Dec 2027</td><td>Workspace APIs excluded from the Google Cloud Support variable fee</td></tr>
+  </tbody>
+</table>
+<p class="meta">From Google's <a href="https://developers.google.com/workspace/guides/quota-usage-tiers">usage tiers and quotas</a> page, read Nov 26.</p>
+
+<h2>Free vs paid: Standard and Scaled</h2>
+<table>
+  <thead><tr><th></th><th>Standard Tier (default)</th><th>Scaled Tier (opt in, billing account)</th></tr></thead>
+  <tbody>
+    <tr><td>Price</td><td><strong>$0</strong>, never billed, no card needed</td><td>Billed from Apr 1, 2027 by bucket (below)</td></tr>
+    <tr><td>MCP quota</td><td><strong>5,000 requests per day, per project, per product</strong>, plus per-minute limits; resets at midnight PT</td><td>Higher quotas on request</td></tr>
+    <tr><td>MCP free allowance</td><td>The 5,000/day above</td><td><strong>None.</strong> Gmail, Calendar and Drive MCP calls are billed from the first successful request</td></tr>
+    <tr><td>REST free allowance</td><td>Published per-project limits</td><td>Large daily no-charge allowances per billing account (e.g. Gmail Light 70M/day, Medium 10M, Premium 1M; Calendar 1M; Drive Premium 1M)</td></tr>
+    <tr><td>Internal-only projects</td><td colspan="2">A Workspace admin can mark a project internal to keep higher REST limits without Scaled. <strong>MCP quotas aren't eligible</strong> for that exception</td></tr>
+  </tbody>
+</table>
+
+<h2>Scaled Tier prices (from Apr 1, 2027)</h2>
+<table>
+  <thead><tr><th>Bucket</th><th>Price per 1,000 requests</th><th>Example MCP tools</th></tr></thead>
+  <tbody>
+    <tr><td>Light</td><td>$0.10</td><td><code>get_file_metadata</code>, <code>get_file_permissions</code>, <code>list_labels</code></td></tr>
+    <tr><td>Medium</td><td>$0.20</td><td><code>create_draft</code>, <code>label_message</code>, <code>create_file</code>, <code>copy_file</code></td></tr>
+    <tr><td>Plus</td><td>$0.25</td><td><code>list_recent_files</code>, <code>search_files</code>; <strong>every Calendar call</strong></td></tr>
+    <tr><td>Premium</td><td>$0.50</td><td><code>search_threads</code>, <code>get_thread</code>, <code>read_file_content</code>, <code>download_file_content</code></td></tr>
+  </tbody>
+</table>
+<p class="meta">From Google's <a href="https://developers.google.com/workspace/guides/quota-pricing">pricing and billing tiers</a> page. Some MCP tools count as several requests: in Gmail, <strong><code>search_threads</code> and <code>list_drafts</code> count as 10 each</strong> (<a href="https://developers.google.com/workspace/gmail/api/reference/quota">Gmail quota page</a>), and failed tool calls that return HTTP 200 with an error flag also count. Spend-based discounts start above $20,000 a month (17% marginal from $20k to $50k).</p>
+
+<h2>What an inbox agent costs</h2>
+<p>Our arithmetic from Google's published prices. Say an agent triages one inbox each day with <strong>50 searches</strong> (<code>search_threads</code>, 10 units each, Premium), <strong>200 thread reads</strong> (<code>get_thread</code>, Premium) and <strong>20 drafts</strong> (<code>create_draft</code>, Medium).</p>
+<table>
+  <thead><tr><th>Scenario</th><th>Gmail MCP units per day</th><th>Standard Tier</th><th>Scaled Tier from Apr 1, 2027</th></tr></thead>
+  <tbody>
+    <tr><td>One person, own project</td><td>500 + 200 + 20 = <strong>720</strong></td><td>Free (under 5,000)</td><td>About $0.35/day (~$10.60 per 30 days), if you opted in</td></tr>
+    <tr><td>Same agent for 10 users on one project</td><td>7,200</td><td>Over the cap; throttled</td><td>About $3.54/day (~$106 per 30 days)</td></tr>
+    <tr><td>SaaS with 1,000 users</td><td>720,000</td><td>Not possible</td><td>About $354/day (~$10,600 per 30 days)</td></tr>
+  </tbody>
+</table>
+<p class="meta">Per user per day: 50 × 10 × $0.50/1,000 = $0.25; 200 × $0.50/1,000 = $0.10; 20 × $0.20/1,000 = $0.004. The searches are 70% of the units and the cost, so an agent that searches less and reads specific threads costs far less. Standard caps are per project, per product, so each user running their own project (the "personal use" setup) stays free.</p>
+
+<h2>Three Google CLIs, three jobs</h2>
+<ul class="clean">
+  <li><strong>Workspace CLI</strong> (new, GA Nov 24): lets a terminal agent read and change your Workspace data (mail, files, calendar) with scoped sign-in. Same tiers and quotas as above</li>
+  <li><strong>Gemini API CLI</strong> (<code>gemini-api</code>, open source, Apache 2.0, beta): lets Claude Code, Codex, Antigravity or any shell agent call Gemini models and managed agents (images, voiceovers, file analysis, Deep Research) with a Gemini API key, billed at Gemini API rates. v0.5.0 (Nov 20) made Gemini 4 Hydrogen its default model. It went viral on X this week, but it isn't new: the current Go version has shipped since Sept 28</li>
+  <li><strong>Antigravity CLI</strong>: Google's own coding agent. Antigravity users got a full Gemini quota reset on Thanksgiving morning</li>
+</ul>
+
+<h2>Who needs to do what</h2>
+<ul class="clean">
+  <li><strong>Individual Claude or Antigravity user:</strong> optional now. If you want Claude to search your Gmail or edit your Drive files, Google's MCP servers are the sanctioned connection and stay free at personal volumes</li>
+  <li><strong>Agent builder (startup, indie SaaS):</strong> before Feb 1, 2027, switch Gmail/Drive/Calendar access from REST to MCP, tick "Use this client for an AI-powered agent" (<code>is_agentic</code>) on the OAuth client, keep non-agent features on a separate client, and re-run your unit economics with MCP billed from the first call</li>
+  <li><strong>n8n, Make or Zapier-style workflows:</strong> fixed workflows that call Gmail or Drive the same way every time look like the "deterministic app calls" REST is meant for. Workflows where an AI agent node picks which Workspace calls to make look like what the Addendum targets. Google hasn't published a line between the two, so treat agent nodes as MCP-bound until it does</li>
+  <li><strong>Workspace admin:</strong> check Admin console → Security → API Controls as the controls roll out; you can require human confirmation for sensitive agent actions and see agent audit logs</li>
+  <li><strong>Cloud billing admin:</strong> watch for Google's email about affected projects; projects over Standard limits need Scaled (or the internal-use mark for REST) before Apr 1, 2027</li>
+</ul>
+<p>Related: <a href="claude-google-workspace-vs-gemini-docs-sheets-slides-2026.html">Claude in Docs, Sheets and Slides vs Gemini</a> · <a href="gemini-4-neon-ai-pro-vs-ultra-api-3-15-no-free-tier-vs-carbon-dec-1-gpt-6-2-sol-astra-claude-opus-5-5-copilot-cursor-2026.html">Gemini 4 Neon</a> · <a href="gemini-4-hydrogen-free-auto-ai-plus-vs-api-1-50-vs-gemini-3-8-flash-claude-sonnet-5-5-gpt-6-1-terra-2026.html">Gemini 4 Hydrogen</a> · <a href="black-friday-2026-ai-deals-google-ai-pro-up-to-50-off-nov-26-vs-chatgpt-plus-claude-pro-full-price-elevenlabs-copilot-2026.html">Black Friday 2026 AI deals</a></p>
+
+<h2>Affiliate-ready picks (what we can monetize today)</h2>
+<p>Claude Pro and Google AI Pro are the buyer paths for people who want AI in their Workspace without building anything; n8n Cloud and Make are the automation paths. Live URLs go through <code>affiliates.md</code> placeholders. Waitlist: <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist">toolsthathelp@agentmail.to</a>.</p>
+<div class="btn-row">
+  <a class="btn primary" href="#AFFILIATE:claude-pro" rel="sponsored noopener">Claude Pro →</a>
+  <a class="btn primary" href="#AFFILIATE:gemini-spark" rel="sponsored noopener">Google AI Pro →</a>
+  <a class="btn primary" href="#AFFILIATE:n8n-cloud" rel="sponsored noopener">n8n Cloud →</a>
+  <a class="btn primary" href="#AFFILIATE:make" rel="sponsored noopener">Make →</a>
+  <a class="btn primary" href="#AFFILIATE:chatgpt-plus" rel="sponsored noopener">ChatGPT Plus →</a>
+</div>
+
+<h2>Want the follow-up?</h2>
+<p>We'll note when Google clarifies which automations count as "AI agents," when Keep's MCP server lands, and what changes on Feb 1 and Apr 1. Join the waitlist (no checkout) for one short note: email <a href="mailto:toolsthathelp@agentmail.to?subject=Aff-intel%20waitlist%20-%20Workspace%20MCP">toolsthathelp@agentmail.to</a>.</p>
+
+<p class="meta">Sources: <a href="https://workspaceupdates.googleblog.com/2026/11/mcp-servers-cli-standardized-usage-tiers-now-available.html">Google Workspace Updates, MCP servers, CLI, standardized usage tiers and admin policies (Nov 24, 2026)</a>; <a href="https://developers.google.com/workspace/guides/quota-usage-tiers">Usage tiers and quotas for Workspace APIs and MCP servers</a>; <a href="https://developers.google.com/workspace/guides/quota-pricing">Workspace API and MCP server pricing and billing tiers</a>; <a href="https://developers.google.com/workspace/gmail/api/reference/quota">Gmail API and MCP quotas</a>; <a href="https://developers.google.com/workspace/guides/configure-mcp-servers">Configure the Workspace MCP servers</a>; <a href="https://workspace.google.com/terms/ai-tools/">Workspace AI Tools Addendum</a>; <a href="https://github.com/google-gemini/gemini-api-cli">google-gemini/gemini-api-cli</a> and its <a href="https://github.com/google-gemini/gemini-api-cli/releases">releases</a>; <a href="https://x.com/_mohansolo/status/2125851902009311306">Varun Mohan on the Antigravity reset (Nov 26)</a>. Cost examples are our arithmetic. Checked Nov 26, 2026.</p>
+    </article>
+    <footer class="site">
+      <p><a href="../">← All reviews</a> · <a href="../DISCLOSURE.md">Affiliate Disclosure</a> · Waitlist: <a href="mailto:toolsthathelp@agentmail.to">toolsthathelp@agentmail.to</a></p>
+    </footer>
+  </div>
+</body>
+</html>

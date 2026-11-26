@@ -86,7 +86,7 @@
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/claude-google-workspace-vs-gemini-docs-sheets-slides-2026.html</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/chatgpt-gpt-6-intelligent-ui-free-vs-plus-vs-claude-gemini-2026.html</loc>
@@ -280,13 +280,13 @@
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/gpt-6-2-astra-sol-api-8-40-chatgpt-plus-pro-codex-copilot-vs-claude-fable-5-2-opus-5-5-gemini-4-carbon-2026.html</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/gemini-4-neon-ai-pro-vs-ultra-api-3-15-no-free-tier-vs-carbon-dec-1-gpt-6-2-sol-astra-claude-opus-5-5-copilot-cursor-2026.html</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
@@ -298,7 +298,7 @@
   </url>
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/black-friday-2026-ai-deals-google-ai-pro-up-to-50-off-nov-26-vs-chatgpt-plus-claude-pro-full-price-elevenlabs-copilot-2026.html</loc>
-    <lastmod>2026-11-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
   </url>
@@ -311,6 +311,12 @@
   <url>
     <loc>https://dmarzejon.github.io/aff-intel/posts/swe-2-1-free-in-devin-until-dec-8-vs-claude-opus-5-5-gpt-6-2-sol-gemini-4-neon-kimi-k3-1-cursor-copilot-mai-code-2-2026.html</loc>
     <lastmod>2026-11-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://dmarzejon.github.io/aff-intel/posts/google-workspace-mcp-servers-ga-ai-agents-must-use-mcp-feb-1-2027-5000-free-requests-scaled-tier-april-1-vs-rest-api-claude-antigravity-n8n-make-2026.html</loc>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
   </url>
