@@ -28,6 +28,9 @@
 | `elevenlabs` | ElevenLabs | `#AFFILIATE:elevenlabs` | _pending_ | ElevenLabs Agents / voice plans — ElevenLabs runs an affiliate program; partner link TBD |
 | `coderabbit` | CodeRabbit | `#AFFILIATE:coderabbit` | _pending_ | CodeRabbit Essentials / Team (AI PR review) — affiliate program on Dub (partners.dub.co/coderabbit, $30 per lead); partner link TBD |
 | `devin` | Devin (Cognition) | `#AFFILIATE:devin` | _pending_ | Devin Pro / Max / Teams (Devin Desktop, ex-Windsurf; SWE-2.1) — partner link TBD |
+| `otter` | Otter.ai | `#AFFILIATE:otter` | _pending_ | Otter Pro / Business (AI meeting notes; Black Friday 50% off annual with code) — partner link TBD |
+| `fireflies` | Fireflies.ai | `#AFFILIATE:fireflies` | _pending_ | Fireflies Pro / Business (AI meeting notes) — partner link TBD |
+| `fathom` | Fathom | `#AFFILIATE:fathom` | _pending_ | Fathom Team / Business (AI meeting notes) — partner link TBD |
 
 ## Placeholder convention
 
@@ -65,3 +68,6 @@ Affiliate Bot should rewrite `href="#AFFILIATE:<slug>"` → live URL and optiona
 | elevenlabs | https://elevenlabs.io/ |
 | coderabbit | https://www.coderabbit.ai/ |
 | devin | https://devin.ai/ |
+| otter | https://otter.ai/ |
+| fireflies | https://fireflies.ai/ |
+| fathom | https://www.fathom.ai/ |
